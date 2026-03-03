@@ -98,46 +98,113 @@ export default function ProblemSection() {
         </p>
       </div>
 
-      {/* Main Content Grid - Image with Floating Badges + Info Cards */}
+      {/* Main Content Grid - Info Cards Left + Image with Floating Badges Right */}
       <div className="relative max-w-[1400px] mx-auto mb-16">
-        <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-center">
           
-          {/* Left - Large Image with Floating Problem Badges */}
+          {/* Left - Compact Info Cards */}
+          <div className="space-y-5">
+            {/* Card 1 - Regulatory Risk */}
+            <div 
+              className={`bg-white border border-gray-200 rounded-xl p-6 transition-all duration-700 hover:border-[#ff6b6b]/50 hover:shadow-lg ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-[#0a0e1a] mb-2">
+                    El Riesgo Regulatorio
+                  </h3>
+                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed">
+                    Un solo instrumento descalibrado puede causar el rechazo de un lote completo o la suspensión de tu línea de producción.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 - Hidden Cost */}
+            <div 
+              className={`bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+              style={{ transitionDelay: '300ms' }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-[#ff6b6b]/20 flex items-center justify-center">
+                  <TrendingDown className="w-5 h-5 text-[#ff6b6b]" strokeWidth={2} />
+                </div>
+                <div>
+                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-white mb-2">
+                    El Costo Oculto
+                  </h3>
+                  <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed">
+                    La mayoría descubre que sus equipos están fuera de especificación cuando ya es tarde: en medio de una auditoría.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Solution */}
+            <div 
+              className={`bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+              style={{ transitionDelay: '400ms' }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 text-3xl">✓</div>
+                <div>
+                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-[#0a0e1a] mb-2">
+                    La Buena Noticia
+                  </h3>
+                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a] leading-relaxed">
+                    Este riesgo se elimina con un plan de calibración periódica. Te lo hacemos fácil, rápido y con certificado.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Large Image with Professional Floating Badges */}
           <div 
             className={`relative transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
-            style={{ transitionDelay: '200ms' }}
+            style={{ transitionDelay: '500ms' }}
           >
             <div className="relative">
-              {/* Main Image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              {/* Main Image - No background, no card */}
+              <div className="relative">
                 <Image
                   src="/images/PERSONA.png"
                   alt="Profesional preocupado por calibración"
-                  width={800}
-                  height={900}
-                  className="w-full h-auto object-cover"
+                  width={900}
+                  height={1000}
+                  className="w-full h-auto object-contain"
                   priority
                 />
               </div>
 
-              {/* Floating Problem Badges around the image */}
+              {/* Professional Floating Problem Badges */}
               {problems.map((problem, index) => {
                 const Icon = problem.icon
                 const positions = [
-                  { top: '5%', left: '-8%', delay: '400ms' },
-                  { top: '25%', right: '-10%', delay: '500ms' },
-                  { top: '45%', left: '-12%', delay: '600ms' },
-                  { top: '65%', right: '-8%', delay: '700ms' },
-                  { bottom: '15%', left: '-10%', delay: '800ms' },
-                  { bottom: '5%', right: '-12%', delay: '900ms' }
+                  { top: '8%', left: '-5%', delay: '600ms' },
+                  { top: '22%', right: '-3%', delay: '700ms' },
+                  { top: '40%', left: '-8%', delay: '800ms' },
+                  { top: '58%', right: '-5%', delay: '900ms' },
+                  { bottom: '20%', left: '-6%', delay: '1000ms' },
+                  { bottom: '8%', right: '-4%', delay: '1100ms' }
                 ]
                 
                 return (
                   <div
                     key={index}
-                    className={`hidden lg:block absolute bg-white rounded-2xl shadow-2xl p-4 max-w-[280px] border-2 border-gray-200 hover:border-[#ff6b6b] hover:scale-105 transition-all duration-500 ${
+                    className={`hidden xl:flex absolute items-center gap-3 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl p-4 max-w-[260px] border border-gray-200/50 hover:border-[#ff6b6b] hover:scale-105 hover:shadow-[0_20px_60px_rgba(255,107,107,0.3)] transition-all duration-500 ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}
                     style={{ 
@@ -146,32 +213,30 @@ export default function ProblemSection() {
                       zIndex: 10
                     }}
                   >
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-white" strokeWidth={2.5} />
-                      </div>
-                      <p className="font-['Inter'] text-[12px] text-[#0a0e1a] leading-snug font-medium">
-                        {problem.text}
-                      </p>
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center shadow-md">
+                      <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                     </div>
+                    <p className="font-['Inter'] text-[11px] text-[#0a0e1a] leading-tight font-semibold">
+                      {problem.text}
+                    </p>
                   </div>
                 )
               })}
 
-              {/* Mobile version - badges below image */}
-              <div className="lg:hidden mt-6 space-y-3">
+              {/* Mobile/Tablet version - badges below image */}
+              <div className="xl:hidden mt-8 space-y-3">
                 {problems.map((problem, index) => {
                   const Icon = problem.icon
                   return (
                     <div
                       key={index}
-                      className={`flex items-start gap-3 bg-white rounded-xl shadow-lg p-4 border-2 border-gray-200 transition-all duration-500 ${
+                      className={`flex items-start gap-3 bg-white rounded-xl shadow-lg p-4 border border-gray-200 transition-all duration-500 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                       }`}
-                      style={{ transitionDelay: `${400 + index * 100}ms` }}
+                      style={{ transitionDelay: `${600 + index * 100}ms` }}
                     >
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-white" strokeWidth={2.5} />
+                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
+                        <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                       </div>
                       <p className="font-['Inter'] text-[13px] text-[#0a0e1a] leading-relaxed font-medium">
                         {problem.text}
@@ -180,61 +245,6 @@ export default function ProblemSection() {
                   )
                 })}
               </div>
-            </div>
-          </div>
-
-          {/* Right - Info Cards */}
-          <div className="space-y-6">
-            {/* Card 1 - Regulatory Risk */}
-            <div 
-              className={`bg-white border-2 border-gray-200 rounded-2xl p-8 transition-all duration-700 hover:border-[#ff6b6b]/50 hover:shadow-xl ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
-              style={{ transitionDelay: '300ms' }}
-            >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center mb-5">
-                <AlertTriangle className="w-7 h-7 text-white" strokeWidth={2} />
-              </div>
-              <h3 className="font-['Space_Grotesk'] font-bold text-[22px] text-[#0a0e1a] mb-3">
-                El Riesgo Regulatorio
-              </h3>
-              <p className="font-['Inter'] text-[16px] text-[#0a0e1a]/70 leading-relaxed">
-                Un solo instrumento descalibrado puede causar el rechazo de un lote completo o la suspensión de tu línea de producción.
-              </p>
-            </div>
-
-            {/* Card 2 - Hidden Cost */}
-            <div 
-              className={`bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-2xl p-8 transition-all duration-700 hover:shadow-2xl ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
-              style={{ transitionDelay: '400ms' }}
-            >
-              <div className="w-14 h-14 rounded-xl bg-[#ff6b6b]/20 flex items-center justify-center mb-5">
-                <TrendingDown className="w-7 h-7 text-[#ff6b6b]" strokeWidth={2} />
-              </div>
-              <h3 className="font-['Space_Grotesk'] font-bold text-[22px] text-white mb-3">
-                El Costo Oculto
-              </h3>
-              <p className="font-['Inter'] text-[16px] text-white/80 leading-relaxed">
-                La mayoría descubre que sus equipos están fuera de especificación cuando ya es tarde: en medio de una auditoría.
-              </p>
-            </div>
-
-            {/* Card 3 - Solution */}
-            <div 
-              className={`bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-2xl p-8 transition-all duration-700 hover:shadow-2xl ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
-              style={{ transitionDelay: '500ms' }}
-            >
-              <div className="text-5xl mb-4">✓</div>
-              <h3 className="font-['Space_Grotesk'] font-bold text-[22px] text-[#0a0e1a] mb-3">
-                La Buena Noticia
-              </h3>
-              <p className="font-['Inter'] text-[16px] text-[#0a0e1a] leading-relaxed">
-                Este riesgo se elimina con un plan de calibración periódica. Te lo hacemos fácil, rápido y con certificado.
-              </p>
             </div>
           </div>
         </div>
