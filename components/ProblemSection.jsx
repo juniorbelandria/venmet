@@ -82,6 +82,7 @@ export default function ProblemSection() {
             fontSize: 'clamp(36px, 5vw, 64px)',
             letterSpacing: '-0.03em',
             fontVariationSettings: '"wght" 800',
+            fontWeight: 700,
             color: '#0a0e1a'
           }}
         >
@@ -93,7 +94,9 @@ export default function ProblemSection() {
             </svg>
           </span>
         </h2>
-        <p className="font-['Inter'] text-[19px] text-[#0a0e1a]/60 leading-relaxed max-w-[700px] mx-auto">
+        <p className="font-['Inter'] text-[19px] text-[#0a0e1a]/60 leading-relaxed max-w-[700px] mx-auto"
+          style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+        >
           Si reconoces alguna de estas situaciones, no estás solo. Son problemas comunes que pueden costarte mucho más de lo que imaginas.
         </p>
       </div>
@@ -116,10 +119,14 @@ export default function ProblemSection() {
                   <AlertTriangle className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-[#0a0e1a] mb-2">
+                  <h3 className="font-['Inter'] font-bold text-[17px] text-[#0a0e1a] mb-2"
+                    style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                  >
                     El Riesgo Regulatorio
                   </h3>
-                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed">
+                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed"
+                    style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                  >
                     Un solo instrumento descalibrado puede causar el rechazo de un lote completo o la suspensión de tu línea de producción.
                   </p>
                 </div>
@@ -138,10 +145,14 @@ export default function ProblemSection() {
                   <TrendingDown className="w-5 h-5 text-[#ff6b6b]" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-white mb-2">
+                  <h3 className="font-['Inter'] font-bold text-[17px] text-white mb-2"
+                    style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                  >
                     El Costo Oculto
                   </h3>
-                  <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed">
+                  <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed"
+                    style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                  >
                     La mayoría descubre que sus equipos están fuera de especificación cuando ya es tarde: en medio de una auditoría.
                   </p>
                 </div>
@@ -158,10 +169,14 @@ export default function ProblemSection() {
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 text-3xl">✓</div>
                 <div>
-                  <h3 className="font-['Space_Grotesk'] font-bold text-[17px] text-[#0a0e1a] mb-2">
+                  <h3 className="font-['Inter'] font-bold text-[17px] text-[#0a0e1a] mb-2"
+                    style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                  >
                     La Buena Noticia
                   </h3>
-                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a] leading-relaxed">
+                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a] leading-relaxed"
+                    style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                  >
                     Este riesgo se elimina con un plan de calibración periódica. Te lo hacemos fácil, rápido y con certificado.
                   </p>
                 </div>
@@ -216,7 +231,9 @@ export default function ProblemSection() {
                     <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center shadow-md">
                       <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                     </div>
-                    <p className="font-['Inter'] text-[11px] text-[#0a0e1a] leading-tight font-semibold">
+                    <p className="font-['Inter'] text-[11px] text-[#0a0e1a] leading-tight font-semibold"
+                      style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                    >
                       {problem.text}
                     </p>
                   </div>
@@ -238,7 +255,9 @@ export default function ProblemSection() {
                       <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
                         <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                       </div>
-                      <p className="font-['Inter'] text-[13px] text-[#0a0e1a] leading-relaxed font-medium">
+                      <p className="font-['Inter'] text-[13px] text-[#0a0e1a] leading-relaxed font-medium"
+                        style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                      >
                         {problem.text}
                       </p>
                     </div>
