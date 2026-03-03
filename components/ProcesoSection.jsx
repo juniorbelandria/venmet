@@ -72,10 +72,28 @@ export default function ProcesoSection() {
       id="proceso"
       className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
     >
-      {/* Decorative Background Elements */}
+      {/* Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none"
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+        }}
+      />
+
+      {/* Grid Pattern Sutil */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: 'linear-gradient(rgba(10,14,26,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(10,14,26,0.05) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} 
+      />
+
+      {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-[1400px] mx-auto">
@@ -175,10 +193,10 @@ export default function ProcesoSection() {
                 style={{ transitionDelay: '400ms' }}
               >
                 <div className="text-center">
-                  <div className="text-[48px] font-['Inter'] font-bold text-[#0a0e1a] mb-1">
+                  <div className="text-[72px] font-['Inter'] font-bold text-[#0a0e1a] leading-none">
                     {pasos[activeStep].numero}
                   </div>
-                  <div className="text-[13px] font-['Inter'] font-semibold text-[#0a0e1a] px-4"
+                  <div className="text-[13px] font-['Inter'] font-semibold text-[#0a0e1a] px-4 mt-1"
                     style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                   >
                     {pasos[activeStep].titulo}
@@ -260,19 +278,6 @@ export default function ProcesoSection() {
                   </div>
                 )
               })}
-            </div>
-
-            {/* Bottom Note - Desktop Only */}
-            <div 
-              className={`text-right mt-6 pr-4 transition-all duration-700 delay-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              <p className="font-['Inter'] text-[13px] text-[#0a0e1a]/60 leading-relaxed italic"
-                style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-              >
-                Haz clic en cada paso para ver más detalles
-              </p>
             </div>
           </div>
         </div>
