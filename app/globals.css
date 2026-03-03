@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colores Principales */
+  --azul: #182c66;
+  --azul-medio: #2a4080;
+  --acento: #27eee7;
+  --acento2: #FFB347;
+  --blanco: #F5F7FA;
+  --gris: #8A96A8;
+  --gris-claro: #EEF1F6;
+  --texto: #1A2B42;
+  --rojo-suave: #FF6B6B;
+  
+  /* Colores de Certificaciones */
+  --iso-azul: #0052B4;
+  --covenin-rojo: #CF1020;
+  --sencamer-naranja: #F5A623;
+  --sencamer-naranja-oscuro: #D4860A;
+  --bpf-verde: #27eee7;
+  
+  /* Colores de Servicios */
+  --temp-humedad-bg: rgba(39,238,231,0.10);
+  --temperatura-bg: rgba(255,200,100,0.12);
+  --masa-bg: rgba(255,179,71,0.10);
+  --volumen-bg: rgba(100,180,255,0.12);
+  --presion-bg: rgba(255,107,107,0.10);
+  --tiempo-bg: rgba(39,238,231,0.08);
+  --dimensional-bg: rgba(24,44,102,0.08);
+  --fisico-quimico-bg: rgba(108,99,255,0.10);
+  
+  /* Colores de Certificaciones (fondos circulares) */
+  --iso-fondo: rgba(0,82,180,0.08);
+  --iso-borde: rgba(0,82,180,0.18);
+  --covenin-fondo: rgba(207,16,32,0.08);
+  --covenin-borde: rgba(207,16,32,0.18);
+  --sencamer-fondo: rgba(245,166,35,0.08);
+  --sencamer-borde: rgba(245,166,35,0.18);
+  --bpf-fondo: rgba(39,238,231,0.08);
+  --bpf-borde: rgba(39,238,231,0.18);
+  
+  /* Estados Antes/Después */
+  --antes-fondo: rgba(255,107,107,0.10);
+  --antes-borde: rgba(255,107,107,0.20);
+  --antes-texto: #FF6B6B;
+  --despues-fondo: rgba(39,238,231,0.10);
+  --despues-borde: rgba(39,238,231,0.20);
+  --despues-texto: #27eee7;
+  
+  /* Colores de texto */
+  --texto-principal: #1A2B42;
+  --texto-secundario: #8A96A8;
+  --texto-card: #3A4D63;
+  --footer-oscuro: #060F1E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--blanco);
+  color: var(--texto);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utilidades de animación */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Delays para animaciones escalonadas */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Efectos de hover personalizados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradientes personalizados */
+.gradient-azul {
+  background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 100%);
+}
+
+.gradient-acento {
+  background: linear-gradient(135deg, var(--acento) 0%, #00E5BF 100%);
+}
+
+.gradient-radial-acento {
+  background: radial-gradient(circle at top right, rgba(0, 201, 167, 0.15) 0%, transparent 70%);
+}
+
+/* Backdrop blur para navegación */
+.backdrop-blur-custom {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Grid pattern para fondos */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(39, 238, 231, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 238, 231, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Sombras personalizadas */
+.shadow-acento {
+  box-shadow: 0 8px 24px rgba(39, 238, 231, 0.25);
+}
+
+.shadow-acento-lg {
+  box-shadow: 0 12px 32px rgba(39, 238, 231, 0.3);
+}
+
+.shadow-azul {
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.15);
+}
+
+/* Bordes con gradiente */
+.border-gradient-acento {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--blanco), var(--blanco)) padding-box,
+              linear-gradient(135deg, var(--acento), #00E5BF) border-box;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gris-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--acento);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1dd4cd;
+}
+
+/* Tipografía responsive */
+.text-responsive-xl {
+  font-size: clamp(36px, 4vw, 58px);
+}
+
+.text-responsive-lg {
+  font-size: clamp(28px, 3.5vw, 46px);
+}
+
+.text-responsive-md {
+  font-size: clamp(20px, 2.5vw, 32px);
+}
+
+/* Estilos para badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Estilos para botones CTA */
+.btn-primary {
+  background: var(--acento);
+  color: var(--azul);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(39, 238, 231, 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Cards con hover effect */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección con padding estándar */
+.section-padding {
+  padding: 90px 5%;
+}
+
+.section-padding-sm {
+  padding: 60px 5%;
+}
+
+/* Container con max-width */
+.container-custom {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tag labels de sección */
+.section-tag {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 16px;
+  display: inline-block;
+}
