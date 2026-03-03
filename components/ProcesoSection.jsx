@@ -80,7 +80,7 @@ export default function ProcesoSection() {
 
       <div className="relative max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className={`text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase mb-6"
             style={{
               background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
@@ -91,7 +91,7 @@ export default function ProcesoSection() {
             ⚡ Cómo Funciona
           </span>
           <h2 
-            className="font-['Inter'] font-bold leading-[1.1] max-w-[900px] mx-auto mb-6"
+            className="font-['Inter'] font-bold leading-[1.1] max-w-[900px] mx-auto"
             style={{ 
               fontSize: 'clamp(36px, 5vw, 64px)',
               letterSpacing: '-0.03em',
@@ -103,30 +103,25 @@ export default function ProcesoSection() {
             en{' '}
             <span style={{ color: '#27eee7' }}>4 pasos simples</span>
           </h2>
-          <p className="font-['Inter'] text-[19px] text-[#0a0e1a]/60 leading-relaxed max-w-[700px] mx-auto"
-            style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-          >
-            Sin burocracia, sin complicaciones. Así de fácil trabajamos contigo.
-          </p>
         </div>
 
         {/* Circular Process Design */}
-        <div className="relative max-w-[1100px] mx-auto">
+        <div className="relative max-w-[900px] mx-auto">
           {/* Desktop: Circular Layout */}
           <div className="hidden lg:block">
-            <div className="relative w-full aspect-square max-w-[700px] mx-auto">
+            <div className="relative w-full aspect-square max-w-[550px] mx-auto">
               {/* Center Circle */}
               <div 
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] rounded-full bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
                 }`}
                 style={{ transitionDelay: '300ms' }}
               >
                 <div className="text-center">
-                  <div className="text-[72px] font-['Inter'] font-bold text-[#0a0e1a] mb-2">
+                  <div className="text-[56px] font-['Inter'] font-bold text-[#0a0e1a] mb-1">
                     {pasos[activeStep].numero}
                   </div>
-                  <div className="text-[18px] font-['Inter'] font-semibold text-[#0a0e1a] px-6"
+                  <div className="text-[15px] font-['Inter'] font-semibold text-[#0a0e1a] px-6"
                     style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                   >
                     {pasos[activeStep].titulo}
@@ -163,7 +158,7 @@ export default function ProcesoSection() {
               {pasos.map((paso, index) => {
                 const Icon = paso.icon
                 const angle = (index * 90) - 90 // Start from top
-                const radius = 350 // Distance from center
+                const radius = 280 // Distance from center
                 const x = Math.cos((angle * Math.PI) / 180) * radius
                 const y = Math.sin((angle * Math.PI) / 180) * radius
                 const isActive = activeStep === index
@@ -181,25 +176,25 @@ export default function ProcesoSection() {
                     onClick={() => setActiveStep(index)}
                   >
                     <div 
-                      className={`bg-white rounded-2xl p-6 shadow-xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
+                      className={`bg-white rounded-xl p-5 shadow-xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
                         isActive ? 'border-[#27eee7] shadow-[0_0_40px_rgba(39,238,231,0.3)]' : 'border-gray-200'
                       }`}
-                      style={{ width: '240px' }}
+                      style={{ width: '200px' }}
                     >
-                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 ${
+                      <div className={`w-11 h-11 rounded-lg flex items-center justify-center mb-3 transition-all duration-500 ${
                         isActive ? 'bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] scale-110' : 'bg-gray-100'
                       }`}>
-                        <Icon className={`w-7 h-7 ${isActive ? 'text-[#0a0e1a]' : 'text-gray-600'}`} strokeWidth={2} />
+                        <Icon className={`w-6 h-6 ${isActive ? 'text-[#0a0e1a]' : 'text-gray-600'}`} strokeWidth={2} />
                       </div>
-                      <div className={`text-[14px] font-['Inter'] font-bold mb-1 ${isActive ? 'text-[#27eee7]' : 'text-gray-400'}`}>
+                      <div className={`text-[12px] font-['Inter'] font-bold mb-1 ${isActive ? 'text-[#27eee7]' : 'text-gray-400'}`}>
                         Paso {paso.numero}
                       </div>
-                      <h3 className="font-['Inter'] font-bold text-[16px] text-[#0a0e1a] mb-2"
+                      <h3 className="font-['Inter'] font-bold text-[14px] text-[#0a0e1a] mb-2"
                         style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                       >
                         {paso.titulo}
                       </h3>
-                      <p className="font-['Inter'] text-[13px] text-[#0a0e1a]/70 leading-relaxed"
+                      <p className="font-['Inter'] text-[12px] text-[#0a0e1a]/70 leading-relaxed"
                         style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                       >
                         {paso.descripcion}
@@ -208,6 +203,22 @@ export default function ProcesoSection() {
                   </div>
                 )
               })}
+            </div>
+
+            {/* Bottom Note - Desktop Only */}
+            <div 
+              className={`text-right mt-8 pr-8 transition-all duration-700 delay-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <p className="font-['Inter'] text-[15px] text-[#0a0e1a]/70 leading-relaxed"
+                style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+              >
+                Sin contratos largos. Sin letra pequeña.{' '}
+                <span className="text-[#27eee7] font-semibold">
+                  Solo resultados que puedes presentar con confianza.
+                </span>
+              </p>
             </div>
           </div>
 
@@ -250,23 +261,23 @@ export default function ProcesoSection() {
                 </div>
               )
             })}
-          </div>
-        </div>
 
-        {/* Bottom Note */}
-        <div 
-          className={`text-center mt-16 transition-all duration-700 delay-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          <p className="font-['Inter'] text-[17px] text-[#0a0e1a]/70 leading-relaxed"
-            style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-          >
-            Sin contratos largos. Sin letra pequeña.{' '}
-            <span className="text-[#27eee7] font-semibold">
-              Solo resultados que puedes presentar con confianza.
-            </span>
-          </p>
+            {/* Bottom Note - Mobile */}
+            <div 
+              className={`text-center mt-8 transition-all duration-700 delay-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <p className="font-['Inter'] text-[15px] text-[#0a0e1a]/70 leading-relaxed"
+                style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+              >
+                Sin contratos largos. Sin letra pequeña.{' '}
+                <span className="text-[#27eee7] font-semibold">
+                  Solo resultados que puedes presentar con confianza.
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
