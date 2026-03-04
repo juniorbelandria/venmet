@@ -6,14 +6,14 @@
 
 :root {
   /* Colores Principales */
-  --azul: #182c66;
-  --azul-medio: #2a4080;
+  --azul: #152b86;
+  --azul-medio: #152b86;
   --acento: #27eee7;
   --acento2: #FFB347;
   --blanco: #F5F7FA;
   --gris: #8A96A8;
   --gris-claro: #EEF1F6;
-  --texto: #1A2B42;
+  --texto: #152b86;
   --rojo-suave: #FF6B6B;
   
   /* Colores de Certificaciones */
@@ -24,18 +24,18 @@
   --bpf-verde: #27eee7;
   
   /* Colores de Servicios */
-  --temp-humedad-bg: rgba(39,238,231,0.10);
+  --temp-humedad-bg: #152b86;
   --temperatura-bg: rgba(255,200,100,0.12);
   --masa-bg: rgba(255,179,71,0.10);
   --volumen-bg: rgba(100,180,255,0.12);
   --presion-bg: rgba(255,107,107,0.10);
   --tiempo-bg: rgba(39,238,231,0.08);
-  --dimensional-bg: rgba(24,44,102,0.08);
-  --fisico-quimico-bg: rgba(108,99,255,0.10);
+  --dimensional-bg: #152b86;
+  --fisico-quimico-bg: #152b86;
   
   /* Colores de Certificaciones (fondos circulares) */
-  --iso-fondo: rgba(0,82,180,0.08);
-  --iso-borde: rgba(0,82,180,0.18);
+  --iso-fondo: #152b86;
+  --iso-borde: #152b86;
   --covenin-fondo: rgba(207,16,32,0.08);
   --covenin-borde: rgba(207,16,32,0.18);
   --sencamer-fondo: rgba(245,166,35,0.08);
@@ -47,15 +47,15 @@
   --antes-fondo: rgba(255,107,107,0.10);
   --antes-borde: rgba(255,107,107,0.20);
   --antes-texto: #FF6B6B;
-  --despues-fondo: rgba(39,238,231,0.10);
+  --despues-fondo: #152b86;
   --despues-borde: rgba(39,238,231,0.20);
   --despues-texto: #27eee7;
   
   /* Colores de texto */
-  --texto-principal: #1A2B42;
+  --texto-principal: #152b86;
   --texto-secundario: #8A96A8;
   --texto-card: #3A4D63;
-  --footer-oscuro: #060F1E;
+  --footer-oscuro: #152b86;
 }
 
 * {
