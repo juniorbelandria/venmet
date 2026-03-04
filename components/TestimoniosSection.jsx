@@ -1,10 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Star, Check } from 'lucide-react'
 
 export default function TestimoniosSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const scrollRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +27,35 @@ export default function TestimoniosSection() {
       if (element) observer.unobserve(element)
     }
   }, [])
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current
+    if (!scrollContainer || isPaused) return
+
+    let animationId
+    let scrollPosition = 0
+    const scrollSpeed = 0.5 // Velocidad del scroll (píxeles por frame)
+
+    const scroll = () => {
+      scrollPosition += scrollSpeed
+      
+      // Cuando llegamos a la mitad del contenido, reseteamos
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0
+      }
+      
+      scrollContainer.scrollLeft = scrollPosition
+      animationId = requestAnimationFrame(scroll)
+    }
+
+    animationId = requestAnimationFrame(scroll)
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
+    }
+  }, [isPaused])
 
   const testimonios = [
     {
@@ -53,8 +84,38 @@ export default function TestimoniosSection() {
       rating: 5,
       badge: 'Reducción de errores de medición en 85%',
       texto: '"Después de implementar el plan de calibración periódica con VENMET, nuestros datos de control de proceso son consistentes y confiables. Eliminamos prácticamente todos los rechazos internos por desviación de medición. El ROI fue inmediato."'
+    },
+    {
+      iniciales: 'CF',
+      nombre: 'Carlos Fernández',
+      cargo: 'Director Técnico',
+      empresa: 'Industria Metalmecánica, Zulia',
+      rating: 5,
+      badge: 'Certificación ISO 9001 lograda',
+      texto: '"Sin el soporte de VENMET no hubiéramos logrado nuestra certificación ISO 9001. Su equipo nos guió en todo el proceso de trazabilidad metrológica. Ahora competimos con empresas internacionales."'
+    },
+    {
+      iniciales: 'LM',
+      nombre: 'Luisa Martínez',
+      cargo: 'Gerente de Operaciones',
+      empresa: 'Laboratorio Clínico, Lara',
+      rating: 5,
+      badge: 'Acreditación SVCAL obtenida',
+      texto: '"La precisión de nuestros análisis clínicos mejoró notablemente. VENMET calibró todos nuestros equipos de laboratorio y nos ayudó a obtener la acreditación SVCAL. Nuestros pacientes confían más en nosotros."'
+    },
+    {
+      iniciales: 'RP',
+      nombre: 'Roberto Pérez',
+      cargo: 'Jefe de Mantenimiento',
+      empresa: 'Planta Automotriz, Aragua',
+      rating: 5,
+      badge: 'Cero rechazos en 6 meses',
+      texto: '"Implementamos el programa de calibración preventiva y los resultados son increíbles. Llevamos 6 meses sin rechazos por problemas de medición. El ahorro en reprocesos pagó el servicio en el primer mes."'
     }
   ]
+
+  // Duplicamos los testimonios para el efecto infinito
+  const testimoniosInfinitos = [...testimonios, ...testimonios]
 
   return (
     <section 
@@ -88,57 +149,70 @@ export default function TestimoniosSection() {
           la exactitud de sus procesos.
         </p>
 
-        {/* Grid de Testimonios */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonios.map((testimonio, index) => (
-            <div
-              key={index}
-              className={`bg-[#F5F7FA] rounded-[18px] p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${300 + index * 150}ms` }}
-            >
-              {/* Rating */}
-              <div className="flex gap-1 mb-3">
-                {[...Array(testimonio.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FFB347] text-[#FFB347]" strokeWidth={0} />
-                ))}
-              </div>
+        {/* Slider Infinito de Testimonios */}
+        <div className="relative overflow-hidden">
+          {/* Gradientes laterales para efecto fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          
+          {/* Container del slider */}
+          <div 
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            style={{ 
+              scrollBehavior: 'auto',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {testimoniosInfinitos.map((testimonio, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[380px] bg-[#F5F7FA] rounded-[18px] p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-3">
+                  {[...Array(testimonio.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#FFB347] text-[#FFB347]" strokeWidth={0} />
+                  ))}
+                </div>
 
-              {/* Badge de resultado */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[rgba(0,201,167,0.10)] border border-[rgba(0,201,167,0.20)] mb-4">
-                <Check className="w-3 h-3 text-[#00C9A7]" strokeWidth={3} />
-                <span className="font-['Inter'] text-[11px] text-[#00C9A7] font-semibold">
-                  {testimonio.badge}
-                </span>
-              </div>
-
-              {/* Texto del testimonio */}
-              <p className="font-['Inter'] text-[14px] text-[#3A4D63] leading-relaxed mb-6 italic">
-                {testimonio.texto}
-              </p>
-
-              {/* Autor */}
-              <div className="flex items-center gap-3 pt-4 border-t border-[#E0E4EA]">
-                {/* Avatar con iniciales */}
-                <div className="w-[42px] h-[42px] rounded-full bg-[#0B1F3A] flex items-center justify-center flex-shrink-0">
-                  <span className="font-['Space_Grotesk'] font-bold text-[14px] text-[#00C9A7]">
-                    {testimonio.iniciales}
+                {/* Badge de resultado */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[rgba(0,201,167,0.10)] border border-[rgba(0,201,167,0.20)] mb-4">
+                  <Check className="w-3 h-3 text-[#00C9A7]" strokeWidth={3} />
+                  <span className="font-['Inter'] text-[11px] text-[#00C9A7] font-semibold">
+                    {testimonio.badge}
                   </span>
                 </div>
 
-                {/* Info del autor */}
-                <div>
-                  <p className="font-['Space_Grotesk'] font-bold text-[14px] text-[#1A2B42] leading-tight">
-                    {testimonio.nombre}
-                  </p>
-                  <p className="font-['Inter'] text-[12px] text-[#8A96A8] leading-tight">
-                    {testimonio.cargo} · {testimonio.empresa}
-                  </p>
+                {/* Texto del testimonio */}
+                <p className="font-['Inter'] text-[14px] text-[#3A4D63] leading-relaxed mb-6 italic">
+                  {testimonio.texto}
+                </p>
+
+                {/* Autor */}
+                <div className="flex items-center gap-3 pt-4 border-t border-[#E0E4EA]">
+                  {/* Avatar con iniciales */}
+                  <div className="w-[42px] h-[42px] rounded-full bg-[#0B1F3A] flex items-center justify-center flex-shrink-0">
+                    <span className="font-['Space_Grotesk'] font-bold text-[14px] text-[#00C9A7]">
+                      {testimonio.iniciales}
+                    </span>
+                  </div>
+
+                  {/* Info del autor */}
+                  <div>
+                    <p className="font-['Space_Grotesk'] font-bold text-[14px] text-[#1A2B42] leading-tight">
+                      {testimonio.nombre}
+                    </p>
+                    <p className="font-['Inter'] text-[12px] text-[#8A96A8] leading-tight">
+                      {testimonio.cargo} · {testimonio.empresa}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
