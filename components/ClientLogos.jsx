@@ -78,20 +78,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-1-${index}`}
-                  className="flex-shrink-0 mx-12 flex items-center justify-center group"
-                  style={{ width: '200px', height: '100px' }}
+                  className="flex-shrink-0 mx-16 flex items-center justify-center group"
+                  style={{ width: '260px', height: '130px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={180}
-                      height={90}
+                      width={240}
+                      height={120}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '180px',
-                        maxHeight: '90px'
+                        maxWidth: '240px',
+                        maxHeight: '120px'
                       }}
                     />
                   </div>
@@ -101,20 +101,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-2-${index}`}
-                  className="flex-shrink-0 mx-12 flex items-center justify-center group"
-                  style={{ width: '200px', height: '100px' }}
+                  className="flex-shrink-0 mx-16 flex items-center justify-center group"
+                  style={{ width: '260px', height: '130px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={180}
-                      height={90}
+                      width={240}
+                      height={120}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '180px',
-                        maxHeight: '90px'
+                        maxWidth: '240px',
+                        maxHeight: '120px'
                       }}
                     />
                   </div>
@@ -136,7 +136,7 @@ export default function ClientLogos() {
         }
 
         .animate-scroll {
-          animation: scroll 35s linear infinite;
+          animation: scroll 40s linear infinite;
         }
 
         .animate-scroll:hover {
