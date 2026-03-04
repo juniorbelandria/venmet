@@ -31,28 +31,42 @@ export default function Footer() {
     <footer className="relative text-white overflow-hidden"
       style={{ background: '#152b86' }}
     >
-      {/* Grid Pattern TEAL */}
+      {/* Subtle Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.08]" 
+        className="absolute inset-0 opacity-[0.04]" 
         style={{
           backgroundImage: `
             linear-gradient(rgba(39,238,231,0.5) 1px, transparent 1px),
             linear-gradient(90deg, rgba(39,238,231,0.5) 1px, transparent 1px)
           `,
-          backgroundSize: '30px 30px'
+          backgroundSize: '40px 40px'
         }} 
       />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto relative z-10 px-[5%]">
         
-        {/* Sección Principal - CTA */}
-        <div className="px-[5%] py-8 border-b border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="font-['Inter'] font-bold text-[20px] text-white mb-2">
+        {/* CTA Section - Más prominente */}
+        <div className="py-16 border-b border-white/10">
+          <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left max-w-[600px]">
+              <h3 className="font-['Inter'] font-bold text-white mb-3"
+                style={{ 
+                  fontSize: 'clamp(24px, 3vw, 32px)',
+                  letterSpacing: '-0.02em',
+                  lineHeight: '1.2'
+                }}
+              >
                 ¿Necesitas calibrar tus equipos?
               </h3>
-              <p className="font-['Inter'] text-[13px] text-white/70">
+              <p className="font-['Inter'] text-[16px] text-white/70 leading-relaxed"
+                style={{ fontWeight: 500 }}
+              >
                 Obtén tu cotización gratis en menos de 24 horas
               </p>
             </div>
@@ -60,109 +74,128 @@ export default function Footer() {
               href="https://wa.me/584242049381"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all whitespace-nowrap"
+              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-['Inter'] font-semibold text-[15px] hover:scale-105 transition-all group overflow-hidden whitespace-nowrap"
               style={{
                 background: '#27eee7',
                 color: '#152b86',
-                boxShadow: '0 4px 16px rgba(39, 238, 231, 0.3)'
+                boxShadow: '0 8px 32px rgba(39, 238, 231, 0.3)'
               }}
             >
-              Solicitar Cotización
-              <ArrowRight size={16} strokeWidth={2.5} />
+              {/* Shimmer Effect */}
+              <div 
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
+                  width: '50%'
+                }}
+              />
+              <span className="relative">Solicitar Cotización</span>
+              <ArrowRight className="relative" size={18} strokeWidth={2.5} />
             </a>
           </div>
         </div>
 
-        {/* Sección de Contenido */}
-        <div className="px-[5%] py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {/* Main Content - Grid optimizado */}
+        <div className="py-16">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
             
-            {/* Logo y Redes - 2 columnas en desktop */}
-            <div className="col-span-2 md:col-span-4 lg:col-span-2">
+            {/* Logo y Descripción - 4 columnas */}
+            <div className="lg:col-span-4">
               <Image
                 src="/images/FOOTER.png"
                 alt="VENMET Logo"
-                width={100}
-                height={33}
-                className="h-auto mb-3"
+                width={140}
+                height={46}
+                className="h-auto mb-5"
               />
-              <p className="font-['Inter'] text-[11px] text-white/70 leading-relaxed mb-4">
+              <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-6"
+                style={{ fontWeight: 500, maxWidth: '320px' }}
+              >
                 +20 años brindando servicios de calibración con trazabilidad garantizada.
               </p>
               
               {/* Redes Sociales */}
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-6">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                    background: 'rgba(39, 238, 231, 0.1)',
+                    border: '1px solid rgba(39, 238, 231, 0.2)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = '#27eee7'
                     e.currentTarget.style.borderColor = '#27eee7'
-                    e.currentTarget.style.transform = 'translateY(-2px)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
-                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.background = 'rgba(39, 238, 231, 0.1)'
+                    e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Facebook size={14} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Facebook size={16} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
 
                 <a 
                   href="https://instagram.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                    background: 'rgba(39, 238, 231, 0.1)',
+                    border: '1px solid rgba(39, 238, 231, 0.2)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = '#27eee7'
                     e.currentTarget.style.borderColor = '#27eee7'
-                    e.currentTarget.style.transform = 'translateY(-2px)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
-                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.background = 'rgba(39, 238, 231, 0.1)'
+                    e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Instagram size={14} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Instagram size={16} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
               </div>
 
               {/* Contacto */}
-              <div className="space-y-1.5">
-                <a href="tel:+584242049381" className="flex items-center gap-1.5 text-white/70 hover:text-[#27eee7] transition-colors">
-                  <Phone size={12} className="text-[#27eee7]" strokeWidth={2} />
-                  <span className="font-['Inter'] text-[11px]">+58 0424-204.93.81</span>
+              <div className="space-y-3">
+                <a href="tel:+584242049381" className="flex items-center gap-2.5 text-white/70 hover:text-[#27eee7] transition-colors group">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 group-hover:bg-[#27eee7]/20 transition-colors">
+                    <Phone size={14} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <span className="font-['Inter'] text-[13px]" style={{ fontWeight: 500 }}>+58 0424-204.93.81</span>
                 </a>
-                <a href="mailto:info@venmet.com.ve" className="flex items-center gap-1.5 text-white/70 hover:text-[#27eee7] transition-colors">
-                  <Mail size={12} className="text-[#27eee7]" strokeWidth={2} />
-                  <span className="font-['Inter'] text-[11px]">info@venmet.com.ve</span>
+                <a href="mailto:info@venmet.com.ve" className="flex items-center gap-2.5 text-white/70 hover:text-[#27eee7] transition-colors group">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 group-hover:bg-[#27eee7]/20 transition-colors">
+                    <Mail size={14} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <span className="font-['Inter'] text-[13px]" style={{ fontWeight: 500 }}>info@venmet.com.ve</span>
                 </a>
+                <div className="flex items-start gap-2.5 text-white/70">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                    <MapPin size={14} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <p className="font-['Inter'] text-[13px] leading-relaxed pt-1" style={{ fontWeight: 500 }}>
+                    Urb. El Marqués, Miranda, Caracas, Venezuela
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Empresa */}
-            <div className="col-span-1">
-              <h4 className="font-['Inter'] font-bold text-[13px] text-white mb-2.5">
+            {/* Empresa - 2 columnas */}
+            <div className="lg:col-span-2">
+              <h4 className="font-['Inter'] font-bold text-[14px] text-white mb-4 uppercase tracking-wider">
                 Empresa
               </h4>
-              <ul className="space-y-1.5">
+              <ul className="space-y-2.5">
                 {enlaces.empresa.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="font-['Inter'] text-[11px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
+                      className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] hover:translate-x-1 transition-all inline-block"
+                      style={{ fontWeight: 500 }}
                     >
                       {link.nombre}
                     </a>
@@ -171,17 +204,18 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Servicios */}
-            <div className="col-span-1">
-              <h4 className="font-['Inter'] font-bold text-[13px] text-white mb-2.5">
+            {/* Servicios - 3 columnas */}
+            <div className="lg:col-span-3">
+              <h4 className="font-['Inter'] font-bold text-[14px] text-white mb-4 uppercase tracking-wider">
                 Servicios
               </h4>
-              <ul className="space-y-1.5">
+              <ul className="space-y-2.5">
                 {enlaces.servicios.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="font-['Inter'] text-[11px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
+                      className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] hover:translate-x-1 transition-all inline-block"
+                      style={{ fontWeight: 500 }}
                     >
                       {link.nombre}
                     </a>
@@ -190,53 +224,50 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Soporte y Ubicación */}
-            <div className="col-span-2 md:col-span-2 lg:col-span-2">
-              <h4 className="font-['Inter'] font-bold text-[13px] text-white mb-2.5">
+            {/* Soporte - 3 columnas */}
+            <div className="lg:col-span-3">
+              <h4 className="font-['Inter'] font-bold text-[14px] text-white mb-4 uppercase tracking-wider">
                 Soporte
               </h4>
-              <ul className="space-y-1.5 mb-4">
+              <ul className="space-y-2.5">
                 {enlaces.soporte.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="font-['Inter'] text-[11px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
+                      className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] hover:translate-x-1 transition-all inline-block"
+                      style={{ fontWeight: 500 }}
                     >
                       {link.nombre}
                     </a>
                   </li>
                 ))}
               </ul>
-
-              {/* Ubicación */}
-              <div className="flex items-start gap-1.5 text-white/70">
-                <MapPin size={12} className="text-[#27eee7] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                <p className="font-['Inter'] text-[11px] leading-relaxed">
-                  Urb. El Marqués, Miranda, Caracas, Venezuela
-                </p>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="px-[5%] py-4 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+        {/* Bottom Bar - Más elegante */}
+        <div className="py-6 border-t border-white/10">
+          <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
             {/* Copyright */}
-            <p className="font-['Inter'] text-[10px] text-white/50 text-center md:text-left">
+            <p className="font-['Inter'] text-[12px] text-white/50 text-center md:text-left"
+              style={{ fontWeight: 500 }}
+            >
               © {currentYear} Venezolana de Metrología C.A. Todos los derechos reservados.
             </p>
 
-            {/* Certificaciones */}
-            <div className="flex items-center gap-2">
-              <span className="font-['Inter'] text-[9px] text-white/40">Certificado por:</span>
-              <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 font-['Inter'] font-bold text-[8px] text-[#27eee7] tracking-wide">
-                ISO/IEC 17025
-              </span>
-              <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 font-['Inter'] font-bold text-[8px] text-[#27eee7] tracking-wide">
-                COVENIN
-              </span>
+            {/* Certificaciones - Más prominentes */}
+            <div className="flex items-center gap-3">
+              <span className="font-['Inter'] text-[11px] text-white/40" style={{ fontWeight: 500 }}>Certificado por:</span>
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1.5 rounded-lg bg-[#27eee7]/10 border border-[#27eee7]/30 font-['Inter'] font-bold text-[10px] text-[#27eee7] tracking-wider uppercase">
+                  ISO/IEC 17025
+                </span>
+                <span className="px-3 py-1.5 rounded-lg bg-[#27eee7]/10 border border-[#27eee7]/30 font-['Inter'] font-bold text-[10px] text-[#27eee7] tracking-wider uppercase">
+                  COVENIN
+                </span>
+              </div>
             </div>
           </div>
         </div>
