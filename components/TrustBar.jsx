@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Factory, Utensils, FlaskConical, Building2, Microscope, Hospital } from 'lucide-react'
 import Image from 'next/image'
 
 export default function TrustBar() {
@@ -27,122 +26,127 @@ export default function TrustBar() {
     }
   }, [])
 
-  const sectors = [
-    { icon: Factory, name: 'Industria Farmacéutica' },
-    { icon: Utensils, name: 'Sector Alimentario' },
-    { icon: FlaskConical, name: 'Industria Química' },
-    { icon: Building2, name: 'Manufactura' },
-    { icon: Microscope, name: 'Laboratorios Clínicos' },
-    { icon: Hospital, name: 'Sector Salud' },
+  // Logos de clientes (5.png a 12.png)
+  const logos = [
+    '/images/5.png',
+    '/images/6.png',
+    '/images/7.png',
+    '/images/8.png',
+    '/images/9.png',
+    '/images/10.png',
+    '/images/11.png',
+    '/images/12.png'
   ]
 
   return (
     <section 
       id="trust-bar"
-      className="relative py-[80px] px-[5%] overflow-hidden"
-      style={{ background: '#152b86' }}
+      className="relative py-16 px-[5%] overflow-hidden bg-white"
     >
-      {/* Background Image with blur */}
-      <div className="absolute inset-0 opacity-70">
-        <Image
-          src="/images/laboratorio.jpg"
-          alt=""
-          fill
-          className="object-cover blur-sm scale-110"
-          priority
-          quality={100}
-        />
-      </div>
-
-      {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-
-      {/* Noise Texture Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
-        }}
-      />
-
-      {/* Subtle Grid Pattern */}
+      {/* Subtle background pattern */}
       <div 
         className="absolute inset-0 opacity-[0.02]" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 0.5px, transparent 0.5px), linear-gradient(90deg, rgba(255,255,255,0.3) 0.5px, transparent 0.5px)',
-          backgroundSize: '100px 100px'
+          backgroundImage: 'linear-gradient(rgba(21,43,134,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(21,43,134,0.3) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
         }} 
       />
 
-      {/* Content */}
-      <div className="relative max-w-[1200px] mx-auto">
-        {/* Badge with Glassmorphism */}
-        <div className="text-center mb-16">
-          <div 
-            className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{
-              background: 'rgba(39, 238, 231, 0.05)',
-              backdropFilter: 'blur(24px)',
-              WebkitBackdropFilter: 'blur(24px)',
-              border: '0.5px solid rgba(39, 238, 231, 0.3)',
-              boxShadow: 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.1), 0 4px 24px rgba(39, 238, 231, 0.15)'
-            }}
+      <div className="relative max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className="font-['Inter'] text-[13px] font-semibold text-[#152b86]/60 uppercase tracking-wider mb-2">
+            Confían en Nosotros
+          </p>
+          <h3 className="font-['Inter'] font-bold text-[20px] text-[#152b86]"
+            style={{ letterSpacing: '-0.01em' }}
           >
-            <span className="text-white/90 font-['Inter'] text-[13px] font-medium tracking-wide uppercase">
-              Sectores que Atendemos
-            </span>
-            <div className="w-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: 'var(--acento)' }} />
-          </div>
+            Empresas que garantizan su calidad con VENMET
+          </h3>
         </div>
 
-        {/* Sectors Grid - Professional Circular Icons */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
-          {sectors.map((sector, index) => {
-            const Icon = sector.icon
-            return (
-              <div
-                key={index}
-                className={`flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:scale-110 group ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-                style={{ 
-                  transitionDelay: `${index * 100}ms`,
-                }}
-              >
-                {/* Circular Icon Container */}
-                <div 
-                  className="relative w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
-                  style={{
-                    background: 'rgba(39, 238, 231, 0.08)',
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(39, 238, 231, 0.2)',
-                    boxShadow: 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), 0 4px 16px rgba(39, 238, 231, 0.1)'
-                  }}
+        {/* Infinite Slider Container */}
+        <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Gradient Overlays para efecto fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Slider Track */}
+          <div className="flex overflow-hidden">
+            <div className="flex animate-scroll">
+              {/* Primera copia de logos */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-1-${index}`}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  style={{ width: '160px', height: '80px' }}
                 >
-                  {/* Glow effect on hover */}
-                  <div 
-                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      boxShadow: '0 0 30px rgba(39, 238, 231, 0.4)'
-                    }}
-                  />
-                  <Icon 
-                    className="w-10 h-10 transition-all duration-300 relative z-10" 
-                    style={{ color: 'var(--acento)' }}
-                    strokeWidth={1.5} 
-                  />
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image
+                      src={logo}
+                      alt={`Cliente ${index + 1}`}
+                      width={140}
+                      height={70}
+                      className="object-contain transition-all duration-300 logo-grayscale"
+                      style={{
+                        filter: 'grayscale(100%) brightness(0.5) contrast(1.2)',
+                        maxWidth: '140px',
+                        maxHeight: '70px'
+                      }}
+                    />
+                  </div>
                 </div>
-                <p className="font-['Inter'] text-[14px] text-white/90 font-medium text-center leading-tight">
-                  {sector.name}
-                </p>
-              </div>
-            )
-          })}
+              ))}
+              {/* Segunda copia de logos para loop infinito */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-2-${index}`}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  style={{ width: '160px', height: '80px' }}
+                >
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image
+                      src={logo}
+                      alt={`Cliente ${index + 1}`}
+                      width={140}
+                      height={70}
+                      className="object-contain transition-all duration-300 logo-grayscale"
+                      style={{
+                        filter: 'grayscale(100%) brightness(0.5) contrast(1.2)',
+                        maxWidth: '140px',
+                        maxHeight: '70px'
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+
+        .group:hover .logo-grayscale {
+          filter: grayscale(0%) brightness(1) contrast(1) sepia(100%) saturate(300%) hue-rotate(180deg) !important;
+        }
+      `}</style>
     </section>
   )
 }
