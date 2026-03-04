@@ -174,25 +174,17 @@ export default function CertificacionesSection() {
           ))}
         </div>
 
-        {/* Banner inferior */}
-        <div 
-          className={`relative bg-[#27eee7]/10 backdrop-blur-sm border border-[#27eee7]/30 rounded-[24px] p-10 transition-all duration-700 delay-700 overflow-hidden ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        {/* Texto inferior */}
+        <p 
+          className={`font-['Inter'] text-[17px] text-white/80 leading-relaxed text-center max-w-[900px] mx-auto transition-all duration-700 delay-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
+          style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
         >
-          {/* Glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#27eee7]/5 via-[#27eee7]/10 to-[#27eee7]/5"></div>
-          
-          <div className="relative z-10">
-            <p className="font-['Inter'] text-[17px] text-white/90 leading-relaxed text-center mb-6 max-w-[900px] mx-auto"
-              style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-            >
-              Todos nuestros certificados incluyen trazabilidad documentada a patrones nacionales e
-              internacionales, número de identificación del equipo, incertidumbre de medición, fecha
-              de calibración y fecha de vencimiento recomendada. Listos para usar en cualquier auditoría.
-            </p>
-          </div>
-        </div>
+          Todos nuestros certificados incluyen trazabilidad documentada a patrones nacionales e
+          internacionales, número de identificación del equipo, incertidumbre de medición, fecha
+          de calibración y fecha de vencimiento recomendada. Listos para usar en cualquier auditoría.
+        </p>
       </div>
     </section>
   )
