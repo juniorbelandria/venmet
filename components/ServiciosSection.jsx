@@ -120,24 +120,21 @@ export default function ServiciosSection() {
       ],
       color: '#27eee7',
       gradient: 'from-[#27eee7]/10 to-[#1dd4cd]/5'
+    },
+    {
+      icon: TestTube,
+      titulo: 'Físico-Químico',
+      descripcion: 'Calibración de instrumentos de análisis físico-químico para laboratorios de control de calidad, investigación y procesos industriales.',
+      items: [
+        'pH-metros y electroanalizadores',
+        'Conductivímetros',
+        'Equipos de medición analítica',
+        'Refractómetros'
+      ],
+      color: '#27eee7',
+      gradient: 'from-[#27eee7]/10 to-[#1dd4cd]/5'
     }
   ]
-
-  const fisicoquimico = {
-    icon: TestTube,
-    titulo: 'Físico-Químico',
-    descripcion: 'Calibración de instrumentos de análisis físico-químico para laboratorios de control de calidad, investigación y procesos industriales.',
-    items: [
-      'pH-metros y electroanalizadores',
-      'Conductivímetros',
-      'Equipos de medición analítica',
-      'Refractómetros',
-      'Instrumentos de análisis de proceso',
-      'Instrumentos de laboratorio especializado'
-    ],
-    color: '#27eee7',
-    gradient: 'from-[#27eee7]/10 to-[#1dd4cd]/5'
-  }
 
   return (
     <section 
@@ -204,8 +201,8 @@ export default function ServiciosSection() {
           </p>
         </div>
 
-        {/* Services Grid - Modern Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        {/* Services Grid - Modern Cards - 8 cards in 4x2 grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {servicios.map((servicio, index) => {
             const Icon = servicio.icon
             const isHovered = hoveredCard === index
@@ -300,58 +297,6 @@ export default function ServiciosSection() {
               </div>
             )
           })}
-        </div>
-
-        {/* Físico-Químico - Featured Card */}
-        <div 
-          className={`relative bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-2xl p-8 transition-all duration-700 hover:shadow-2xl ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-          }`}
-          style={{ transitionDelay: '900ms' }}
-        >
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 items-start">
-            {/* Left - Icon and Title */}
-            <div>
-              <div className="w-16 h-16 rounded-xl bg-[#27eee7]/20 flex items-center justify-center mb-5">
-                <TestTube className="w-8 h-8 text-[#27eee7]" strokeWidth={2} />
-              </div>
-              <h3 className="font-['Inter'] font-bold text-[22px] text-white mb-3"
-                style={{ fontWeight: 700, letterSpacing: '-0.02em' }}
-              >
-                {fisicoquimico.titulo}
-              </h3>
-              <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed mb-5"
-                style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-              >
-                {fisicoquimico.descripcion}
-              </p>
-              <a
-                href="#solicitud"
-                className="inline-flex items-center gap-2 bg-[#27eee7] text-[#0a0e1a] px-5 py-3 rounded-lg font-['Inter'] font-bold text-[14px] hover:scale-105 hover:shadow-xl hover:shadow-[#27eee7]/30 transition-all group"
-                style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
-              >
-                Solicitar servicio
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
-              </a>
-            </div>
-
-            {/* Right - Items Grid */}
-            <div className="grid md:grid-cols-2 gap-3">
-              {fisicoquimico.items.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="flex items-start gap-2.5 bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:bg-white/10 hover:border-[#27eee7]/30 transition-all duration-300"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-[#27eee7] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="font-['Inter'] text-[12px] text-white/90 leading-snug"
-                    style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-                  >
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
