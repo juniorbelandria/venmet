@@ -39,7 +39,8 @@ export default function TrustBar() {
   return (
     <section 
       id="trust-bar"
-      className="relative bg-[#0a0e1a] py-[80px] px-[5%] overflow-hidden"
+      className="relative py-[80px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
     >
       {/* Background Image with blur */}
       <div className="absolute inset-0 opacity-70">

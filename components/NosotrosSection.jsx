@@ -355,10 +355,13 @@ export default function NosotrosSection() {
       {/* Contact CTA Bar */}
       <div className="max-w-[1400px] mx-auto">
         <div 
-          className={`bg-gradient-to-r from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-3xl p-10 transition-all duration-700 ${
+          className={`rounded-3xl p-10 transition-all duration-700 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
-          style={{ transitionDelay: '1000ms' }}
+          style={{ 
+            transitionDelay: '1000ms',
+            background: '#152b86'
+          }}
         >
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="flex items-start gap-4">

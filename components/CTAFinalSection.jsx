@@ -29,7 +29,8 @@ export default function CTAFinalSection() {
   return (
     <section 
       id="contacto"
-      className="relative bg-[#0B1F3A] py-[90px] px-[5%] overflow-hidden"
+      className="relative py-[90px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
     >
       {/* Grid Background */}
       <div className="absolute inset-0 grid-pattern opacity-100" />

@@ -37,7 +37,8 @@ export default function HeroSection() {
   return (
     <section 
       id="inicio" 
-      className="relative bg-[#0a0e1a] pt-[140px] pb-[120px] px-[5%] overflow-hidden"
+      className="relative pt-[140px] pb-[120px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
     >
       {/* Noise Texture Overlay */}
       <div 

@@ -57,7 +57,8 @@ export default function CertificacionesSection() {
   return (
     <section 
       id="certificaciones"
-      className="relative bg-[#0B1F3A] py-[100px] px-[5%] overflow-hidden"
+      className="relative py-[100px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
     >
       {/* Grid Pattern */}
       <div 
