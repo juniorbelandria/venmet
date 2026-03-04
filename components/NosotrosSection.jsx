@@ -149,8 +149,10 @@ export default function NosotrosSection() {
                   style={{ transitionDelay: '300ms' }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0a0e1a] to-[#1a3a52] flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-5 h-5 text-[#27eee7]" strokeWidth={2} />
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: '#152b86' }}
+                    >
+                      <TrendingUp className="w-5 h-5 text-white" strokeWidth={2} />
                     </div>
                     <div>
                       <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-[#0a0e1a] leading-none">
@@ -186,8 +188,10 @@ export default function NosotrosSection() {
                   style={{ transitionDelay: '500ms' }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0a0e1a] to-[#1a3a52] flex items-center justify-center flex-shrink-0">
-                      <Layers className="w-5 h-5 text-[#27eee7]" strokeWidth={2} />
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: '#152b86' }}
+                    >
+                      <Layers className="w-5 h-5 text-white" strokeWidth={2} />
                     </div>
                     <div>
                       <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-[#0a0e1a] leading-none">
@@ -231,8 +235,10 @@ export default function NosotrosSection() {
               style={{ transitionDelay: '700ms' }}
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0a0e1a] to-[#1a3a52] flex items-center justify-center flex-shrink-0">
-                  <Target className="w-6 h-6 text-[#27eee7]" strokeWidth={2} />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: '#152b86' }}
+                >
+                  <Target className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
                   <h3 className="font-['Space_Grotesk'] font-bold text-[18px] text-[#0a0e1a] mb-2">
@@ -247,14 +253,17 @@ export default function NosotrosSection() {
 
             {/* Visión */}
             <div 
-              className={`bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
+              className={`rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
               }`}
-              style={{ transitionDelay: '800ms' }}
+              style={{ 
+                transitionDelay: '800ms',
+                background: '#152b86'
+              }}
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#27eee7]/20 flex items-center justify-center flex-shrink-0">
-                  <Telescope className="w-6 h-6 text-[#27eee7]" strokeWidth={2} />
+                <div className="w-12 h-12 rounded-xl bg-white/30 flex items-center justify-center flex-shrink-0">
+                  <Telescope className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
                   <h3 className="font-['Space_Grotesk'] font-bold text-[18px] text-white mb-2">
@@ -290,8 +299,10 @@ export default function NosotrosSection() {
                 }`}
                 style={{ transitionDelay: '1000ms' }}
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0a0e1a] to-[#1a3a52] flex items-center justify-center mx-auto mb-2">
-                  <Zap className="w-5 h-5 text-[#27eee7]" strokeWidth={2} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2"
+                  style={{ background: '#152b86' }}
+                >
+                  <Zap className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <h4 className="font-['Space_Grotesk'] font-bold text-[13px] text-[#0a0e1a] mb-1">Entrega</h4>
                 <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/60">Plazos cumplidos</p>
