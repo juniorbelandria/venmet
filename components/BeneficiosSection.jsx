@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Shield, DollarSign, Clock, FileCheck, X, Check } from 'lucide-react'
+import { Shield, TrendingUp, Clock, FileCheck, CheckCircle2, XCircle, ArrowRight, Sparkles, Zap } from 'lucide-react'
 
 export default function BeneficiosSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [activeCard, setActiveCard] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,184 +31,232 @@ export default function BeneficiosSection() {
     {
       icon: Shield,
       titulo: 'Auditorías sin sorpresas',
-      descripcion: 'Pasa cualquier inspección ISO, MPPS o SENCAMER con todos tus certificados al día y la documentación lista para presentar.',
-      antes: [
-        'Auditoría suspendida por',
-        'equipos sin certificar.',
-        'No conformidades críticas.',
-        'Producción paralizada.'
-      ],
-      despues: [
-        'Auditoría aprobada.',
-        'Cero observaciones en',
-        'metrología. Operación',
-        'continua sin interrupciones.'
-      ]
+      descripcion: 'Pasa cualquier inspección ISO, MPPS o SENCAMER con todos tus certificados al día.',
+      impacto: 'Cero no conformidades en metrología',
+      antes: ['Auditoría suspendida', 'No conformidades críticas', 'Producción paralizada'],
+      despues: ['Auditoría aprobada', 'Cero observaciones', 'Operación continua'],
+      color: '#27eee7',
+      size: 'large'
     },
     {
-      icon: DollarSign,
-      titulo: 'Cero pérdidas por medición incorrecta',
-      descripcion: 'Un solo lote rechazado por datos de temperatura o peso fuera de rango puede costar más que un año de calibraciones.',
-      antes: [
-        'Lotes rechazados. Reprocesos',
-        'costosos. Clientes',
-        'insatisfechos. Pérdidas',
-        'difíciles de rastrear.'
-      ],
-      despues: [
-        'Datos de proceso confiables.',
-        'Decisiones seguras. Cero',
-        'rechazos atribuibles a errores',
-        'de medición.'
-      ]
+      icon: TrendingUp,
+      titulo: 'Cero pérdidas por medición',
+      descripcion: 'Un lote rechazado cuesta más que un año de calibraciones.',
+      impacto: 'Datos de proceso 100% confiables',
+      antes: ['Lotes rechazados', 'Reprocesos costosos', 'Clientes insatisfechos'],
+      despues: ['Datos confiables', 'Decisiones seguras', 'Cero rechazos'],
+      color: '#27eee7',
+      size: 'large'
     },
     {
       icon: Clock,
       titulo: 'Plazos que puedes planificar',
-      descripcion: 'Confirmamos fechas antes de iniciar. Tu mantenimiento preventivo no depende de la incertidumbre del proveedor.',
-      antes: [
-        'Proveedor sin plazo definido.',
-        'Equipos semanas fuera de línea.',
-        'Planificación imposible.'
-      ],
-      despues: [
-        'Entrega en el plazo acordado.',
-        'Programas de mantenimiento',
-        'cumplidos. Sin sorpresas.'
-      ]
+      descripcion: 'Confirmamos fechas antes de iniciar. Sin sorpresas.',
+      impacto: 'Entrega en el plazo acordado',
+      antes: ['Sin plazo definido', 'Equipos fuera de línea', 'Planificación imposible'],
+      despues: ['Plazo acordado', 'Programas cumplidos', 'Sin sorpresas'],
+      color: '#27eee7',
+      size: 'small'
     },
     {
       icon: FileCheck,
-      titulo: 'Trazabilidad total documentada',
-      descripcion: 'Cada certificado incluye trazabilidad a patrones nacionales e internacionales, válida para cualquier sistema de gestión de calidad.',
-      antes: [
-        'Certificados sin trazabilidad.',
-        'Rechazados en auditorías.',
-        'Sistema de calidad sin',
-        'respaldo técnico.'
-      ],
-      despues: [
-        'Trazabilidad documentada',
-        'ISO/IEC 17025. Certificados',
-        'aceptados por cualquier ente',
-        'regulador.'
-      ]
+      titulo: 'Trazabilidad total',
+      descripcion: 'Certificados válidos para cualquier sistema de gestión.',
+      impacto: 'ISO/IEC 17025 documentado',
+      antes: ['Sin trazabilidad', 'Rechazados en auditorías', 'Sin respaldo técnico'],
+      despues: ['Trazabilidad ISO', 'Certificados aceptados', 'Respaldo total'],
+      color: '#27eee7',
+      size: 'small'
     }
   ]
 
   return (
     <section 
       id="beneficios"
-      className="relative bg-[#0B1F3A] py-[90px] px-[5%] overflow-hidden"
+      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
     >
-      {/* Grid Background */}
-      <div className="absolute inset-0 grid-pattern opacity-100" />
+      {/* Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+        }}
+      />
 
-      <div className="relative max-w-[1200px] mx-auto">
-        {/* Tag Label */}
-        <div className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <span className="section-tag">
+      {/* Grid Pattern CYAN */}
+      <div 
+        className="absolute inset-0 opacity-[0.3]" 
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(39,238,231,0.35) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(39,238,231,0.35) 2px, transparent 2px)
+          `,
+          backgroundSize: '25px 25px'
+        }} 
+      />
+
+      {/* Glassmorphism Gradients */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase mb-6"
+            style={{
+              background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+              color: '#0a0e1a',
+              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.3)'
+            }}
+          >
+            <Zap className="inline w-3.5 h-3.5 mr-2 -mt-0.5" />
             Beneficios Reales
           </span>
+          <h2 
+            className="font-['Inter'] font-bold leading-[1.1] max-w-[900px] mx-auto mb-6"
+            style={{ 
+              fontSize: 'clamp(36px, 5vw, 64px)',
+              letterSpacing: '-0.03em',
+              fontWeight: 700,
+              color: '#0a0e1a'
+            }}
+          >
+            Lo que cambia en tu empresa<br />
+            cuando trabajas con{' '}
+            <span style={{ color: '#27eee7' }}>VENMET</span>
+          </h2>
+          <p className="font-['Inter'] text-[19px] text-[#0a0e1a]/60 leading-relaxed max-w-[700px] mx-auto"
+            style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+          >
+            Cada servicio tiene un impacto directo en tu operación, tu rentabilidad y tu tranquilidad.
+          </p>
         </div>
 
-        {/* Título H2 */}
-        <h2 
-          className={`font-['Space_Grotesk'] font-extrabold text-white text-center leading-[1.15] mb-4 transition-all duration-700 delay-100 ${
+        {/* Bento Grid Layout */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {beneficios.map((beneficio, index) => {
+            const Icon = beneficio.icon
+            const isActive = activeCard === index
+            
+            return (
+              <div
+                key={index}
+                className={`group relative bg-white rounded-2xl p-8 border-2 border-gray-200 transition-all duration-500 hover:border-[#27eee7] hover:shadow-2xl cursor-pointer ${
+                  beneficio.size === 'large' ? 'lg:row-span-1' : ''
+                } ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ 
+                  transitionDelay: `${300 + index * 100}ms`,
+                  boxShadow: isActive ? '0 20px 60px rgba(39,238,231,0.2)' : undefined
+                }}
+                onMouseEnter={() => setActiveCard(index)}
+                onMouseLeave={() => setActiveCard(null)}
+              >
+                {/* Icon and Title */}
+                <div className="flex items-start gap-4 mb-5">
+                  <div 
+                    className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#27eee7]/10 to-[#1dd4cd]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
+                  >
+                    <Icon 
+                      className="w-7 h-7 transition-colors duration-500" 
+                      style={{ color: isActive ? '#27eee7' : '#0a0e1a' }}
+                      strokeWidth={2}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-['Inter'] font-bold text-[20px] text-[#0a0e1a] mb-2"
+                      style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                    >
+                      {beneficio.titulo}
+                    </h3>
+                    <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed"
+                      style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                    >
+                      {beneficio.descripcion}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Impact Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#27eee7]/10 to-[#1dd4cd]/5 mb-6">
+                  <Sparkles className="w-4 h-4 text-[#27eee7]" strokeWidth={2} />
+                  <span className="font-['Inter'] text-[13px] font-semibold text-[#0a0e1a]"
+                    style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                  >
+                    {beneficio.impacto}
+                  </span>
+                </div>
+
+                {/* Before/After Comparison */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Before */}
+                  <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                    <div className="flex items-center gap-2 mb-3">
+                      <XCircle className="w-4 h-4 text-red-500" strokeWidth={2.5} />
+                      <span className="font-['Inter'] text-[11px] font-bold text-red-600 uppercase tracking-wide">
+                        Antes
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      {beneficio.antes.map((item, idx) => (
+                        <p key={idx} className="font-['Inter'] text-[12px] text-[#0a0e1a]/70 leading-snug"
+                          style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                        >
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="bg-gradient-to-br from-[#27eee7]/10 to-[#1dd4cd]/5 rounded-xl p-4 border border-[#27eee7]/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle2 className="w-4 h-4 text-[#27eee7]" strokeWidth={2.5} />
+                      <span className="font-['Inter'] text-[11px] font-bold text-[#27eee7] uppercase tracking-wide">
+                        Con VENMET
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      {beneficio.despues.map((item, idx) => (
+                        <p key={idx} className="font-['Inter'] text-[12px] text-[#0a0e1a]/70 leading-snug"
+                          style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
+                        >
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div 
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: 'radial-gradient(circle at 50% 0%, rgba(39,238,231,0.1), transparent 70%)'
+                  }}
+                />
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div 
+          className={`text-center mt-12 transition-all duration-700 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
-          style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}
         >
-          Lo que cambia en tu empresa cuando<br />
-          trabajas con VENMET
-        </h2>
-
-        {/* Subtítulo */}
-        <p className={`font-['Inter'] text-[17px] text-white/65 text-center leading-relaxed mb-12 max-w-[700px] mx-auto transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}>
-          Cada servicio tiene un impacto directo en tu operación, tu rentabilidad y tu tranquilidad.
-        </p>
-
-        {/* Grid de Beneficios */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {beneficios.map((beneficio, index) => (
-            <div
-              key={index}
-              className={`bg-white/5 backdrop-blur-sm rounded-[18px] p-6 border border-white/10 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${300 + index * 150}ms` }}
-            >
-              {/* Icono y Título */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#00C9A7]/10 rounded-xl flex items-center justify-center">
-                  <beneficio.icon className="w-6 h-6 text-[#00C9A7]" strokeWidth={2} />
-                </div>
-                <h3 className="font-['Space_Grotesk'] font-bold text-[20px] text-white leading-tight">
-                  {beneficio.titulo}
-                </h3>
-              </div>
-
-              {/* Descripción */}
-              <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-6">
-                {beneficio.descripcion}
-              </p>
-
-              {/* Comparación Antes/Después */}
-              <div className="grid md:grid-cols-2 gap-4">
-                {/* ANTES */}
-                <div 
-                  className="rounded-[12px] p-4 border"
-                  style={{ 
-                    backgroundColor: 'rgba(255,107,107,0.10)',
-                    borderColor: 'rgba(255,107,107,0.20)'
-                  }}
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-5 h-5 rounded-full bg-[#FF6B6B]/20 flex items-center justify-center">
-                      <X className="w-3 h-3 text-[#FF6B6B]" strokeWidth={3} />
-                    </div>
-                    <span className="font-['Space_Grotesk'] font-bold text-[12px] text-[#FF6B6B] uppercase tracking-wide">
-                      Antes
-                    </span>
-                  </div>
-                  <div className="space-y-1">
-                    {beneficio.antes.map((linea, idx) => (
-                      <p key={idx} className="font-['Inter'] text-[12px] text-white/80 leading-relaxed">
-                        {linea}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CON VENMET */}
-                <div 
-                  className="rounded-[12px] p-4 border"
-                  style={{ 
-                    backgroundColor: 'rgba(0,201,167,0.10)',
-                    borderColor: 'rgba(0,201,167,0.20)'
-                  }}
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-5 h-5 rounded-full bg-[#00C9A7]/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-[#00C9A7]" strokeWidth={3} />
-                    </div>
-                    <span className="font-['Space_Grotesk'] font-bold text-[12px] text-[#00C9A7] uppercase tracking-wide">
-                      Con VENMET
-                    </span>
-                  </div>
-                  <div className="space-y-1">
-                    {beneficio.despues.map((linea, idx) => (
-                      <p key={idx} className="font-['Inter'] text-[12px] text-white/80 leading-relaxed">
-                        {linea}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+          <a
+            href="#solicitud"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#27eee7] to-[#1dd4cd] text-[#0a0e1a] px-8 py-4 rounded-xl font-['Inter'] font-bold text-[16px] hover:scale-105 hover:shadow-2xl hover:shadow-[#27eee7]/30 transition-all group"
+            style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+          >
+            Solicitar Servicio Ahora
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+          </a>
         </div>
       </div>
     </section>
