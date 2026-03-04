@@ -78,33 +78,22 @@ export default function FormularioSection() {
   return (
     <section 
       id="solicitud"
-      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
+      className="relative bg-[#0B1F3A] py-[100px] px-[5%] overflow-hidden"
     >
-      {/* Noise Texture Overlay */}
+      {/* Grid Background */}
       <div 
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
-        }}
-      />
-
-      {/* Grid Pattern CYAN */}
-      <div 
-        className="absolute inset-0 opacity-[0.3]" 
+        className="absolute inset-0 opacity-[0.08]" 
         style={{
           backgroundImage: `
-            linear-gradient(rgba(39,238,231,0.35) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(39,238,231,0.35) 2px, transparent 2px)
+            linear-gradient(rgba(39,238,231,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(39,238,231,0.5) 1px, transparent 1px)
           `,
-          backgroundSize: '25px 25px'
+          backgroundSize: '30px 30px'
         }} 
       />
 
-      {/* Glassmorphism Gradients */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
-      </div>
+      {/* Gradient Accent */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#27eee7] opacity-[0.08] blur-[120px] rounded-full" />
 
       <div className="max-w-[900px] mx-auto relative z-10">
         {/* Tag Label */}
@@ -122,27 +111,25 @@ export default function FormularioSection() {
 
         {/* Título H2 */}
         <h2 
-          className={`font-['Inter'] font-bold text-center leading-[1.1] mb-6 transition-all duration-700 delay-100 ${
+          className={`font-['Inter'] font-bold text-white text-center leading-[1.1] mb-6 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ 
             fontSize: 'clamp(36px, 5vw, 64px)',
             letterSpacing: '-0.03em',
-            fontWeight: 700,
-            color: '#0a0e1a'
+            fontWeight: 700
           }}
         >
           Solicita tu cotización gratis
         </h2>
 
         {/* Subtítulo */}
-        <p className={`font-['Inter'] text-[19px] leading-relaxed mb-16 max-w-[600px] mx-auto text-center transition-all duration-700 delay-200 ${
+        <p className={`font-['Inter'] text-[19px] text-white/70 leading-relaxed mb-16 max-w-[600px] mx-auto text-center transition-all duration-700 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
           style={{ 
             fontWeight: 500, 
-            letterSpacing: '-0.01em',
-            color: 'rgba(10, 14, 26, 0.6)'
+            letterSpacing: '-0.01em'
           }}
         >
           Completa el formulario y recibe una respuesta personalizada en menos de 24 horas.
@@ -211,7 +198,7 @@ export default function FormularioSection() {
             <div className="space-y-6 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2"
-                  style={{ color: '#0a0e1a', fontWeight: 600 }}
+                  style={{ color: 'white', fontWeight: 600 }}
                 >
                   <Building2 size={18} className="text-[#27eee7]" />
                   Nombre de la Empresa *
@@ -222,7 +209,7 @@ export default function FormularioSection() {
                   value={formData.nombreEmpresa}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-full border border-gray-200 font-['Inter'] text-[15px] focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border border-white/20 bg-white/5 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
                   style={{ fontWeight: 500 }}
                   placeholder="Ej: Laboratorios Farmacéuticos XYZ"
                 />
@@ -230,7 +217,7 @@ export default function FormularioSection() {
 
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2"
-                  style={{ color: '#0a0e1a', fontWeight: 600 }}
+                  style={{ color: 'white', fontWeight: 600 }}
                 >
                   <FileText size={18} className="text-[#27eee7]" />
                   Sector Industrial *
@@ -240,7 +227,7 @@ export default function FormularioSection() {
                   value={formData.sector}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-full border border-gray-200 font-['Inter'] text-[15px] focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border border-white/20 bg-white/5 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
                   style={{ fontWeight: 500 }}
                 >
                   <option value="">Selecciona tu sector</option>
@@ -458,17 +445,16 @@ export default function FormularioSection() {
           )}
 
           {/* Botones de Navegación */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
             <button
               type="button"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-['Inter'] font-bold text-[14px] transition-all ${
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] transition-all ${
                 currentStep === 1
                   ? 'opacity-0 pointer-events-none'
-                  : 'border-2 border-gray-200 hover:border-[#27eee7] hover:text-[#27eee7]'
+                  : 'border-2 border-white/30 text-white hover:border-[#27eee7] hover:text-[#27eee7] hover:bg-white/5'
               }`}
-              style={{ color: '#0a0e1a' }}
             >
               <ChevronLeft size={18} />
               Anterior
@@ -478,7 +464,7 @@ export default function FormularioSection() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
                 style={{
                   background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
                   color: '#0a0e1a',
@@ -491,7 +477,7 @@ export default function FormularioSection() {
             ) : (
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
                 style={{
                   background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
                   color: '#0a0e1a',
