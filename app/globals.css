@@ -190,11 +190,11 @@ html {
 
 /* Gradientes personalizados */
 .gradient-azul {
-  background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 100%);
+  background: #152b86;
 }
 
 .gradient-acento {
-  background: linear-gradient(135deg, var(--acento) 0%, #00E5BF 100%);
+  background: #152b86;
 }
 
 .gradient-radial-acento {
@@ -230,9 +230,8 @@ html {
 
 /* Bordes con gradiente */
 .border-gradient-acento {
-  border: 1px solid transparent;
-  background: linear-gradient(var(--blanco), var(--blanco)) padding-box,
-              linear-gradient(135deg, var(--acento), #00E5BF) border-box;
+  border: 1px solid #152b86;
+  background: var(--blanco);
 }
 
 /* Scrollbar personalizado */
