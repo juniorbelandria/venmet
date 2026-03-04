@@ -15,7 +15,7 @@ import CTAFinalSection from '@/components/CTAFinalSection'
 import FormularioSection from '@/components/FormularioSection'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import ExitPopup from '@/components/ExitPopup'
+// import ExitPopup from '@/components/ExitPopup'
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
       <FormularioSection />
       <Footer />
       <WhatsAppButton />
-      <ExitPopup />
+      {/* <ExitPopup /> */}
     </main>
   )
 }
