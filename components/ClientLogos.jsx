@@ -41,7 +41,7 @@ export default function ClientLogos() {
   return (
     <section 
       id="client-logos"
-      className="relative py-20 px-[5%] overflow-hidden bg-white"
+      className="relative py-24 px-[5%] overflow-hidden bg-white"
     >
       {/* Subtle background pattern */}
       <div 
@@ -53,16 +53,32 @@ export default function ClientLogos() {
       />
 
       <div className="relative max-w-[1400px] mx-auto">
-        {/* Header */}
+        {/* Header - Mejorado como las demás secciones */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <p className="font-['Inter'] text-[13px] font-semibold text-[#152b86]/60 uppercase tracking-wider mb-2">
-            Confían en Nosotros
-          </p>
-          <h3 className="font-['Inter'] font-bold text-[24px] text-[#152b86]"
-            style={{ letterSpacing: '-0.01em' }}
+          <div 
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-6"
+            style={{
+              background: '#152b86',
+              color: 'white',
+              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
+            }}
           >
-            Empresas que garantizan su calidad con VENMET
-          </h3>
+            <span className="font-['Inter'] text-[13px] font-bold tracking-wide uppercase">
+              Confían en Nosotros
+            </span>
+          </div>
+          <h2 
+            className="font-['Inter'] font-bold leading-[1.1] max-w-[900px] mx-auto"
+            style={{ 
+              fontSize: 'clamp(32px, 4.5vw, 52px)',
+              letterSpacing: '-0.03em',
+              fontWeight: 700,
+              color: '#152b86'
+            }}
+          >
+            Empresas que garantizan su calidad con{' '}
+            <span style={{ color: '#27eee7' }}>VENMET</span>
+          </h2>
         </div>
 
         {/* Infinite Slider Container */}
@@ -78,20 +94,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-1-${index}`}
-                  className="flex-shrink-0 mx-16 flex items-center justify-center group"
-                  style={{ width: '260px', height: '130px' }}
+                  className="flex-shrink-0 mx-20 flex items-center justify-center group"
+                  style={{ width: '480px', height: '240px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={240}
-                      height={120}
+                      width={480}
+                      height={240}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '240px',
-                        maxHeight: '120px'
+                        maxWidth: '480px',
+                        maxHeight: '240px'
                       }}
                     />
                   </div>
@@ -101,20 +117,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-2-${index}`}
-                  className="flex-shrink-0 mx-16 flex items-center justify-center group"
-                  style={{ width: '260px', height: '130px' }}
+                  className="flex-shrink-0 mx-20 flex items-center justify-center group"
+                  style={{ width: '480px', height: '240px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={240}
-                      height={120}
+                      width={480}
+                      height={240}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '240px',
-                        maxHeight: '120px'
+                        maxWidth: '480px',
+                        maxHeight: '240px'
                       }}
                     />
                   </div>
@@ -136,7 +152,7 @@ export default function ClientLogos() {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 50s linear infinite;
         }
 
         .animate-scroll:hover {
