@@ -94,33 +94,14 @@ export default function ComparacionSection() {
             color: '#0a0e1a'
           }}
         >
-          <span style={{ color: '#27eee7' }}>VENMET</span> vs.{' '}
+          <span style={{ color: '#27eee7' }}>VENMET</span> vs. La alternativa<br />
+          de ignorar la metrología{' '}
           <span className="relative inline-block">
-            La alternativa
-            <svg 
-              className="absolute -bottom-2 left-0 w-full" 
-              viewBox="0 0 300 12" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ height: '12px' }}
-            >
-              <path 
-                d="M2 8C50 3 100 2 150 5C200 8 250 4 298 7" 
-                stroke="#FF6B6B" 
-                strokeWidth="3" 
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                style={{
-                  strokeDasharray: '300',
-                  strokeDashoffset: isVisible ? '0' : '300',
-                  transition: 'stroke-dashoffset 1s ease-out 0.8s'
-                }}
-              />
+            <span style={{ color: '#ff6b6b' }}>o hacerlo mal</span>
+            <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
+              <path d="M2 10C60 2 140 2 198 10" stroke="#ff6b6b" strokeWidth="3" strokeLinecap="round"/>
             </svg>
           </span>
-          <br />
-          de ignorar la metrología{' '}
-          <span style={{ color: '#FF6B6B' }}>(o hacerlo mal)</span>
         </h2>
 
         {/* Subtítulo */}
