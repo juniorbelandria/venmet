@@ -157,8 +157,10 @@ export default function ProcesoSection() {
                     }`}
                     style={{ transitionDelay: `${300 + index * 150}ms` }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-[#0a0e1a]" strokeWidth={2} />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+                      style={{ background: '#152b86' }}
+                    >
+                      <Icon className="w-6 h-6 text-white" strokeWidth={2} />
                     </div>
                     <div className="flex-1">
                       <div className="text-[13px] font-['Inter'] font-bold text-[#27eee7] mb-1">
@@ -190,16 +192,19 @@ export default function ProcesoSection() {
             <div className="relative w-full aspect-square max-w-[480px] mx-auto mb-24">
               {/* Center Circle */}
               <div 
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
                 }`}
-                style={{ transitionDelay: '400ms' }}
+                style={{ 
+                  transitionDelay: '400ms',
+                  background: '#152b86'
+                }}
               >
                 <div className="text-center">
-                  <div className="text-[72px] font-['Inter'] font-bold text-[#0a0e1a] leading-none">
+                  <div className="text-[72px] font-['Inter'] font-bold text-white leading-none">
                     {pasos[activeStep].numero}
                   </div>
-                  <div className="text-[13px] font-['Inter'] font-semibold text-[#0a0e1a] px-4 mt-1"
+                  <div className="text-[13px] font-['Inter'] font-semibold text-white px-4 mt-1"
                     style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                   >
                     {pasos[activeStep].titulo}
@@ -260,9 +265,11 @@ export default function ProcesoSection() {
                       style={{ width: '170px' }}
                     >
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 transition-all duration-500 ${
-                        isActive ? 'bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] scale-110' : 'bg-gray-100'
-                      }`}>
-                        <Icon className={`w-5 h-5 ${isActive ? 'text-[#0a0e1a]' : 'text-gray-600'}`} strokeWidth={2} />
+                        isActive ? 'scale-110' : ''
+                      }`}
+                        style={{ background: isActive ? '#152b86' : '#f3f4f6' }}
+                      >
+                        <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-gray-600'}`} strokeWidth={2} />
                       </div>
                       <div className={`text-[11px] font-['Inter'] font-bold mb-1 ${isActive ? 'text-[#27eee7]' : 'text-gray-400'}`}>
                         Paso {paso.numero}

@@ -90,9 +90,9 @@ export default function ProblemSection() {
       <div className={`relative max-w-[1400px] mx-auto mb-20 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase mb-6"
           style={{
-            background: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%)',
+            background: '#152b86',
             color: 'white',
-            boxShadow: '0 4px 20px rgba(255, 107, 107, 0.3)'
+            boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
           }}
         >
           El Problema Real
@@ -136,7 +136,9 @@ export default function ProblemSection() {
               style={{ transitionDelay: '200ms' }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
+                <div className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
+                  style={{ background: '#152b86' }}
+                >
                   <AlertTriangle className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <div>
@@ -156,14 +158,17 @@ export default function ProblemSection() {
 
             {/* Card 2 - Hidden Cost */}
             <div 
-              className={`bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
+              className={`rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}
-              style={{ transitionDelay: '300ms' }}
+              style={{ 
+                transitionDelay: '300ms',
+                background: '#152b86'
+              }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-[#ff6b6b]/20 flex items-center justify-center">
-                  <TrendingDown className="w-5 h-5 text-[#ff6b6b]" strokeWidth={2} />
+                <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-white/30 flex items-center justify-center">
+                  <TrendingDown className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <div>
                   <h3 className="font-['Inter'] font-bold text-[17px] text-white mb-2"
@@ -182,20 +187,23 @@ export default function ProblemSection() {
 
             {/* Card 3 - Solution */}
             <div 
-              className={`bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
+              className={`rounded-xl p-6 transition-all duration-700 hover:shadow-xl ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}
-              style={{ transitionDelay: '400ms' }}
+              style={{ 
+                transitionDelay: '400ms',
+                background: '#152b86'
+              }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 text-3xl">✓</div>
+                <div className="flex-shrink-0 text-3xl text-white">✓</div>
                 <div>
-                  <h3 className="font-['Inter'] font-bold text-[17px] text-[#0a0e1a] mb-2"
+                  <h3 className="font-['Inter'] font-bold text-[17px] text-white mb-2"
                     style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                   >
                     La Buena Noticia
                   </h3>
-                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a] leading-relaxed"
+                  <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed"
                     style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                   >
                     Este riesgo se elimina con un plan de calibración periódica. Te lo hacemos fácil, rápido y con certificado.
@@ -249,7 +257,9 @@ export default function ProblemSection() {
                       zIndex: 10
                     }}
                   >
-                    <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center shadow-md">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center shadow-md"
+                      style={{ background: '#152b86' }}
+                    >
                       <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                     </div>
                     <p className="font-['Inter'] text-[11px] text-[#0a0e1a] leading-tight font-semibold"
@@ -273,7 +283,9 @@ export default function ProblemSection() {
                       }`}
                       style={{ transitionDelay: `${600 + index * 100}ms` }}
                     >
-                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-[#ff6b6b] to-[#ee5a52] flex items-center justify-center">
+                      <div className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
+                        style={{ background: '#152b86' }}
+                      >
                         <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
                       </div>
                       <p className="font-['Inter'] text-[13px] text-[#0a0e1a] leading-relaxed font-medium"

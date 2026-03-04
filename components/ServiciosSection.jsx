@@ -223,7 +223,9 @@ export default function ServiciosSection() {
                 {/* Badge if exists */}
                 {servicio.badge && (
                   <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-['Inter'] font-bold tracking-wide uppercase bg-gradient-to-r from-[#27eee7] to-[#1dd4cd] text-[#0a0e1a]">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-['Inter'] font-bold tracking-wide uppercase text-white"
+                      style={{ background: '#152b86' }}
+                    >
                       <Sparkles className="w-2.5 h-2.5" />
                       {servicio.badge}
                     </span>
