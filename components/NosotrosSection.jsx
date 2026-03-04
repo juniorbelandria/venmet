@@ -162,18 +162,21 @@ export default function NosotrosSection() {
                 </div>
 
                 <div 
-                  className="bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-2xl p-5 shadow-xl transition-all duration-300 hover:scale-105"
-                  style={{ transitionDelay: '400ms' }}
+                  className="rounded-2xl p-5 shadow-xl transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    transitionDelay: '400ms',
+                    background: '#152b86'
+                  }}
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-white/30 flex items-center justify-center flex-shrink-0">
-                      <Users className="w-5 h-5 text-[#0a0e1a]" strokeWidth={2} />
+                      <Users className="w-5 h-5 text-white" strokeWidth={2} />
                     </div>
                     <div>
-                      <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-[#0a0e1a] leading-none">
+                      <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-white leading-none">
                         +{counts.clients}
                       </p>
-                      <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/70 font-medium">Empresas Atendidas</p>
+                      <p className="font-['Inter'] text-[11px] text-white/70 font-medium">Empresas Atendidas</p>
                     </div>
                   </div>
                 </div>
@@ -196,18 +199,21 @@ export default function NosotrosSection() {
                 </div>
 
                 <div 
-                  className="bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-2xl p-5 shadow-xl transition-all duration-300 hover:scale-105"
-                  style={{ transitionDelay: '600ms' }}
+                  className="rounded-2xl p-5 shadow-xl transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    transitionDelay: '600ms',
+                    background: '#152b86'
+                  }}
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-white/30 flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck className="w-5 h-5 text-[#0a0e1a]" strokeWidth={2} />
+                      <ShieldCheck className="w-5 h-5 text-white" strokeWidth={2} />
                     </div>
                     <div>
-                      <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-[#0a0e1a] leading-none">
+                      <p className="font-['Space_Grotesk'] font-extrabold text-[28px] text-white leading-none">
                         {counts.traceability}%
                       </p>
-                      <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/70 font-medium">Trazabilidad</p>
+                      <p className="font-['Inter'] text-[11px] text-white/70 font-medium">Trazabilidad</p>
                     </div>
                   </div>
                 </div>
@@ -269,8 +275,10 @@ export default function NosotrosSection() {
                 }`}
                 style={{ transitionDelay: '900ms' }}
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex items-center justify-center mx-auto mb-2">
-                  <Target className="w-5 h-5 text-[#0a0e1a]" strokeWidth={2} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2"
+                  style={{ background: '#152b86' }}
+                >
+                  <Target className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <h4 className="font-['Space_Grotesk'] font-bold text-[13px] text-[#0a0e1a] mb-1">Exactitud</h4>
                 <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/60">Trazabilidad internacional</p>
@@ -295,8 +303,10 @@ export default function NosotrosSection() {
                 }`}
                 style={{ transitionDelay: '1100ms' }}
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex items-center justify-center mx-auto mb-2">
-                  <Building2 className="w-5 h-5 text-[#0a0e1a]" strokeWidth={2} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2"
+                  style={{ background: '#152b86' }}
+                >
+                  <Building2 className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <h4 className="font-['Space_Grotesk'] font-bold text-[13px] text-[#0a0e1a] mb-1">Normas</h4>
                 <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/60">ISO/IEC 17025</p>
@@ -305,20 +315,23 @@ export default function NosotrosSection() {
 
             {/* Política */}
             <div 
-              className={`bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
+              className={`rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
               }`}
-              style={{ transitionDelay: '1200ms' }}
+              style={{ 
+                transitionDelay: '1200ms',
+                background: '#152b86'
+              }}
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-white/30 flex items-center justify-center flex-shrink-0">
-                  <ClipboardCheck className="w-6 h-6 text-[#0a0e1a]" strokeWidth={2} />
+                  <ClipboardCheck className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="font-['Space_Grotesk'] font-bold text-[18px] text-[#0a0e1a] mb-2">
+                  <h3 className="font-['Space_Grotesk'] font-bold text-[18px] text-white mb-2">
                     Política de Calidad
                   </h3>
-                  <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/80 leading-relaxed">
+                  <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed">
                     VENMET C.A. está comprometido en satisfacer las necesidades de los clientes, asegurando la confiabilidad y entrega oportuna de los resultados, soportados con equipos de vanguardia y personal altamente capacitado.
                   </p>
                 </div>
