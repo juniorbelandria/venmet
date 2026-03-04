@@ -129,7 +129,7 @@ export default function FormularioSection() {
             fontSize: 'clamp(36px, 5vw, 64px)',
             letterSpacing: '-0.03em',
             fontWeight: 700,
-            color: '#0a0e1a'
+            color: '#152b86'
           }}
         >
           Solicita tu <span style={{ color: '#27eee7' }}>cotización gratis</span>

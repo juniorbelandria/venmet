@@ -128,7 +128,7 @@ export default function ProcesoSection() {
                 fontSize: 'clamp(32px, 4.5vw, 56px)',
                 letterSpacing: '-0.03em',
                 fontWeight: 700,
-                color: '#0a0e1a'
+                color: '#152b86'
               }}
             >
               De la solicitud al certificado<br />

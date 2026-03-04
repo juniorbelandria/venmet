@@ -187,7 +187,7 @@ export default function ServiciosSection() {
               fontSize: 'clamp(36px, 5vw, 64px)',
               letterSpacing: '-0.03em',
               fontWeight: 700,
-              color: '#0a0e1a'
+              color: '#152b86'
             }}
           >
             Calibración en las{' '}

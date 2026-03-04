@@ -104,7 +104,7 @@ export default function ProblemSection() {
             letterSpacing: '-0.03em',
             fontVariationSettings: '"wght" 800',
             fontWeight: 700,
-            color: '#0a0e1a'
+            color: '#152b86'
           }}
         >
           ¿Te ha pasado{' '}

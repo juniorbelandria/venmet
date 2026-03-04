@@ -107,7 +107,7 @@ export default function NosotrosSection() {
             fontSize: 'clamp(32px, 4.5vw, 56px)',
             letterSpacing: '-0.03em',
             fontVariationSettings: '"wght" 700',
-            color: '#0a0e1a'
+            color: '#152b86'
           }}
         >
           Más de{' '}

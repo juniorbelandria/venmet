@@ -154,7 +154,7 @@ export default function TestimoniosSection() {
             fontSize: 'clamp(36px, 5vw, 64px)',
             letterSpacing: '-0.03em',
             fontWeight: 700,
-            color: '#0a0e1a'
+            color: '#152b86'
           }}
         >
           Resultados reales de empresas<br />
