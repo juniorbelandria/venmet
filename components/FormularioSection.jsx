@@ -182,7 +182,7 @@ export default function FormularioSection() {
                         isCompleted || isActive ? 'scale-110' : 'scale-100'
                       }`}
                       style={isCompleted || isActive ? {
-                        background: '#0B1F3A',
+                        background: '#27eee7',
                         boxShadow: '0 6px 24px rgba(39, 238, 231, 0.4), 0 0 20px rgba(39, 238, 231, 0.2)'
                       } : {
                         background: 'white',
@@ -190,9 +190,9 @@ export default function FormularioSection() {
                       }}
                     >
                       {isCompleted ? (
-                        <CheckCircle2 size={20} style={{ color: '#27eee7' }} />
+                        <CheckCircle2 size={20} style={{ color: '#152b86' }} />
                       ) : (
-                        <Icon size={20} style={{ color: isActive ? '#27eee7' : '#9ca3af' }} />
+                        <Icon size={20} style={{ color: isActive ? '#152b86' : '#9ca3af' }} />
                       )}
                     </div>
                     <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
