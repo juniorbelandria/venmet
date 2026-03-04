@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/HeroSection'
+import ClientLogos from '@/components/ClientLogos'
 import TrustBar from '@/components/TrustBar'
 import ProblemSection from '@/components/ProblemSection'
 import NosotrosSection from '@/components/NosotrosSection'
@@ -22,6 +23,7 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
+      <ClientLogos />
       <NosotrosSection />
       <TrustBar />
       <ProblemSection />
