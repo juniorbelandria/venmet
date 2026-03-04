@@ -132,11 +132,14 @@ export default function TestimoniosSection() {
 
       <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Tag Label */}
-        <div className={`text-center mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#27eee7]/10 border border-[#27eee7]/20">
-            <span className="font-['Inter'] text-[13px] text-[#0B1F3A] font-semibold tracking-wide uppercase">
-              Lo que dicen nuestros clientes
-            </span>
+        <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <span className="inline-block px-4 py-2 rounded-full text-[13px] font-['Inter'] font-semibold tracking-wide uppercase"
+            style={{
+              background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+              color: '#0a0e1a'
+            }}
+          >
+            Lo que dicen nuestros clientes
           </span>
         </div>
 
