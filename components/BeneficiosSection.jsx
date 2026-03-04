@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { Shield, TrendingUp, Clock, FileCheck, CheckCircle2, XCircle, ArrowRight, Sparkles, Zap } from 'lucide-react'
 
 export default function BeneficiosSection() {
@@ -75,6 +76,20 @@ export default function BeneficiosSection() {
       id="beneficios"
       className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
     >
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 opacity-20">
+        <Image
+          src="/images/imagenhero.webp"
+          alt=""
+          fill
+          className="object-cover blur-sm scale-110"
+          priority
+        />
+      </div>
+
+      {/* Dark overlay for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/80" />
+
       {/* Noise Texture Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
