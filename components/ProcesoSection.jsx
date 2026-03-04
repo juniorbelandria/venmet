@@ -74,26 +74,26 @@ export default function ProcesoSection() {
     >
       {/* Noise Texture Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
         style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
         }}
       />
 
-      {/* Grid Pattern Sutil - Más visible */}
+      {/* Grid Pattern Más Visible */}
       <div 
-        className="absolute inset-0 opacity-[0.08]" 
+        className="absolute inset-0 opacity-[0.15]" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(10,14,26,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(10,14,26,0.1) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
+          backgroundImage: 'linear-gradient(rgba(39,238,231,0.15) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(39,238,231,0.15) 1.5px, transparent 1.5px)',
+          backgroundSize: '30px 30px'
         }} 
       />
 
       {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-[1400px] mx-auto">
@@ -184,7 +184,7 @@ export default function ProcesoSection() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
-            <div className="relative w-full aspect-square max-w-[480px] mx-auto">
+            <div className="relative w-full aspect-square max-w-[480px] mx-auto pb-12">
               {/* Center Circle */}
               <div 
                 className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
