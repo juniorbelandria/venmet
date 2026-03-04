@@ -63,8 +63,34 @@ export default function NosotrosSection() {
   return (
     <section 
       id="nosotros"
-      className="relative bg-white py-[80px] px-[5%] overflow-hidden"
+      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[80px] px-[5%] overflow-hidden"
     >
+      {/* Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+        }}
+      />
+
+      {/* Grid Pattern MUY Visible */}
+      <div 
+        className="absolute inset-0 opacity-[0.25]" 
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(39,238,231,0.3) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(39,238,231,0.3) 2px, transparent 2px)
+          `,
+          backgroundSize: '25px 25px'
+        }} 
+      />
+
+      {/* Glassmorphism Gradients */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
+      </div>
       {/* Header */}
       <div className={`max-w-[1400px] mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <span className="inline-block px-4 py-2 rounded-full text-[13px] font-['Inter'] font-semibold tracking-wide uppercase mb-6"
