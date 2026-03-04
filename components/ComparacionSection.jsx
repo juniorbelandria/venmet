@@ -134,9 +134,9 @@ export default function ComparacionSection() {
                   background: '#152b86'
                 }}
               >
-                <Check className="w-6 h-6 text-[#0a0e1a]" strokeWidth={3} />
+                <Check className="w-6 h-6 text-white" strokeWidth={3} />
               </div>
-              <h3 className="font-['Inter'] font-bold text-[24px]" style={{ color: '#0a0e1a' }}>
+              <h3 className="font-['Inter'] font-bold text-[24px]" style={{ color: '#152b86' }}>
                 Con <span style={{ color: '#27eee7' }}>VENMET</span>
               </h3>
             </div>
@@ -157,15 +157,15 @@ export default function ComparacionSection() {
                   }`}
                     style={{
                       background: hoveredRow === index 
-                        ? '#152b86'
+                        ? '#27eee7'
                         : 'rgba(39, 238, 231, 0.15)'
                     }}
                   >
-                    <Check className="w-4 h-4" style={{ color: hoveredRow === index ? '#0a0e1a' : '#27eee7' }} strokeWidth={3} />
+                    <Check className="w-4 h-4" style={{ color: hoveredRow === index ? '#152b86' : '#27eee7' }} strokeWidth={3} />
                   </div>
                   <p className="font-['Inter'] text-[15px] leading-relaxed" 
                     style={{ 
-                      color: '#0a0e1a',
+                      color: '#152b86',
                       fontWeight: 500
                     }}
                   >
@@ -189,7 +189,7 @@ export default function ComparacionSection() {
               <div className="w-12 h-12 rounded-full bg-[#FF6B6B]/15 flex items-center justify-center">
                 <X className="w-6 h-6 text-[#FF6B6B]" strokeWidth={3} />
               </div>
-              <h3 className="font-['Inter'] font-bold text-[24px]" style={{ color: '#0a0e1a' }}>
+              <h3 className="font-['Inter'] font-bold text-[24px]" style={{ color: '#152b86' }}>
                 Sin Metrología
               </h3>
             </div>
@@ -215,7 +215,7 @@ export default function ComparacionSection() {
                   </div>
                   <p className="font-['Inter'] text-[15px] leading-relaxed" 
                     style={{ 
-                      color: 'rgba(10, 14, 26, 0.7)',
+                      color: '#152b86',
                       fontWeight: 500
                     }}
                   >
