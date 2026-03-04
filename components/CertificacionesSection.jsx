@@ -104,7 +104,7 @@ export default function CertificacionesSection() {
           }}
         >
           Las normas que aplicamos son<br />
-          las que tus auditores exigen
+          las que tus <span style={{ color: '#27eee7' }}>auditores exigen</span>
         </h2>
 
         {/* Subtítulo */}
