@@ -67,13 +67,13 @@ export default function ProblemSection() {
         }}
       />
 
-      {/* Grid Pattern MUY Visible */}
+      {/* Grid Pattern ROJO Visible */}
       <div 
         className="absolute inset-0 opacity-[0.25]" 
         style={{
           backgroundImage: `
-            linear-gradient(rgba(39,238,231,0.3) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(39,238,231,0.3) 2px, transparent 2px)
+            linear-gradient(rgba(255,107,107,0.3) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(255,107,107,0.3) 2px, transparent 2px)
           `,
           backgroundSize: '25px 25px'
         }} 
@@ -95,7 +95,7 @@ export default function ProblemSection() {
             boxShadow: '0 4px 20px rgba(255, 107, 107, 0.3)'
           }}
         >
-          ⚠️ El Problema Real
+          El Problema Real
         </span>
         <h2 
           className="font-['Inter'] font-bold leading-[1.1] max-w-[1000px] mx-auto mb-6"

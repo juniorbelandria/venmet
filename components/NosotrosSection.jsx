@@ -73,13 +73,13 @@ export default function NosotrosSection() {
         }}
       />
 
-      {/* Grid Pattern MUY Visible */}
+      {/* Grid Pattern CYAN Más Visible */}
       <div 
-        className="absolute inset-0 opacity-[0.25]" 
+        className="absolute inset-0 opacity-[0.3]" 
         style={{
           backgroundImage: `
-            linear-gradient(rgba(39,238,231,0.3) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(39,238,231,0.3) 2px, transparent 2px)
+            linear-gradient(rgba(39,238,231,0.35) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(39,238,231,0.35) 2px, transparent 2px)
           `,
           backgroundSize: '25px 25px'
         }} 
