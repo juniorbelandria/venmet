@@ -94,8 +94,33 @@ export default function ComparacionSection() {
             color: '#0a0e1a'
           }}
         >
-          <span style={{ color: '#27eee7' }}>VENMET</span> vs. La alternativa<br />
-          de no calibrar (o hacerlo mal)
+          <span style={{ color: '#27eee7' }}>VENMET</span> vs.{' '}
+          <span className="relative inline-block">
+            La alternativa
+            <svg 
+              className="absolute -bottom-2 left-0 w-full" 
+              viewBox="0 0 300 12" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ height: '12px' }}
+            >
+              <path 
+                d="M2 8C50 3 100 2 150 5C200 8 250 4 298 7" 
+                stroke="#FF6B6B" 
+                strokeWidth="3" 
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  strokeDasharray: '300',
+                  strokeDashoffset: isVisible ? '0' : '300',
+                  transition: 'stroke-dashoffset 1s ease-out 0.8s'
+                }}
+              />
+            </svg>
+          </span>
+          <br />
+          de ignorar la metrología{' '}
+          <span style={{ color: '#FF6B6B' }}>(o hacerlo mal)</span>
         </h2>
 
         {/* Subtítulo */}
@@ -184,7 +209,7 @@ export default function ComparacionSection() {
                 <X className="w-6 h-6 text-[#FF6B6B]" strokeWidth={3} />
               </div>
               <h3 className="font-['Inter'] font-bold text-[24px]" style={{ color: '#0a0e1a' }}>
-                Sin Calibrar
+                Sin Metrología
               </h3>
             </div>
 
