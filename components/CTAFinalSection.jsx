@@ -99,9 +99,9 @@ export default function CTAFinalSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-['Inter'] font-bold text-[16px] hover:-translate-y-1 hover:shadow-xl transition-all"
             style={{
-              background: '#152b86',
-              color: 'white',
-              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
+              background: '#27eee7',
+              color: '#152b86',
+              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.4)'
             }}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
