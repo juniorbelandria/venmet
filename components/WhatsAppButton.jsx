@@ -9,9 +9,13 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-8 right-8 z-50">
       {/* Tooltip */}
       {showTooltip && (
-        <div className="absolute bottom-full right-0 mb-2 px-4 py-2 bg-[#0B1F3A] text-white text-[13px] font-['Inter'] font-medium rounded-lg whitespace-nowrap shadow-lg animate-fadeInUp">
+        <div className="absolute bottom-full right-0 mb-2 px-4 py-2 text-white text-[13px] font-['Inter'] font-medium rounded-lg whitespace-nowrap shadow-lg animate-fadeInUp"
+          style={{ background: '#152b86' }}
+        >
           💬 Cotiza por WhatsApp
-          <div className="absolute bottom-[-4px] right-4 w-2 h-2 bg-[#0B1F3A] rotate-45" />
+          <div className="absolute bottom-[-4px] right-4 w-2 h-2 rotate-45"
+            style={{ background: '#152b86' }}
+          />
         </div>
       )}
 
@@ -24,7 +28,7 @@ export default function WhatsAppButton() {
         onMouseLeave={() => setShowTooltip(false)}
         className="flex items-center justify-center w-16 h-16 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 animate-bounce-slow"
         style={{ 
-          background: '#0B1F3A',
+          background: '#152b86',
           boxShadow: '0 6px 24px rgba(39, 238, 231, 0.4), 0 0 20px rgba(39, 238, 231, 0.2)',
           animation: 'wa-bounce 3s ease-in-out infinite 2s'
         }}

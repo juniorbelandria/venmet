@@ -28,7 +28,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#060F1E] text-white py-[60px] px-[5%] overflow-hidden">
+    <footer className="relative text-white py-[60px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
+    >
       {/* Grid Pattern TEAL */}
       <div 
         className="absolute inset-0 opacity-[0.08]" 
@@ -52,8 +54,8 @@ export default function Footer() {
               <Image
                 src="/images/FOOTER.png"
                 alt="VENMET Logo"
-                width={180}
-                height={60}
+                width={140}
+                height={46}
                 className="h-auto"
               />
             </div>
