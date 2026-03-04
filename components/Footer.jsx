@@ -1,6 +1,7 @@
 'use client'
 
-import { MapPin, Phone, Mail, Globe } from 'lucide-react'
+import { MapPin, Phone, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -27,22 +28,34 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#060F1E] text-white py-[60px] px-[5%]">
-      <div className="max-w-[1400px] mx-auto">
+    <footer className="relative bg-[#060F1E] text-white py-[60px] px-[5%] overflow-hidden">
+      {/* Grid Pattern TEAL */}
+      <div 
+        className="absolute inset-0 opacity-[0.08]" 
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(39,238,231,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(39,238,231,0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: '30px 30px'
+        }} 
+      />
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Grid Principal */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
           {/* Columna 1: Logo y Descripción */}
           <div className="lg:col-span-1">
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-[38px] h-[38px] bg-[#00C9A7] rounded-[8px] flex items-center justify-center">
-                <span className="text-[#0B1F3A] font-['Space_Grotesk'] font-extrabold text-[15px]">VM</span>
-              </div>
-              <div className="font-['Space_Grotesk'] font-bold text-[18px]" style={{ letterSpacing: '1px' }}>
-                <span className="text-white">VEN</span>
-                <span className="text-[#00C9A7]">MET</span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/images/LOGOPRINCIPAL.png"
+                alt="VENMET Logo"
+                width={180}
+                height={60}
+                className="h-auto"
+              />
             </div>
 
             <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-6">
@@ -51,12 +64,12 @@ export default function Footer() {
 
             {/* Contacto Directo */}
             <div className="space-y-3">
-              <a href="tel:+584242049381" className="flex items-center gap-2 text-white/80 hover:text-[#00C9A7] transition-colors group">
-                <Phone size={16} className="text-[#00C9A7]" />
+              <a href="tel:+584242049381" className="flex items-center gap-2 text-white/80 hover:text-[#27eee7] transition-colors group">
+                <Phone size={16} className="text-[#27eee7]" />
                 <span className="font-['Inter'] text-[13px]">+58 0424-204.93.81</span>
               </a>
-              <a href="mailto:info@venmet.com.ve" className="flex items-center gap-2 text-white/80 hover:text-[#00C9A7] transition-colors group">
-                <Mail size={16} className="text-[#00C9A7]" />
+              <a href="mailto:info@venmet.com.ve" className="flex items-center gap-2 text-white/80 hover:text-[#27eee7] transition-colors group">
+                <Mail size={16} className="text-[#27eee7]" />
                 <span className="font-['Inter'] text-[13px]">info@venmet.com.ve</span>
               </a>
             </div>
@@ -64,7 +77,7 @@ export default function Footer() {
 
           {/* Columna 2: Empresa */}
           <div>
-            <h4 className="font-['Space_Grotesk'] font-bold text-[16px] text-white mb-4">
+            <h4 className="font-['Inter'] font-bold text-[16px] text-white mb-4">
               Empresa
             </h4>
             <ul className="space-y-2">
@@ -72,7 +85,7 @@ export default function Footer() {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#00C9A7] transition-colors inline-block"
+                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
                   >
                     {link.nombre}
                   </a>
@@ -83,7 +96,7 @@ export default function Footer() {
 
           {/* Columna 3: Servicios */}
           <div>
-            <h4 className="font-['Space_Grotesk'] font-bold text-[16px] text-white mb-4">
+            <h4 className="font-['Inter'] font-bold text-[16px] text-white mb-4">
               Servicios
             </h4>
             <ul className="space-y-2">
@@ -91,7 +104,7 @@ export default function Footer() {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#00C9A7] transition-colors inline-block"
+                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
                   >
                     {link.nombre}
                   </a>
@@ -102,7 +115,7 @@ export default function Footer() {
 
           {/* Columna 4: Soporte y Ubicación */}
           <div>
-            <h4 className="font-['Space_Grotesk'] font-bold text-[16px] text-white mb-4">
+            <h4 className="font-['Inter'] font-bold text-[16px] text-white mb-4">
               Soporte
             </h4>
             <ul className="space-y-2 mb-6">
@@ -110,7 +123,7 @@ export default function Footer() {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#00C9A7] transition-colors inline-block"
+                    className="font-['Inter'] text-[14px] text-white/70 hover:text-[#27eee7] transition-colors inline-block"
                   >
                     {link.nombre}
                   </a>
@@ -120,7 +133,7 @@ export default function Footer() {
 
             {/* Ubicación */}
             <div className="flex items-start gap-2 text-white/70">
-              <MapPin size={16} className="text-[#00C9A7] mt-0.5 flex-shrink-0" />
+              <MapPin size={16} className="text-[#27eee7] mt-0.5 flex-shrink-0" />
               <p className="font-['Inter'] text-[13px] leading-relaxed">
                 Urb. El Marqués, Miranda<br />
                 Caracas, Venezuela
@@ -142,10 +155,10 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <span className="font-['Inter'] text-[12px] text-white/50">Certificado por:</span>
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-['Space_Grotesk'] font-bold text-[10px] text-[#00C9A7]">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-['Inter'] font-bold text-[10px] text-[#27eee7]">
                   ISO/IEC 17025
                 </span>
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-['Space_Grotesk'] font-bold text-[10px] text-[#00C9A7]">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-['Inter'] font-bold text-[10px] text-[#27eee7]">
                   COVENIN
                 </span>
               </div>
