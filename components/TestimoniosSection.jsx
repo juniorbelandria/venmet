@@ -120,29 +120,39 @@ export default function TestimoniosSection() {
   return (
     <section 
       id="testimonios"
-      className="bg-white py-[90px] px-[5%]"
+      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto">
+      {/* Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+        }}
+      />
+
+      <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Tag Label */}
-        <div className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <span className="section-tag">
-            Lo que dicen nuestros clientes
+        <div className={`text-center mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#27eee7]/10 border border-[#27eee7]/20">
+            <span className="font-['Inter'] text-[13px] text-[#0B1F3A] font-semibold tracking-wide uppercase">
+              Lo que dicen nuestros clientes
+            </span>
           </span>
         </div>
 
         {/* Título H2 */}
         <h2 
-          className={`font-['Space_Grotesk'] font-extrabold text-[#1A2B42] text-center leading-[1.15] mb-4 transition-all duration-700 delay-100 ${
+          className={`font-['Space_Grotesk'] font-extrabold text-[#0B1F3A] text-center leading-[1.15] mb-5 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
-          style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}
+          style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}
         >
           Resultados reales de empresas<br />
           como la tuya
         </h2>
 
         {/* Subtítulo */}
-        <p className={`font-['Inter'] text-[17px] text-[#8A96A8] text-center leading-relaxed mb-12 max-w-[700px] mx-auto transition-all duration-700 delay-200 ${
+        <p className={`font-['Inter'] text-[18px] text-[#5A6C7D] text-center leading-relaxed mb-16 max-w-[700px] mx-auto transition-all duration-700 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           Más de 500 empresas venezolanas confían en VENMET para garantizar
