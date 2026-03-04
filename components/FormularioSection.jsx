@@ -88,13 +88,13 @@ export default function FormularioSection() {
         }}
       />
 
-      {/* Grid Pattern CYAN */}
+      {/* Grid Pattern AZUL OSCURO */}
       <div 
-        className="absolute inset-0 opacity-[0.3]" 
+        className="absolute inset-0 opacity-[0.15]" 
         style={{
           backgroundImage: `
-            linear-gradient(rgba(39,238,231,0.35) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(39,238,231,0.35) 2px, transparent 2px)
+            linear-gradient(rgba(11,31,58,0.5) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(11,31,58,0.5) 2px, transparent 2px)
           `,
           backgroundSize: '25px 25px'
         }} 
@@ -132,7 +132,7 @@ export default function FormularioSection() {
             color: '#0a0e1a'
           }}
         >
-          Solicita tu cotización gratis
+          Solicita tu <span style={{ color: '#27eee7' }}>cotización gratis</span>
         </h2>
 
         {/* Subtítulo */}
@@ -196,7 +196,7 @@ export default function FormularioSection() {
                       )}
                     </div>
                     <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
-                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-gray-400'
+                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-[#0B1F3A]'
                     }`}>
                       {step.title}
                     </p>
