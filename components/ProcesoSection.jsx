@@ -80,12 +80,15 @@ export default function ProcesoSection() {
         }}
       />
 
-      {/* Grid Pattern Más Visible */}
+      {/* Grid Pattern MUY Visible */}
       <div 
-        className="absolute inset-0 opacity-[0.15]" 
+        className="absolute inset-0 opacity-[0.25]" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(39,238,231,0.15) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(39,238,231,0.15) 1.5px, transparent 1.5px)',
-          backgroundSize: '30px 30px'
+          backgroundImage: `
+            linear-gradient(rgba(39,238,231,0.3) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(39,238,231,0.3) 2px, transparent 2px)
+          `,
+          backgroundSize: '25px 25px'
         }} 
       />
 
@@ -184,7 +187,7 @@ export default function ProcesoSection() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
-            <div className="relative w-full aspect-square max-w-[480px] mx-auto pb-12">
+            <div className="relative w-full aspect-square max-w-[480px] mx-auto mb-24">
               {/* Center Circle */}
               <div 
                 className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-[#27eee7] to-[#1dd4cd] flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
