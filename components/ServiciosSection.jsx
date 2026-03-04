@@ -205,7 +205,7 @@ export default function ServiciosSection() {
         </div>
 
         {/* Services Grid - Modern Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {servicios.map((servicio, index) => {
             const Icon = servicio.icon
             const isHovered = hoveredCard === index
@@ -213,7 +213,7 @@ export default function ServiciosSection() {
             return (
               <div
                 key={index}
-                className={`group relative bg-white rounded-2xl p-7 border-2 border-gray-200 transition-all duration-500 hover:border-[${servicio.color}] hover:shadow-2xl hover:-translate-y-2 cursor-pointer ${
+                className={`group relative bg-white rounded-xl p-5 border-2 border-gray-200 transition-all duration-500 hover:border-[${servicio.color}] hover:shadow-2xl hover:-translate-y-2 cursor-pointer ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
@@ -225,9 +225,9 @@ export default function ServiciosSection() {
               >
                 {/* Badge if exists */}
                 {servicio.badge && (
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-['Inter'] font-bold tracking-wide uppercase bg-gradient-to-r from-[#27eee7] to-[#1dd4cd] text-[#0a0e1a]">
-                      <Sparkles className="w-3 h-3" />
+                  <div className="absolute top-3 right-3">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-['Inter'] font-bold tracking-wide uppercase bg-gradient-to-r from-[#27eee7] to-[#1dd4cd] text-[#0a0e1a]">
+                      <Sparkles className="w-2.5 h-2.5" />
                       {servicio.badge}
                     </span>
                   </div>
@@ -235,39 +235,39 @@ export default function ServiciosSection() {
 
                 {/* Icon */}
                 <div 
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${servicio.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500`}
+                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${servicio.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}
                 >
                   <Icon 
-                    className="w-8 h-8 transition-colors duration-500" 
+                    className="w-6 h-6 transition-colors duration-500" 
                     style={{ color: isHovered ? servicio.color : '#0a0e1a' }}
                     strokeWidth={2}
                   />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-['Inter'] font-bold text-[20px] text-[#0a0e1a] mb-3"
+                <h3 className="font-['Inter'] font-bold text-[16px] text-[#0a0e1a] mb-2"
                   style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                 >
                   {servicio.titulo}
                 </h3>
 
                 {/* Description */}
-                <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed mb-5"
+                <p className="font-['Inter'] text-[12px] text-[#0a0e1a]/70 leading-relaxed mb-4"
                   style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                 >
                   {servicio.descripcion}
                 </p>
 
                 {/* Items */}
-                <div className="space-y-2.5 mb-6">
+                <div className="space-y-1.5 mb-4">
                   {servicio.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5">
+                    <div key={idx} className="flex items-start gap-2">
                       <CheckCircle2 
-                        className="w-4 h-4 flex-shrink-0 mt-0.5 transition-colors duration-300" 
+                        className="w-3 h-3 flex-shrink-0 mt-0.5 transition-colors duration-300" 
                         style={{ color: isHovered ? servicio.color : '#27eee7' }}
                         strokeWidth={2.5}
                       />
-                      <span className="font-['Inter'] text-[13px] text-[#0a0e1a]/70 leading-snug"
+                      <span className="font-['Inter'] text-[11px] text-[#0a0e1a]/70 leading-snug"
                         style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                       >
                         {item}
@@ -279,20 +279,20 @@ export default function ServiciosSection() {
                 {/* CTA Button */}
                 <a
                   href="#solicitud"
-                  className="inline-flex items-center gap-2 font-['Inter'] font-semibold text-[14px] group-hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 font-['Inter'] font-semibold text-[12px] group-hover:gap-2.5 transition-all duration-300"
                   style={{ 
                     color: servicio.color,
                     fontWeight: 600,
                     letterSpacing: '-0.01em'
                   }}
                 >
-                  Solicitar servicio
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+                  Solicitar
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
                 </a>
 
                 {/* Hover Glow Effect */}
                 <div 
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
                     background: `radial-gradient(circle at 50% 0%, ${servicio.color}10, transparent 70%)`
                   }}
@@ -304,7 +304,7 @@ export default function ServiciosSection() {
 
         {/* Físico-Químico - Featured Card */}
         <div 
-          className={`relative bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-3xl p-10 transition-all duration-700 hover:shadow-2xl ${
+          className={`relative bg-gradient-to-br from-[#0a0e1a] via-[#1a3a52] to-[#0a0e1a] rounded-2xl p-8 transition-all duration-700 hover:shadow-2xl ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
           style={{ transitionDelay: '900ms' }}
@@ -312,38 +312,38 @@ export default function ServiciosSection() {
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 items-start">
             {/* Left - Icon and Title */}
             <div>
-              <div className="w-20 h-20 rounded-2xl bg-[#27eee7]/20 flex items-center justify-center mb-6">
-                <TestTube className="w-10 h-10 text-[#27eee7]" strokeWidth={2} />
+              <div className="w-16 h-16 rounded-xl bg-[#27eee7]/20 flex items-center justify-center mb-5">
+                <TestTube className="w-8 h-8 text-[#27eee7]" strokeWidth={2} />
               </div>
-              <h3 className="font-['Inter'] font-bold text-[28px] text-white mb-4"
+              <h3 className="font-['Inter'] font-bold text-[22px] text-white mb-3"
                 style={{ fontWeight: 700, letterSpacing: '-0.02em' }}
               >
                 {fisicoquimico.titulo}
               </h3>
-              <p className="font-['Inter'] text-[16px] text-white/80 leading-relaxed mb-6"
+              <p className="font-['Inter'] text-[14px] text-white/80 leading-relaxed mb-5"
                 style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
               >
                 {fisicoquimico.descripcion}
               </p>
               <a
                 href="#solicitud"
-                className="inline-flex items-center gap-3 bg-[#27eee7] text-[#0a0e1a] px-6 py-3.5 rounded-xl font-['Inter'] font-bold text-[15px] hover:scale-105 hover:shadow-xl hover:shadow-[#27eee7]/30 transition-all group"
+                className="inline-flex items-center gap-2 bg-[#27eee7] text-[#0a0e1a] px-5 py-3 rounded-lg font-['Inter'] font-bold text-[14px] hover:scale-105 hover:shadow-xl hover:shadow-[#27eee7]/30 transition-all group"
                 style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
               >
                 Solicitar servicio
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
               </a>
             </div>
 
             {/* Right - Items Grid */}
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3">
               {fisicoquimico.items.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 hover:border-[#27eee7]/30 transition-all duration-300"
+                  className="flex items-start gap-2.5 bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:bg-white/10 hover:border-[#27eee7]/30 transition-all duration-300"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#27eee7] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="font-['Inter'] text-[14px] text-white/90 leading-snug"
+                  <CheckCircle2 className="w-4 h-4 text-[#27eee7] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="font-['Inter'] text-[12px] text-white/90 leading-snug"
                     style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                   >
                     {item}
