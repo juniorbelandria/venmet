@@ -148,62 +148,66 @@ export default function FormularioSection() {
           Completa el formulario y recibe una respuesta personalizada en menos de 24 horas.
         </p>
 
-        {/* Stepper */}
-        <div className={`mb-10 transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}>
-          <div className="flex justify-between items-center relative">
-            {/* Línea de progreso */}
-            <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 -z-10">
-              <div 
-                className="h-full transition-all duration-500"
-                style={{ 
-                  width: `${((currentStep - 1) / 3) * 100}%`,
-                  background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)'
-                }}
-              />
-            </div>
-
-            {steps.map((step) => {
-              const Icon = step.icon
-              const isActive = currentStep === step.number
-              const isCompleted = currentStep > step.number
-
-              return (
-                <div key={step.number} className="flex flex-col items-center">
-                  <div 
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isCompleted || isActive ? 'scale-110' : 'scale-100'
-                    }`}
-                    style={isCompleted || isActive ? {
-                      background: '#0B1F3A',
-                      boxShadow: '0 6px 24px rgba(39, 238, 231, 0.4), 0 0 20px rgba(39, 238, 231, 0.2)'
-                    } : {
-                      background: 'white',
-                      border: '2px solid #e5e7eb'
-                    }}
-                  >
-                    {isCompleted ? (
-                      <CheckCircle2 size={20} style={{ color: '#27eee7' }} />
-                    ) : (
-                      <Icon size={20} style={{ color: isActive ? '#27eee7' : '#9ca3af' }} />
-                    )}
-                  </div>
-                  <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
-                    isActive || isCompleted ? 'text-[#27eee7]' : 'text-gray-400'
-                  }`}>
-                    {step.title}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Formulario sin card */}
-        <form onSubmit={handleSubmit} className={`transition-all duration-700 delay-400 ${
+        {/* Card contenedor para Stepper y Formulario */}
+        <div className={`bg-white rounded-[24px] p-8 md:p-10 transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        }`}>
+        }`}
+          style={{
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          {/* Stepper */}
+          <div className="mb-10">
+            <div className="flex justify-between items-center relative">
+              {/* Línea de progreso */}
+              <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 -z-10">
+                <div 
+                  className="h-full transition-all duration-500"
+                  style={{ 
+                    width: `${((currentStep - 1) / 3) * 100}%`,
+                    background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)'
+                  }}
+                />
+              </div>
+
+              {steps.map((step) => {
+                const Icon = step.icon
+                const isActive = currentStep === step.number
+                const isCompleted = currentStep > step.number
+
+                return (
+                  <div key={step.number} className="flex flex-col items-center">
+                    <div 
+                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isCompleted || isActive ? 'scale-110' : 'scale-100'
+                      }`}
+                      style={isCompleted || isActive ? {
+                        background: '#0B1F3A',
+                        boxShadow: '0 6px 24px rgba(39, 238, 231, 0.4), 0 0 20px rgba(39, 238, 231, 0.2)'
+                      } : {
+                        background: 'white',
+                        border: '2px solid #e5e7eb'
+                      }}
+                    >
+                      {isCompleted ? (
+                        <CheckCircle2 size={20} style={{ color: '#27eee7' }} />
+                      ) : (
+                        <Icon size={20} style={{ color: isActive ? '#27eee7' : '#9ca3af' }} />
+                      )}
+                    </div>
+                    <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
+                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-gray-400'
+                    }`}>
+                      {step.title}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Formulario */}
+          <form onSubmit={handleSubmit}>
           
           {/* PASO 1: Información de la Empresa */}
           {currentStep === 1 && (
@@ -503,6 +507,7 @@ export default function FormularioSection() {
             )}
           </div>
         </form>
+        </div>
       </div>
     </section>
   )
