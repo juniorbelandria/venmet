@@ -35,7 +35,7 @@ export default function CTAFinalSection() {
       <div className="absolute inset-0 grid-pattern opacity-100" />
 
       {/* Gradient Accent */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00C9A7] opacity-[0.08] blur-[120px] rounded-full" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#27eee7] opacity-[0.08] blur-[120px] rounded-full" />
 
       <div className="relative max-w-[900px] mx-auto text-center">
         {/* Título H2 */}
