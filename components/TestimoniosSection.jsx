@@ -133,31 +133,44 @@ export default function TestimoniosSection() {
       <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Tag Label */}
         <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <span className="inline-block px-4 py-2 rounded-full text-[13px] font-['Inter'] font-semibold tracking-wide uppercase"
+          <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase"
             style={{
               background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
-              color: '#0a0e1a'
+              color: '#0a0e1a',
+              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.3)'
             }}
           >
+            <Star className="inline w-3.5 h-3.5 mr-2 -mt-0.5 fill-[#0a0e1a]" />
             Lo que dicen nuestros clientes
           </span>
         </div>
 
         {/* Título H2 */}
         <h2 
-          className={`font-['Space_Grotesk'] font-extrabold text-[#0B1F3A] text-center leading-[1.15] mb-5 transition-all duration-700 delay-100 ${
+          className={`font-['Inter'] font-bold text-center leading-[1.1] mb-6 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
-          style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}
+          style={{ 
+            fontSize: 'clamp(36px, 5vw, 64px)',
+            letterSpacing: '-0.03em',
+            fontWeight: 700,
+            color: '#0a0e1a'
+          }}
         >
           Resultados reales de empresas<br />
           como la tuya
         </h2>
 
         {/* Subtítulo */}
-        <p className={`font-['Inter'] text-[18px] text-[#5A6C7D] text-center leading-relaxed mb-16 max-w-[700px] mx-auto transition-all duration-700 delay-200 ${
+        <p className={`font-['Inter'] text-[19px] leading-relaxed mb-16 max-w-[700px] mx-auto text-center transition-all duration-700 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}>
+        }`}
+          style={{ 
+            fontWeight: 500, 
+            letterSpacing: '-0.01em',
+            color: 'rgba(10, 14, 26, 0.6)'
+          }}
+        >
           Más de 500 empresas venezolanas confían en VENMET para garantizar
           la exactitud de sus procesos.
         </p>
