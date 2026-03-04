@@ -50,7 +50,7 @@ export default function Footer() {
             {/* Logo */}
             <div className="mb-4">
               <Image
-                src="/images/LOGOPRINCIPAL.png"
+                src="/images/FOOTER.png"
                 alt="VENMET Logo"
                 width={180}
                 height={60}
