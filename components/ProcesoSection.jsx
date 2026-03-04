@@ -70,33 +70,25 @@ export default function ProcesoSection() {
   return (
     <section 
       id="proceso"
-      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
+      className="relative py-[100px] px-[5%] overflow-hidden"
+      style={{ background: '#152b86' }}
     >
-      {/* Noise Texture Overlay */}
+      {/* Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
-        }}
-      />
-
-      {/* Grid Pattern CYAN Más Visible */}
-      <div 
-        className="absolute inset-0 opacity-[0.3]" 
+        className="absolute inset-0 opacity-[0.08]" 
         style={{
           backgroundImage: `
-            linear-gradient(rgba(39,238,231,0.35) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(39,238,231,0.35) 2px, transparent 2px)
+            linear-gradient(rgba(39,238,231,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(39,238,231,0.5) 1px, transparent 1px)
           `,
-          backgroundSize: '25px 25px'
+          backgroundSize: '30px 30px'
         }} 
       />
 
       {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-[1400px] mx-auto">
@@ -104,9 +96,9 @@ export default function ProcesoSection() {
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase mb-6"
             style={{
-              background: '#152b86',
-              color: 'white',
-              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
+              background: '#27eee7',
+              color: '#152b86',
+              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.3)'
             }}
           >
             ⚡ Cómo Funciona
@@ -123,12 +115,11 @@ export default function ProcesoSection() {
             }`}
           >
             <h2 
-              className="font-['Inter'] font-bold leading-[1.1] mb-6"
+              className="font-['Inter'] font-bold text-white leading-[1.1] mb-6"
               style={{ 
                 fontSize: 'clamp(32px, 4.5vw, 56px)',
                 letterSpacing: '-0.03em',
-                fontWeight: 700,
-                color: '#152b86'
+                fontWeight: 700
               }}
             >
               De la solicitud al certificado<br />
@@ -136,7 +127,7 @@ export default function ProcesoSection() {
               <span style={{ color: '#27eee7' }}>4 pasos simples</span>
             </h2>
             
-            <p className="font-['Inter'] text-[17px] text-[#0a0e1a]/70 leading-relaxed mb-8"
+            <p className="font-['Inter'] text-[17px] text-white/70 leading-relaxed mb-8"
               style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
             >
               Sin contratos largos. Sin letra pequeña.{' '}
@@ -152,26 +143,26 @@ export default function ProcesoSection() {
                 return (
                   <div
                     key={index}
-                    className={`flex items-start gap-4 bg-white rounded-xl p-5 shadow-lg border-2 border-gray-200 hover:border-[#27eee7] transition-all duration-500 ${
+                    className={`flex items-start gap-4 bg-[#27eee7]/10 backdrop-blur-sm rounded-xl p-5 border border-[#27eee7]/20 hover:bg-[#27eee7]/15 hover:border-[#27eee7]/40 transition-all duration-500 ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}
                     style={{ transitionDelay: `${300 + index * 150}ms` }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
-                      style={{ background: '#152b86' }}
+                      style={{ background: '#27eee7' }}
                     >
-                      <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                      <Icon className="w-6 h-6" style={{ color: '#152b86' }} strokeWidth={2} />
                     </div>
                     <div className="flex-1">
                       <div className="text-[13px] font-['Inter'] font-bold text-[#27eee7] mb-1">
                         Paso {paso.numero}
                       </div>
-                      <h3 className="font-['Inter'] font-bold text-[16px] text-[#0a0e1a] mb-2"
+                      <h3 className="font-['Inter'] font-bold text-[16px] text-white mb-2"
                         style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                       >
                         {paso.titulo}
                       </h3>
-                      <p className="font-['Inter'] text-[14px] text-[#0a0e1a]/70 leading-relaxed"
+                      <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed"
                         style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                       >
                         {paso.descripcion}
@@ -197,15 +188,17 @@ export default function ProcesoSection() {
                 }`}
                 style={{ 
                   transitionDelay: '400ms',
-                  background: '#152b86'
+                  background: '#27eee7'
                 }}
               >
                 <div className="text-center">
-                  <div className="text-[72px] font-['Inter'] font-bold text-white leading-none">
+                  <div className="text-[72px] font-['Inter'] font-bold leading-none"
+                    style={{ color: '#152b86' }}
+                  >
                     {pasos[activeStep].numero}
                   </div>
-                  <div className="text-[13px] font-['Inter'] font-semibold text-white px-4 mt-1"
-                    style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
+                  <div className="text-[13px] font-['Inter'] font-semibold px-4 mt-1"
+                    style={{ fontWeight: 600, letterSpacing: '-0.01em', color: '#152b86' }}
                   >
                     {pasos[activeStep].titulo}
                   </div>
@@ -259,27 +252,27 @@ export default function ProcesoSection() {
                     onClick={() => setActiveStep(index)}
                   >
                     <div 
-                      className={`bg-white rounded-xl p-4 shadow-xl border-2 transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
-                        isActive ? 'border-[#27eee7] shadow-[0_0_40px_rgba(39,238,231,0.3)]' : 'border-gray-200'
+                      className={`bg-[#27eee7]/10 backdrop-blur-sm rounded-xl p-4 border transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
+                        isActive ? 'border-[#27eee7] shadow-[0_0_40px_rgba(39,238,231,0.3)] bg-[#27eee7]/15' : 'border-[#27eee7]/20'
                       }`}
                       style={{ width: '170px' }}
                     >
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 transition-all duration-500 ${
                         isActive ? 'scale-110' : ''
                       }`}
-                        style={{ background: isActive ? '#152b86' : '#f3f4f6' }}
+                        style={{ background: isActive ? '#27eee7' : 'rgba(39, 238, 231, 0.15)' }}
                       >
-                        <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-gray-600'}`} strokeWidth={2} />
+                        <Icon className={`w-5 h-5 ${isActive ? 'text-[#152b86]' : 'text-[#27eee7]'}`} strokeWidth={2} />
                       </div>
-                      <div className={`text-[11px] font-['Inter'] font-bold mb-1 ${isActive ? 'text-[#27eee7]' : 'text-gray-400'}`}>
+                      <div className={`text-[11px] font-['Inter'] font-bold mb-1 ${isActive ? 'text-[#27eee7]' : 'text-white/50'}`}>
                         Paso {paso.numero}
                       </div>
-                      <h3 className="font-['Inter'] font-bold text-[13px] text-[#0a0e1a] mb-1"
+                      <h3 className="font-['Inter'] font-bold text-[13px] text-white mb-1"
                         style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                       >
                         {paso.titulo}
                       </h3>
-                      <p className="font-['Inter'] text-[11px] text-[#0a0e1a]/70 leading-snug"
+                      <p className="font-['Inter'] text-[11px] text-white/70 leading-snug"
                         style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                       >
                         {paso.descripcion}
