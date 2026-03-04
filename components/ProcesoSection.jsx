@@ -31,7 +31,7 @@ export default function ProcesoSection() {
     if (isVisible) {
       const interval = setInterval(() => {
         setActiveStep((prev) => (prev + 1) % 4)
-      }, 3000)
+      }, 2000) // Cambiado de 3000 a 2000ms (más rápido)
       return () => clearInterval(interval)
     }
   }, [isVisible])
@@ -74,26 +74,26 @@ export default function ProcesoSection() {
     >
       {/* Noise Texture Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none"
         style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
         }}
       />
 
-      {/* Grid Pattern Sutil */}
+      {/* Grid Pattern Sutil - Más visible */}
       <div 
-        className="absolute inset-0 opacity-[0.03]" 
+        className="absolute inset-0 opacity-[0.08]" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(10,14,26,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(10,14,26,0.05) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
+          backgroundImage: 'linear-gradient(rgba(10,14,26,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(10,14,26,0.1) 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
         }} 
       />
 
       {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#27eee7]/8 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-[1400px] mx-auto">
@@ -212,8 +212,8 @@ export default function ProcesoSection() {
                   r="45"
                   fill="none"
                   stroke="#27eee7"
-                  strokeWidth="0.3"
-                  opacity="0.2"
+                  strokeWidth="0.4"
+                  opacity="0.3"
                 />
                 <circle
                   cx="50"
@@ -221,10 +221,10 @@ export default function ProcesoSection() {
                   r="45"
                   fill="none"
                   stroke="#27eee7"
-                  strokeWidth="0.5"
+                  strokeWidth="0.8"
                   strokeDasharray="282.7"
                   strokeDashoffset={282.7 - (282.7 * (activeStep + 1)) / 4}
-                  className="transition-all duration-1000"
+                  className="transition-all duration-700"
                   strokeLinecap="round"
                 />
               </svg>
