@@ -72,9 +72,9 @@ export default function ComparacionSection() {
         <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase"
             style={{
-              background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
-              color: '#0a0e1a',
-              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.3)'
+              background: '#152b86',
+              color: 'white',
+              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
             }}
           >
             <Zap className="inline w-3.5 h-3.5 mr-2 -mt-0.5" />
@@ -131,7 +131,7 @@ export default function ComparacionSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-full flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)'
+                  background: '#152b86'
                 }}
               >
                 <Check className="w-6 h-6 text-[#0a0e1a]" strokeWidth={3} />
@@ -157,7 +157,7 @@ export default function ComparacionSection() {
                   }`}
                     style={{
                       background: hoveredRow === index 
-                        ? 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)'
+                        ? '#152b86'
                         : 'rgba(39, 238, 231, 0.15)'
                     }}
                   >

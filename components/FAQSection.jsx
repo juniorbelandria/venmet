@@ -93,9 +93,9 @@ export default function FAQSection() {
         <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase"
             style={{
-              background: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
-              color: '#0a0e1a',
-              boxShadow: '0 4px 20px rgba(39, 238, 231, 0.3)'
+              background: '#152b86',
+              color: 'white',
+              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
             }}
           >
             Preguntas Frecuentes

@@ -74,14 +74,14 @@ export default function StatsBar() {
       value: `+${counts.years}`,
       label: 'Años de Experiencia',
       gradient: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)',
-      iconGradient: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+      iconGradient: '#152b86',
       delay: 0
     },
     {
       icon: Users,
       value: `+${counts.clients}`,
       label: 'Empresas Atendidas',
-      gradient: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+      gradient: '#152b86',
       iconGradient: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)',
       delay: 100
     },
@@ -90,14 +90,14 @@ export default function StatsBar() {
       value: counts.magnitudes,
       label: 'Magnitudes Físicas',
       gradient: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)',
-      iconGradient: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+      iconGradient: '#152b86',
       delay: 200
     },
     {
       icon: ShieldCheck,
       value: `${counts.traceability}%`,
       label: 'Trazabilidad Garantizada',
-      gradient: 'linear-gradient(135deg, #27eee7 0%, #1dd4cd 100%)',
+      gradient: '#152b86',
       iconGradient: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)',
       delay: 300
     }

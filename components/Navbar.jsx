@@ -62,10 +62,10 @@ export default function Navbar() {
         {/* CTA Button */}
         <a
           href="#solicitud"
-          className="hidden lg:flex items-center gap-2 text-white px-6 py-3 rounded-full font-['Space_Grotesk'] font-bold text-[15px] hover:brightness-110 hover:shadow-xl transition-all"
+          className="hidden lg:flex items-center gap-2 text-white px-6 py-3 rounded-full font-['Inter'] font-bold text-[15px] hover:brightness-110 hover:shadow-xl transition-all"
           style={{ 
-            background: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)',
-            boxShadow: '0 4px 20px rgba(10, 14, 26, 0.3)' 
+            background: '#152b86',
+            boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)' 
           }}
         >
           Solicitar Servicio
@@ -106,8 +106,8 @@ export default function Navbar() {
           <a
             href="#solicitud"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 mt-4 text-white px-6 py-3 rounded-full font-['Space_Grotesk'] font-bold text-center"
-            style={{ background: 'linear-gradient(135deg, #0a0e1a 0%, #1a3a52 100%)' }}
+            className="flex items-center justify-center gap-2 mt-4 text-white px-6 py-3 rounded-full font-['Inter'] font-bold text-center"
+            style={{ background: '#152b86' }}
           >
             Solicitar Servicio
             <Microscope className="w-5 h-5" strokeWidth={2.5} />
