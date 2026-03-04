@@ -70,7 +70,7 @@ export default function ProcesoSection() {
   return (
     <section 
       id="proceso"
-      className="relative py-[100px] px-[5%] overflow-hidden"
+      className="relative py-[120px] px-[5%] overflow-hidden mb-[80px]"
       style={{ background: '#152b86' }}
     >
       {/* Grid Pattern */}
@@ -180,7 +180,7 @@ export default function ProcesoSection() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
-            <div className="relative w-full aspect-square max-w-[550px] mx-auto">
+            <div className="relative w-full aspect-square max-w-[600px] mx-auto">
               {/* Center Circle - Sin transparencia */}
               <div 
                 className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full flex flex-col items-center justify-center shadow-2xl transition-all duration-1000 ${
@@ -211,7 +211,7 @@ export default function ProcesoSection() {
                 <circle
                   cx="50"
                   cy="50"
-                  r="42"
+                  r="40"
                   fill="none"
                   stroke="#27eee7"
                   strokeWidth="0.3"
@@ -220,23 +220,23 @@ export default function ProcesoSection() {
                 <circle
                   cx="50"
                   cy="50"
-                  r="42"
+                  r="40"
                   fill="none"
                   stroke="#27eee7"
                   strokeWidth="1"
-                  strokeDasharray="263.9"
-                  strokeDashoffset={263.9 - (263.9 * (activeStep + 1)) / 4}
+                  strokeDasharray="251.3"
+                  strokeDashoffset={251.3 - (251.3 * (activeStep + 1)) / 4}
                   className="transition-all duration-700"
                   strokeLinecap="round"
                   style={{ filter: 'drop-shadow(0 0 8px rgba(39, 238, 231, 0.6))' }}
                 />
               </svg>
 
-              {/* Step Cards positioned around circle - Sin transparencia y más separados */}
+              {/* Step Cards positioned around circle - Optimizadas */}
               {pasos.map((paso, index) => {
                 const Icon = paso.icon
                 const angle = (index * 90) - 90 // Start from top
-                const radius = 270 // Aumentado de 240 a 270 para más separación
+                const radius = 300 // Aumentado para más espacio horizontal
                 const x = Math.cos((angle * Math.PI) / 180) * radius
                 const y = Math.sin((angle * Math.PI) / 180) * radius
                 const isActive = activeStep === index
@@ -254,37 +254,44 @@ export default function ProcesoSection() {
                     onClick={() => setActiveStep(index)}
                   >
                     <div 
-                      className={`rounded-2xl p-5 border-2 transition-all duration-500 hover:scale-105 ${
+                      className={`rounded-2xl p-4 border-2 transition-all duration-500 hover:scale-105 ${
                         isActive 
                           ? 'border-[#27eee7] shadow-[0_0_40px_rgba(39,238,231,0.4)]' 
                           : 'border-[#27eee7]/30 hover:border-[#27eee7]/50'
                       }`}
                       style={{ 
-                        width: '190px',
+                        width: '210px',
                         background: isActive ? 'rgba(39, 238, 231, 0.08)' : 'rgba(21, 43, 134, 0.6)',
                         backdropFilter: 'blur(20px)',
                         WebkitBackdropFilter: 'blur(20px)'
                       }}
                     >
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 ${
-                        isActive ? 'scale-110' : ''
-                      }`}
-                        style={{ 
-                          background: isActive ? '#27eee7' : 'rgba(39, 238, 231, 0.15)',
-                          boxShadow: isActive ? '0 4px 20px rgba(39, 238, 231, 0.3)' : 'none'
-                        }}
-                      >
-                        <Icon className={`w-6 h-6 ${isActive ? 'text-[#152b86]' : 'text-[#27eee7]'}`} strokeWidth={2} />
+                      {/* Header con icono y paso */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
+                          isActive ? 'scale-110' : ''
+                        }`}
+                          style={{ 
+                            background: isActive ? '#27eee7' : 'rgba(39, 238, 231, 0.15)',
+                            boxShadow: isActive ? '0 4px 20px rgba(39, 238, 231, 0.3)' : 'none'
+                          }}
+                        >
+                          <Icon className={`w-5 h-5 ${isActive ? 'text-[#152b86]' : 'text-[#27eee7]'}`} strokeWidth={2} />
+                        </div>
+                        <div className={`text-[10px] font-['Inter'] font-bold uppercase tracking-wider ${isActive ? 'text-[#27eee7]' : 'text-white/50'}`}>
+                          Paso {paso.numero}
+                        </div>
                       </div>
-                      <div className={`text-[11px] font-['Inter'] font-bold mb-2 uppercase tracking-wider ${isActive ? 'text-[#27eee7]' : 'text-white/50'}`}>
-                        Paso {paso.numero}
-                      </div>
-                      <h3 className="font-['Inter'] font-bold text-[14px] text-white mb-2"
+
+                      {/* Título */}
+                      <h3 className="font-['Inter'] font-bold text-[15px] text-white mb-2 leading-tight"
                         style={{ fontWeight: 600, letterSpacing: '-0.01em' }}
                       >
                         {paso.titulo}
                       </h3>
-                      <p className="font-['Inter'] text-[12px] text-white/70 leading-snug"
+
+                      {/* Descripción compacta */}
+                      <p className="font-['Inter'] text-[11.5px] text-white/70 leading-[1.4]"
                         style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
                       >
                         {paso.descripcion}
