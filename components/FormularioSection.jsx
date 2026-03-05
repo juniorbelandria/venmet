@@ -78,7 +78,7 @@ export default function FormularioSection() {
   return (
     <section 
       id="solicitud"
-      className="relative py-[100px] px-[5%] overflow-hidden"
+      className="relative py-[120px] md:py-[140px] lg:py-[160px] px-[5%] overflow-hidden"
       style={{ background: '#27eee7' }}
     >
       {/* Imagen de fondo con overlay */}
@@ -106,7 +106,7 @@ export default function FormularioSection() {
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#152b86]/15 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-[900px] mx-auto relative z-10">
+      <div className="max-w-[1600px] mx-auto relative z-10">
         {/* Tag Label */}
         <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase"
@@ -149,12 +149,12 @@ export default function FormularioSection() {
         </p>
 
         {/* Grid Layout: Pasos a la izquierda, Formulario a la derecha */}
-        <div className={`grid lg:grid-cols-[1.2fr_1.8fr] gap-20 xl:gap-28 items-start transition-all duration-700 delay-300 ${
+        <div className={`grid lg:grid-cols-[1fr_1.4fr] gap-24 xl:gap-32 items-start transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}>
           
           {/* Columna Izquierda - Pasos Minimalistas */}
-          <div className="space-y-12">
+          <div className="space-y-14 lg:space-y-16">
             {steps.map((step) => {
               const Icon = step.icon
               const isActive = currentStep === step.number
@@ -176,25 +176,25 @@ export default function FormularioSection() {
                 >
                   {/* Icono Circular Minimalista */}
                   <div 
-                    className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300"
+                    className="flex-shrink-0 w-24 h-24 rounded-full flex items-center justify-center transition-all duration-300"
                     style={{
                       background: isActive ? '#152b86' : isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.2)',
-                      border: isActive ? '3px solid #27eee7' : '3px solid transparent',
-                      boxShadow: isActive ? '0 0 0 8px rgba(39, 238, 231, 0.15)' : 'none'
+                      border: isActive ? '4px solid #27eee7' : '4px solid transparent',
+                      boxShadow: isActive ? '0 0 0 10px rgba(39, 238, 231, 0.15), 0 8px 24px rgba(21, 43, 134, 0.2)' : 'none'
                     }}
                   >
                     {isCompleted ? (
-                      <CheckCircle2 size={32} style={{ color: '#27eee7' }} strokeWidth={2.5} />
+                      <CheckCircle2 size={36} style={{ color: '#27eee7' }} strokeWidth={2.5} />
                     ) : (
-                      <Icon size={32} style={{ color: isActive ? '#27eee7' : 'rgba(21, 43, 134, 0.4)' }} strokeWidth={2} />
+                      <Icon size={36} style={{ color: isActive ? '#27eee7' : 'rgba(21, 43, 134, 0.4)' }} strokeWidth={2} />
                     )}
                   </div>
 
                   {/* Contenido */}
-                  <div className="flex-1 pt-2">
+                  <div className="flex-1 pt-3">
                     <div className="flex items-center gap-2 mb-3">
                       <span 
-                        className="font-['Inter'] text-[12px] font-bold tracking-wider"
+                        className="font-['Inter'] text-[13px] font-bold tracking-wider"
                         style={{
                           color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)'
                         }}
@@ -203,7 +203,7 @@ export default function FormularioSection() {
                       </span>
                     </div>
                     <h3 
-                      className="font-['Inter'] font-bold text-[26px] mb-3 leading-tight"
+                      className="font-['Inter'] font-bold text-[30px] mb-4 leading-tight"
                       style={{ 
                         color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)',
                         fontWeight: 700 
@@ -212,7 +212,7 @@ export default function FormularioSection() {
                       {step.title}
                     </h3>
                     <p 
-                      className="font-['Inter'] text-[16px] leading-relaxed"
+                      className="font-['Inter'] text-[17px] leading-relaxed"
                       style={{ 
                         color: isActive || isCompleted ? 'rgba(21, 43, 134, 0.8)' : 'rgba(21, 43, 134, 0.4)',
                         fontWeight: 500 
@@ -228,12 +228,12 @@ export default function FormularioSection() {
 
           {/* Columna Derecha - Formulario Minimalista */}
           <div 
-            className="rounded-[32px] p-12 md:p-14 lg:p-16 sticky top-8"
+            className="rounded-[40px] p-14 md:p-16 lg:p-20 sticky top-8"
             style={{
-              background: 'rgba(255, 255, 255, 0.95)',
+              background: 'rgba(255, 255, 255, 0.98)',
               backdropFilter: 'blur(20px)',
-              boxShadow: '0 24px 80px rgba(21, 43, 134, 0.15), 0 8px 32px rgba(21, 43, 134, 0.1)',
-              border: '1px solid rgba(255, 255, 255, 0.8)'
+              boxShadow: '0 32px 120px rgba(21, 43, 134, 0.2), 0 16px 48px rgba(21, 43, 134, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.9)'
             }}
           >
 
@@ -242,7 +242,7 @@ export default function FormularioSection() {
           
           {/* PASO 1: Información de la Empresa */}
           {currentStep === 1 && (
-            <div className="space-y-8 animate-fadeInUp">
+            <div className="space-y-9 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -256,7 +256,7 @@ export default function FormularioSection() {
                   value={formData.nombreEmpresa}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -281,7 +281,7 @@ export default function FormularioSection() {
                   value={formData.sector}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] focus:outline-none transition-all"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -306,7 +306,7 @@ export default function FormularioSection() {
 
           {/* PASO 2: Equipos a Calibrar */}
           {currentStep === 2 && (
-            <div className="space-y-8 animate-fadeInUp">
+            <div className="space-y-9 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -320,7 +320,7 @@ export default function FormularioSection() {
                   onChange={handleInputChange}
                   required
                   rows="3"
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -347,7 +347,7 @@ export default function FormularioSection() {
                     onChange={handleInputChange}
                     required
                     min="1"
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -371,7 +371,7 @@ export default function FormularioSection() {
                     value={formData.magnitud}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -398,7 +398,7 @@ export default function FormularioSection() {
 
           {/* PASO 3: Plazo y Urgencia */}
           {currentStep === 3 && (
-            <div className="space-y-8 animate-fadeInUp">
+            <div className="space-y-9 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -411,7 +411,7 @@ export default function FormularioSection() {
                   value={formData.plazo}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] focus:outline-none transition-all"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -439,7 +439,7 @@ export default function FormularioSection() {
                   name="fechaAuditoria"
                   value={formData.fechaAuditoria}
                   onChange={handleInputChange}
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] focus:outline-none transition-all"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -455,7 +455,7 @@ export default function FormularioSection() {
 
           {/* PASO 4: Datos de Contacto */}
           {currentStep === 4 && (
-            <div className="space-y-8 animate-fadeInUp">
+            <div className="space-y-9 animate-fadeInUp">
               <div className="grid md:grid-cols-2 gap-7">
                 <div>
                   <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
@@ -470,7 +470,7 @@ export default function FormularioSection() {
                     value={formData.nombreContacto}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -495,7 +495,7 @@ export default function FormularioSection() {
                     value={formData.cargo}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -523,7 +523,7 @@ export default function FormularioSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -549,7 +549,7 @@ export default function FormularioSection() {
                     value={formData.telefono}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                     style={{ 
                       fontWeight: 500,
                       color: '#152b86',
@@ -576,7 +576,7 @@ export default function FormularioSection() {
                   value={formData.ubicacion}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -600,7 +600,7 @@ export default function FormularioSection() {
                   value={formData.comentarios}
                   onChange={handleInputChange}
                   rows="3"
-                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
+                  className="w-full px-6 py-5 rounded-[16px] border-2 font-['Inter'] text-[16px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
                   style={{ 
                     fontWeight: 500,
                     color: '#152b86',
@@ -676,3 +676,4 @@ export default function FormularioSection() {
     </section>
   )
 }
+
