@@ -16,6 +16,7 @@ import CTAFinalSection from '@/components/CTAFinalSection'
 import FormularioSection from '@/components/FormularioSection'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import SocialBar from '@/components/SocialBar'
 // import ExitPopup from '@/components/ExitPopup'
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
       <CTAFinalSection />
       <FormularioSection />
       <Footer />
+      <SocialBar />
       <WhatsAppButton />
       {/* <ExitPopup /> */}
     </main>
