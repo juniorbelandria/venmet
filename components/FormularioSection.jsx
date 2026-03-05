@@ -149,12 +149,12 @@ export default function FormularioSection() {
         </p>
 
         {/* Grid Layout: Pasos a la izquierda, Formulario a la derecha */}
-        <div className={`grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start transition-all duration-700 delay-300 ${
+        <div className={`grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}>
           
-          {/* Columna Izquierda - Pasos con Descripciones */}
-          <div className="space-y-6">
+          {/* Columna Izquierda - Pasos Minimalistas */}
+          <div className="space-y-8">
             {steps.map((step) => {
               const Icon = step.icon
               const isActive = currentStep === step.number
@@ -170,56 +170,51 @@ export default function FormularioSection() {
               return (
                 <div 
                   key={step.number}
-                  className={`flex gap-4 p-6 rounded-2xl transition-all duration-500 ${
-                    isActive ? 'scale-105' : 'scale-100'
+                  className={`flex gap-5 transition-all duration-500 ${
+                    isActive ? 'translate-x-2' : 'translate-x-0'
                   }`}
-                  style={{
-                    background: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.3)',
-                    border: isActive ? '2px solid #27eee7' : '2px solid transparent',
-                    boxShadow: isActive ? '0 8px 32px rgba(39, 238, 231, 0.3)' : 'none'
-                  }}
                 >
-                  {/* Icono */}
+                  {/* Icono Circular Minimalista */}
                   <div 
-                    className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300"
+                    className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300"
                     style={{
-                      background: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.1)',
-                      boxShadow: isActive || isCompleted ? '0 4px 16px rgba(39, 238, 231, 0.4)' : 'none'
+                      background: isActive ? '#152b86' : isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.2)',
+                      border: isActive ? '3px solid #27eee7' : '3px solid transparent',
+                      boxShadow: isActive ? '0 0 0 6px rgba(39, 238, 231, 0.15)' : 'none'
                     }}
                   >
                     {isCompleted ? (
-                      <CheckCircle2 size={24} style={{ color: '#152b86' }} strokeWidth={2.5} />
+                      <CheckCircle2 size={28} style={{ color: '#27eee7' }} strokeWidth={2.5} />
                     ) : (
-                      <Icon size={24} style={{ color: isActive || isCompleted ? '#152b86' : 'rgba(255, 255, 255, 0.5)' }} strokeWidth={2} />
+                      <Icon size={28} style={{ color: isActive ? '#27eee7' : 'rgba(21, 43, 134, 0.4)' }} strokeWidth={2} />
                     )}
                   </div>
 
                   {/* Contenido */}
-                  <div className="flex-1">
+                  <div className="flex-1 pt-1">
                     <div className="flex items-center gap-2 mb-2">
                       <span 
-                        className="font-['Inter'] text-[12px] font-bold px-2 py-0.5 rounded"
+                        className="font-['Inter'] text-[11px] font-bold tracking-wider"
                         style={{
-                          background: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.1)',
-                          color: isActive || isCompleted ? '#152b86' : 'rgba(255, 255, 255, 0.5)'
+                          color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)'
                         }}
                       >
                         PASO {step.number}
                       </span>
                     </div>
                     <h3 
-                      className="font-['Inter'] font-bold text-[18px] mb-2"
+                      className="font-['Inter'] font-bold text-[22px] mb-2 leading-tight"
                       style={{ 
-                        color: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.7)',
-                        fontWeight: 600 
+                        color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)',
+                        fontWeight: 700 
                       }}
                     >
                       {step.title}
                     </h3>
                     <p 
-                      className="font-['Inter'] text-[14px] leading-relaxed"
+                      className="font-['Inter'] text-[15px] leading-relaxed"
                       style={{ 
-                        color: isActive || isCompleted ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.5)',
+                        color: isActive || isCompleted ? 'rgba(21, 43, 134, 0.8)' : 'rgba(21, 43, 134, 0.4)',
                         fontWeight: 500 
                       }}
                     >
@@ -231,12 +226,14 @@ export default function FormularioSection() {
             })}
           </div>
 
-          {/* Columna Derecha - Formulario */}
+          {/* Columna Derecha - Formulario Minimalista */}
           <div 
-            className="rounded-[24px] p-8 md:p-10 sticky top-8"
+            className="rounded-[32px] p-10 md:p-12 sticky top-8"
             style={{
-              background: '#152b86',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 24px 80px rgba(21, 43, 134, 0.15), 0 8px 32px rgba(21, 43, 134, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.8)'
             }}
           >
 
@@ -245,12 +242,12 @@ export default function FormularioSection() {
           
           {/* PASO 1: Información de la Empresa */}
           {currentStep === 1 && (
-            <div className="space-y-6 animate-fadeInUp">
+            <div className="space-y-7 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2 text-white"
-                  style={{ fontWeight: 600 }}
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                  style={{ fontWeight: 600, color: '#152b86' }}
                 >
-                  <Building2 size={18} className="text-[#27eee7]" />
+                  <Building2 size={18} style={{ color: '#27eee7' }} />
                   Nombre de la Empresa *
                 </label>
                 <input
@@ -259,17 +256,24 @@ export default function FormularioSection() {
                   value={formData.nombreEmpresa}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
-                  style={{ fontWeight: 500 }}
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                   placeholder="Ej: Laboratorios Farmacéuticos XYZ"
                 />
               </div>
 
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2 text-white"
-                  style={{ fontWeight: 600 }}
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                  style={{ fontWeight: 600, color: '#152b86' }}
                 >
-                  <FileText size={18} className="text-[#27eee7]" />
+                  <FileText size={18} style={{ color: '#27eee7' }} />
                   Sector Industrial *
                 </label>
                 <select
@@ -277,17 +281,24 @@ export default function FormularioSection() {
                   value={formData.sector}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
-                  style={{ fontWeight: 500 }}
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                 >
-                  <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona tu sector</option>
-                  <option value="farmaceutica" style={{ background: '#152b86', color: 'white' }}>Industria Farmacéutica</option>
-                  <option value="alimentaria" style={{ background: '#152b86', color: 'white' }}>Sector Alimentario</option>
-                  <option value="quimica" style={{ background: '#152b86', color: 'white' }}>Industria Química</option>
-                  <option value="manufactura" style={{ background: '#152b86', color: 'white' }}>Manufactura</option>
-                  <option value="laboratorios" style={{ background: '#152b86', color: 'white' }}>Laboratorios Clínicos</option>
-                  <option value="salud" style={{ background: '#152b86', color: 'white' }}>Sector Salud</option>
-                  <option value="otro" style={{ background: '#152b86', color: 'white' }}>Otro</option>
+                  <option value="">Selecciona tu sector</option>
+                  <option value="farmaceutica">Industria Farmacéutica</option>
+                  <option value="alimentaria">Sector Alimentario</option>
+                  <option value="quimica">Industria Química</option>
+                  <option value="manufactura">Manufactura</option>
+                  <option value="laboratorios">Laboratorios Clínicos</option>
+                  <option value="salud">Sector Salud</option>
+                  <option value="otro">Otro</option>
                 </select>
               </div>
             </div>
@@ -295,10 +306,12 @@ export default function FormularioSection() {
 
           {/* PASO 2: Equipos a Calibrar */}
           {currentStep === 2 && (
-            <div className="space-y-6 animate-fadeInUp">
+            <div className="space-y-7 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                  <Package size={18} className="text-[#27eee7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                  style={{ fontWeight: 600, color: '#152b86' }}
+                >
+                  <Package size={18} style={{ color: '#27eee7' }} />
                   Tipo de Equipos a Calibrar *
                 </label>
                 <textarea
@@ -307,14 +320,24 @@ export default function FormularioSection() {
                   onChange={handleInputChange}
                   required
                   rows="3"
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all resize-none"
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                   placeholder="Ej: Balanzas analíticas, termómetros digitales, manómetros..."
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
                     Cantidad Aproximada *
                   </label>
                   <input
@@ -324,13 +347,23 @@ export default function FormularioSection() {
                     onChange={handleInputChange}
                     required
                     min="1"
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                     placeholder="Ej: 15"
                   />
                 </div>
 
                 <div>
-                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
                     Magnitud Principal *
                   </label>
                   <select
@@ -338,17 +371,25 @@ export default function FormularioSection() {
                     value={formData.magnitud}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                   >
-                    <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona magnitud</option>
-                    <option value="temperatura-humedad" style={{ background: '#152b86', color: 'white' }}>Temperatura y Humedad</option>
-                    <option value="temperatura" style={{ background: '#152b86', color: 'white' }}>Temperatura</option>
-                    <option value="masa" style={{ background: '#152b86', color: 'white' }}>Masa</option>
-                    <option value="volumen" style={{ background: '#152b86', color: 'white' }}>Volumen</option>
-                    <option value="presion" style={{ background: '#152b86', color: 'white' }}>Presión</option>
-                    <option value="tiempo" style={{ background: '#152b86', color: 'white' }}>Tiempo</option>
-                    <option value="dimensional" style={{ background: '#152b86', color: 'white' }}>Dimensional</option>
-                    <option value="fisico-quimico" style={{ background: '#152b86', color: 'white' }}>Físico-Químico</option>
+                    <option value="">Selecciona magnitud</option>
+                    <option value="temperatura-humedad">Temperatura y Humedad</option>
+                    <option value="temperatura">Temperatura</option>
+                    <option value="masa">Masa</option>
+                    <option value="volumen">Volumen</option>
+                    <option value="presion">Presión</option>
+                    <option value="tiempo">Tiempo</option>
+                    <option value="dimensional">Dimensional</option>
+                    <option value="fisico-quimico">Físico-Químico</option>
                   </select>
                 </div>
               </div>
@@ -357,10 +398,12 @@ export default function FormularioSection() {
 
           {/* PASO 3: Plazo y Urgencia */}
           {currentStep === 3 && (
-            <div className="space-y-6 animate-fadeInUp">
+            <div className="space-y-7 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                  <Calendar size={18} className="text-[#27eee7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                  style={{ fontWeight: 600, color: '#152b86' }}
+                >
+                  <Calendar size={18} style={{ color: '#27eee7' }} />
                   ¿En qué plazo necesitas el servicio? *
                 </label>
                 <select
@@ -368,17 +411,27 @@ export default function FormularioSection() {
                   value={formData.plazo}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                 >
-                  <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona el plazo</option>
-                  <option value="urgente" style={{ background: '#152b86', color: 'white' }}>Urgente (1-3 días)</option>
-                  <option value="normal" style={{ background: '#152b86', color: 'white' }}>Normal (4-7 días)</option>
-                  <option value="flexible" style={{ background: '#152b86', color: 'white' }}>Flexible (más de 7 días)</option>
+                  <option value="">Selecciona el plazo</option>
+                  <option value="urgente">Urgente (1-3 días)</option>
+                  <option value="normal">Normal (4-7 días)</option>
+                  <option value="flexible">Flexible (más de 7 días)</option>
                 </select>
               </div>
 
               <div>
-                <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
+                <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
+                  style={{ fontWeight: 600, color: '#152b86' }}
+                >
                   ¿Tienes una auditoría próxima? (Opcional)
                 </label>
                 <input
@@ -386,7 +439,15 @@ export default function FormularioSection() {
                   name="fechaAuditoria"
                   value={formData.fechaAuditoria}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] focus:outline-none transition-all"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                 />
               </div>
             </div>
@@ -394,11 +455,13 @@ export default function FormularioSection() {
 
           {/* PASO 4: Datos de Contacto */}
           {currentStep === 4 && (
-            <div className="space-y-6 animate-fadeInUp">
+            <div className="space-y-7 animate-fadeInUp">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                    <User size={18} className="text-[#27eee7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
+                    <User size={18} style={{ color: '#27eee7' }} />
                     Nombre Completo *
                   </label>
                   <input
@@ -407,13 +470,23 @@ export default function FormularioSection() {
                     value={formData.nombreContacto}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                     placeholder="Tu nombre"
                   />
                 </div>
 
                 <div>
-                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
                     Cargo *
                   </label>
                   <input
@@ -422,7 +495,15 @@ export default function FormularioSection() {
                     value={formData.cargo}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                     placeholder="Ej: Gerente de Calidad"
                   />
                 </div>
@@ -430,8 +511,10 @@ export default function FormularioSection() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                    <Mail size={18} className="text-[#27eee7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
+                    <Mail size={18} style={{ color: '#27eee7' }} />
                     Email *
                   </label>
                   <input
@@ -440,14 +523,24 @@ export default function FormularioSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                     placeholder="tu@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                    <Phone size={18} className="text-[#27eee7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                    style={{ fontWeight: 600, color: '#152b86' }}
+                  >
+                    <Phone size={18} style={{ color: '#27eee7' }} />
                     Teléfono *
                   </label>
                   <input
@@ -456,15 +549,25 @@ export default function FormularioSection() {
                     value={formData.telefono}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                    className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      fontWeight: 500,
+                      color: '#152b86',
+                      borderColor: 'rgba(21, 43, 134, 0.15)',
+                      background: 'rgba(21, 43, 134, 0.03)'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                    onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                     placeholder="+58 424-000-0000"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
-                  <MapPin size={18} className="text-[#27eee7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
+                  style={{ fontWeight: 600, color: '#152b86' }}
+                >
+                  <MapPin size={18} style={{ color: '#27eee7' }} />
                   Ubicación de la Empresa *
                 </label>
                 <input
@@ -473,13 +576,23 @@ export default function FormularioSection() {
                   value={formData.ubicacion}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                   placeholder="Ciudad, Estado"
                 />
               </div>
 
               <div>
-                <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
+                <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
+                  style={{ fontWeight: 600, color: '#152b86' }}
+                >
                   Comentarios Adicionales (Opcional)
                 </label>
                 <textarea
@@ -487,7 +600,15 @@ export default function FormularioSection() {
                   value={formData.comentarios}
                   onChange={handleInputChange}
                   rows="3"
-                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all resize-none"
+                  className="w-full px-5 py-4 rounded-[14px] border-2 font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none transition-all resize-none"
+                  style={{ 
+                    fontWeight: 500,
+                    color: '#152b86',
+                    borderColor: 'rgba(21, 43, 134, 0.15)',
+                    background: 'rgba(21, 43, 134, 0.03)'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#27eee7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(21, 43, 134, 0.15)'}
                   placeholder="Información adicional que consideres relevante..."
                 />
               </div>
@@ -495,16 +616,23 @@ export default function FormularioSection() {
           )}
 
           {/* Botones de Navegación */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
+          <div className="flex justify-between items-center mt-10 pt-8 border-t"
+            style={{ borderColor: 'rgba(21, 43, 134, 0.1)' }}
+          >
             <button
               type="button"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] transition-all ${
+              className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-['Inter'] font-bold text-[14px] transition-all ${
                 currentStep === 1
                   ? 'opacity-0 pointer-events-none'
-                  : 'border-2 border-white/20 text-white hover:border-[#27eee7] hover:text-[#27eee7] hover:bg-white/5'
+                  : 'border-2 hover:-translate-x-1'
               }`}
+              style={{
+                borderColor: 'rgba(21, 43, 134, 0.2)',
+                color: '#152b86',
+                fontWeight: 600
+              }}
             >
               <ChevronLeft size={18} />
               Anterior
@@ -514,11 +642,12 @@ export default function FormularioSection() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-2xl transition-all"
                 style={{
-                  background: '#27eee7',
-                  color: '#152b86',
-                  boxShadow: '0 4px 20px rgba(39, 238, 231, 0.4)'
+                  background: '#152b86',
+                  color: 'white',
+                  boxShadow: '0 8px 24px rgba(21, 43, 134, 0.3)',
+                  fontWeight: 600
                 }}
               >
                 Siguiente
@@ -527,11 +656,12 @@ export default function FormularioSection() {
             ) : (
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-2xl transition-all"
                 style={{
                   background: '#27eee7',
                   color: '#152b86',
-                  boxShadow: '0 4px 20px rgba(39, 238, 231, 0.4)'
+                  boxShadow: '0 8px 24px rgba(39, 238, 231, 0.4)',
+                  fontWeight: 600
                 }}
               >
                 <CheckCircle2 size={18} />
