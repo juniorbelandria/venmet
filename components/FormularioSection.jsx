@@ -78,7 +78,8 @@ export default function FormularioSection() {
   return (
     <section 
       id="solicitud"
-      className="relative bg-gradient-to-b from-white via-gray-50 to-white py-[100px] px-[5%] overflow-hidden"
+      className="relative py-[100px] px-[5%] overflow-hidden"
+      style={{ background: '#27eee7' }}
     >
       {/* Noise Texture Overlay */}
       <div 
@@ -111,9 +112,9 @@ export default function FormularioSection() {
         <div className={`text-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <span className="inline-block px-5 py-2.5 rounded-full text-[13px] font-['Inter'] font-bold tracking-wide uppercase"
             style={{
-              background: '#152b86',
-              color: 'white',
-              boxShadow: '0 4px 20px rgba(21, 43, 134, 0.3)'
+              background: 'rgba(21, 43, 134, 0.15)',
+              color: '#152b86',
+              border: '2px solid rgba(21, 43, 134, 0.3)'
             }}
           >
             Solicita tu Servicio
@@ -132,7 +133,7 @@ export default function FormularioSection() {
             color: '#152b86'
           }}
         >
-          Solicita tu <span style={{ color: '#27eee7' }}>cotización gratis</span>
+          Solicita tu <span style={{ color: 'white' }}>cotización gratis</span>
         </h2>
 
         {/* Subtítulo */}
@@ -142,30 +143,31 @@ export default function FormularioSection() {
           style={{ 
             fontWeight: 500, 
             letterSpacing: '-0.01em',
-            color: 'rgba(10, 14, 26, 0.6)'
+            color: 'rgba(21, 43, 134, 0.8)'
           }}
         >
           Completa el formulario y recibe una respuesta personalizada en menos de 24 horas.
         </p>
 
         {/* Card contenedor para Stepper y Formulario */}
-        <div className={`bg-white rounded-[24px] p-8 md:p-10 transition-all duration-700 delay-300 ${
+        <div className={`rounded-[24px] p-8 md:p-10 transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}
           style={{
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04)'
+            background: '#152b86',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
           }}
         >
           {/* Stepper */}
           <div className="mb-10">
             <div className="flex justify-between items-center relative">
               {/* Línea de progreso */}
-              <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 -z-10">
+              <div className="absolute top-6 left-0 right-0 h-0.5 bg-white/20 -z-10">
                 <div 
                   className="h-full transition-all duration-500"
                   style={{ 
                     width: `${((currentStep - 1) / 3) * 100}%`,
-                    background: '#152b86'
+                    background: '#27eee7'
                   }}
                 />
               </div>
@@ -183,20 +185,20 @@ export default function FormularioSection() {
                       }`}
                       style={isCompleted || isActive ? {
                         background: '#27eee7',
-                        boxShadow: '0 6px 24px rgba(39, 238, 231, 0.4), 0 0 20px rgba(39, 238, 231, 0.2)'
+                        boxShadow: '0 6px 24px rgba(39, 238, 231, 0.5), 0 0 20px rgba(39, 238, 231, 0.3)'
                       } : {
-                        background: 'white',
-                        border: '2px solid #e5e7eb'
+                        background: 'rgba(255, 255, 255, 0.1)',
+                        border: '2px solid rgba(255, 255, 255, 0.2)'
                       }}
                     >
                       {isCompleted ? (
-                        <CheckCircle2 size={20} style={{ color: '#152b86' }} />
+                        <CheckCircle2 size={20} style={{ color: '#152b86' }} strokeWidth={2.5} />
                       ) : (
-                        <Icon size={20} style={{ color: isActive ? '#152b86' : '#9ca3af' }} />
+                        <Icon size={20} style={{ color: isActive ? '#152b86' : 'rgba(255, 255, 255, 0.5)' }} strokeWidth={2} />
                       )}
                     </div>
                     <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
-                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-[#0B1F3A]'
+                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-white/50'
                     }`}>
                       {step.title}
                     </p>
@@ -213,8 +215,8 @@ export default function FormularioSection() {
           {currentStep === 1 && (
             <div className="space-y-6 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2"
-                  style={{ color: '#0a0e1a', fontWeight: 600 }}
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2 text-white"
+                  style={{ fontWeight: 600 }}
                 >
                   <Building2 size={18} className="text-[#27eee7]" />
                   Nombre de la Empresa *
@@ -225,15 +227,15 @@ export default function FormularioSection() {
                   value={formData.nombreEmpresa}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 bg-white font-['Inter'] text-[15px] placeholder:text-gray-400 focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
-                  style={{ fontWeight: 500, color: '#0a0e1a' }}
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                  style={{ fontWeight: 500 }}
                   placeholder="Ej: Laboratorios Farmacéuticos XYZ"
                 />
               </div>
 
               <div>
-                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2"
-                  style={{ color: '#0a0e1a', fontWeight: 600 }}
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-2 text-white"
+                  style={{ fontWeight: 600 }}
                 >
                   <FileText size={18} className="text-[#27eee7]" />
                   Sector Industrial *
@@ -243,17 +245,17 @@ export default function FormularioSection() {
                   value={formData.sector}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 bg-white font-['Inter'] text-[15px] focus:outline-none focus:border-[#27eee7] focus:ring-2 focus:ring-[#27eee7]/20 transition-all"
-                  style={{ fontWeight: 500, color: '#0a0e1a' }}
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
+                  style={{ fontWeight: 500 }}
                 >
-                  <option value="">Selecciona tu sector</option>
-                  <option value="farmaceutica">Industria Farmacéutica</option>
-                  <option value="alimentaria">Sector Alimentario</option>
-                  <option value="quimica">Industria Química</option>
-                  <option value="manufactura">Manufactura</option>
-                  <option value="laboratorios">Laboratorios Clínicos</option>
-                  <option value="salud">Sector Salud</option>
-                  <option value="otro">Otro</option>
+                  <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona tu sector</option>
+                  <option value="farmaceutica" style={{ background: '#152b86', color: 'white' }}>Industria Farmacéutica</option>
+                  <option value="alimentaria" style={{ background: '#152b86', color: 'white' }}>Sector Alimentario</option>
+                  <option value="quimica" style={{ background: '#152b86', color: 'white' }}>Industria Química</option>
+                  <option value="manufactura" style={{ background: '#152b86', color: 'white' }}>Manufactura</option>
+                  <option value="laboratorios" style={{ background: '#152b86', color: 'white' }}>Laboratorios Clínicos</option>
+                  <option value="salud" style={{ background: '#152b86', color: 'white' }}>Sector Salud</option>
+                  <option value="otro" style={{ background: '#152b86', color: 'white' }}>Otro</option>
                 </select>
               </div>
             </div>
@@ -263,8 +265,8 @@ export default function FormularioSection() {
           {currentStep === 2 && (
             <div className="space-y-6 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                  <Package size={18} className="text-[#00C9A7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                  <Package size={18} className="text-[#27eee7]" />
                   Tipo de Equipos a Calibrar *
                 </label>
                 <textarea
@@ -273,14 +275,14 @@ export default function FormularioSection() {
                   onChange={handleInputChange}
                   required
                   rows="3"
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all resize-none"
                   placeholder="Ej: Balanzas analíticas, termómetros digitales, manómetros..."
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
                     Cantidad Aproximada *
                   </label>
                   <input
@@ -290,13 +292,13 @@ export default function FormularioSection() {
                     onChange={handleInputChange}
                     required
                     min="1"
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                     placeholder="Ej: 15"
                   />
                 </div>
 
                 <div>
-                  <label className="font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
                     Magnitud Principal *
                   </label>
                   <select
@@ -304,17 +306,17 @@ export default function FormularioSection() {
                     value={formData.magnitud}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                   >
-                    <option value="">Selecciona magnitud</option>
-                    <option value="temperatura-humedad">Temperatura y Humedad</option>
-                    <option value="temperatura">Temperatura</option>
-                    <option value="masa">Masa</option>
-                    <option value="volumen">Volumen</option>
-                    <option value="presion">Presión</option>
-                    <option value="tiempo">Tiempo</option>
-                    <option value="dimensional">Dimensional</option>
-                    <option value="fisico-quimico">Físico-Químico</option>
+                    <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona magnitud</option>
+                    <option value="temperatura-humedad" style={{ background: '#152b86', color: 'white' }}>Temperatura y Humedad</option>
+                    <option value="temperatura" style={{ background: '#152b86', color: 'white' }}>Temperatura</option>
+                    <option value="masa" style={{ background: '#152b86', color: 'white' }}>Masa</option>
+                    <option value="volumen" style={{ background: '#152b86', color: 'white' }}>Volumen</option>
+                    <option value="presion" style={{ background: '#152b86', color: 'white' }}>Presión</option>
+                    <option value="tiempo" style={{ background: '#152b86', color: 'white' }}>Tiempo</option>
+                    <option value="dimensional" style={{ background: '#152b86', color: 'white' }}>Dimensional</option>
+                    <option value="fisico-quimico" style={{ background: '#152b86', color: 'white' }}>Físico-Químico</option>
                   </select>
                 </div>
               </div>
@@ -325,8 +327,8 @@ export default function FormularioSection() {
           {currentStep === 3 && (
             <div className="space-y-6 animate-fadeInUp">
               <div>
-                <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                  <Calendar size={18} className="text-[#00C9A7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                  <Calendar size={18} className="text-[#27eee7]" />
                   ¿En qué plazo necesitas el servicio? *
                 </label>
                 <select
@@ -334,17 +336,17 @@ export default function FormularioSection() {
                   value={formData.plazo}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                 >
-                  <option value="">Selecciona el plazo</option>
-                  <option value="urgente">Urgente (1-3 días)</option>
-                  <option value="normal">Normal (4-7 días)</option>
-                  <option value="flexible">Flexible (más de 7 días)</option>
+                  <option value="" style={{ background: '#152b86', color: 'white' }}>Selecciona el plazo</option>
+                  <option value="urgente" style={{ background: '#152b86', color: 'white' }}>Urgente (1-3 días)</option>
+                  <option value="normal" style={{ background: '#152b86', color: 'white' }}>Normal (4-7 días)</option>
+                  <option value="flexible" style={{ background: '#152b86', color: 'white' }}>Flexible (más de 7 días)</option>
                 </select>
               </div>
 
               <div>
-                <label className="font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2 block">
+                <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
                   ¿Tienes una auditoría próxima? (Opcional)
                 </label>
                 <input
@@ -352,7 +354,7 @@ export default function FormularioSection() {
                   name="fechaAuditoria"
                   value={formData.fechaAuditoria}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                 />
               </div>
             </div>
@@ -363,8 +365,8 @@ export default function FormularioSection() {
             <div className="space-y-6 animate-fadeInUp">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                    <User size={18} className="text-[#00C9A7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                    <User size={18} className="text-[#27eee7]" />
                     Nombre Completo *
                   </label>
                   <input
@@ -373,13 +375,13 @@ export default function FormularioSection() {
                     value={formData.nombreContacto}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                     placeholder="Tu nombre"
                   />
                 </div>
 
                 <div>
-                  <label className="font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2 block">
+                  <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
                     Cargo *
                   </label>
                   <input
@@ -388,7 +390,7 @@ export default function FormularioSection() {
                     value={formData.cargo}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                     placeholder="Ej: Gerente de Calidad"
                   />
                 </div>
@@ -396,8 +398,8 @@ export default function FormularioSection() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                    <Mail size={18} className="text-[#00C9A7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                    <Mail size={18} className="text-[#27eee7]" />
                     Email *
                   </label>
                   <input
@@ -406,14 +408,14 @@ export default function FormularioSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                     placeholder="tu@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                    <Phone size={18} className="text-[#00C9A7]" />
+                  <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                    <Phone size={18} className="text-[#27eee7]" />
                     Teléfono *
                   </label>
                   <input
@@ -422,15 +424,15 @@ export default function FormularioSection() {
                     value={formData.telefono}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                    className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                     placeholder="+58 424-000-0000"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="flex items-center gap-2 font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2">
-                  <MapPin size={18} className="text-[#00C9A7]" />
+                <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] text-white mb-2">
+                  <MapPin size={18} className="text-[#27eee7]" />
                   Ubicación de la Empresa *
                 </label>
                 <input
@@ -439,13 +441,13 @@ export default function FormularioSection() {
                   value={formData.ubicacion}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all"
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all"
                   placeholder="Ciudad, Estado"
                 />
               </div>
 
               <div>
-                <label className="font-['Space_Grotesk'] font-semibold text-[14px] text-[#1A2B42] mb-2 block">
+                <label className="font-['Inter'] font-semibold text-[14px] text-white mb-2 block">
                   Comentarios Adicionales (Opcional)
                 </label>
                 <textarea
@@ -453,7 +455,7 @@ export default function FormularioSection() {
                   value={formData.comentarios}
                   onChange={handleInputChange}
                   rows="3"
-                  className="w-full px-4 py-3 rounded-[10px] border border-[#D0D5DD] font-['Inter'] text-[15px] focus:outline-none focus:border-[#00C9A7] focus:ring-2 focus:ring-[#00C9A7]/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-[10px] border-2 border-white/20 bg-white/10 font-['Inter'] text-[15px] text-white placeholder:text-white/50 focus:outline-none focus:border-[#27eee7] focus:bg-white/15 transition-all resize-none"
                   placeholder="Información adicional que consideres relevante..."
                 />
               </div>
@@ -461,7 +463,7 @@ export default function FormularioSection() {
           )}
 
           {/* Botones de Navegación */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
             <button
               type="button"
               onClick={prevStep}
@@ -469,9 +471,8 @@ export default function FormularioSection() {
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] transition-all ${
                 currentStep === 1
                   ? 'opacity-0 pointer-events-none'
-                  : 'border-2 border-gray-200 hover:border-[#27eee7] hover:text-[#27eee7]'
+                  : 'border-2 border-white/20 text-white hover:border-[#27eee7] hover:text-[#27eee7] hover:bg-white/5'
               }`}
-              style={{ color: '#0a0e1a' }}
             >
               <ChevronLeft size={18} />
               Anterior
@@ -481,11 +482,11 @@ export default function FormularioSection() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-xl transition-all"
                 style={{
-                  background: '#152b86',
-                  color: 'white',
-                  boxShadow: '0 4px 12px rgba(21, 43, 134, 0.3)'
+                  background: '#27eee7',
+                  color: '#152b86',
+                  boxShadow: '0 4px 20px rgba(39, 238, 231, 0.4)'
                 }}
               >
                 Siguiente
@@ -494,11 +495,11 @@ export default function FormularioSection() {
             ) : (
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-[10px] font-['Inter'] font-bold text-[14px] hover:-translate-y-0.5 hover:shadow-xl transition-all"
                 style={{
-                  background: '#152b86',
-                  color: 'white',
-                  boxShadow: '0 4px 12px rgba(21, 43, 134, 0.3)'
+                  background: '#27eee7',
+                  color: '#152b86',
+                  boxShadow: '0 4px 20px rgba(39, 238, 231, 0.4)'
                 }}
               >
                 <CheckCircle2 size={18} />
