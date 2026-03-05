@@ -117,7 +117,7 @@ export default function Footer() {
               </div>
               
               {/* Redes Sociales - Centradas */}
-              <div className="flex items-center justify-center lg:justify-center gap-4 mb-6">
+              <div className="flex items-center justify-center lg:justify-center gap-4 mb-8">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
@@ -161,21 +161,58 @@ export default function Footer() {
                 </a>
               </div>
 
-              {/* Contacto - En una sola línea centrado */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-center gap-3 text-white/70 text-[13px]"
-                style={{ fontWeight: 500 }}
-              >
-                <a href="tel:+584242049381" className="hover:text-[#27eee7] transition-colors whitespace-nowrap">
-                  +58 0424-204.93.81
-                </a>
-                <span className="text-white/30">•</span>
-                <a href="mailto:info@venmet.com.ve" className="hover:text-[#27eee7] transition-colors whitespace-nowrap">
-                  info@venmet.com.ve
-                </a>
-                <span className="text-white/30">•</span>
-                <span className="whitespace-nowrap">
-                  Urb. El Marqués, Miranda, Caracas, Venezuela
-                </span>
+              {/* Contacto - En 3 columnas con iconos */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                {/* Teléfono */}
+                <div>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
+                    <Phone size={18} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
+                    style={{ fontWeight: 600 }}
+                  >
+                    Teléfono
+                  </p>
+                  <a href="tel:+584242049381" className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] transition-colors block"
+                    style={{ fontWeight: 500 }}
+                  >
+                    +58 0424-204.93.81
+                  </a>
+                </div>
+
+                {/* Ubicación */}
+                <div>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
+                    <MapPin size={18} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
+                    style={{ fontWeight: 600 }}
+                  >
+                    Ubicación
+                  </p>
+                  <p className="font-['Inter'] text-[13px] text-white/70 leading-relaxed"
+                    style={{ fontWeight: 500 }}
+                  >
+                    Urb. El Marqués, Miranda<br />Caracas, Venezuela
+                  </p>
+                </div>
+
+                {/* Web */}
+                <div>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
+                    <Mail size={18} className="text-[#27eee7]" strokeWidth={2} />
+                  </div>
+                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
+                    style={{ fontWeight: 600 }}
+                  >
+                    Web
+                  </p>
+                  <a href="mailto:info@venmet.com.ve" className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] transition-colors block"
+                    style={{ fontWeight: 500 }}
+                  >
+                    info@venmet.com.ve
+                  </a>
+                </div>
               </div>
             </div>
 
