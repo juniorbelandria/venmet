@@ -218,8 +218,8 @@ export default function ProblemSection() {
                   height={1000}
                   className="w-full h-auto object-contain"
                   style={{
-                    maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
+                    maskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)',
                     maskSize: '100% 100%',
                     WebkitMaskSize: '100% 100%',
                     maskRepeat: 'no-repeat',
