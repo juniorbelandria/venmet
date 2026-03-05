@@ -117,7 +117,7 @@ export default function Footer() {
               </div>
               
               {/* Redes Sociales */}
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="flex items-center justify-center lg:justify-start gap-3">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
@@ -159,66 +159,6 @@ export default function Footer() {
                 >
                   <Instagram size={20} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
-              </div>
-
-              {/* Contacto - Lista vertical compacta */}
-              <div className="space-y-3 text-center lg:text-left">
-                {/* Teléfono */}
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
-                    <Phone size={16} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
-                      style={{ fontWeight: 600 }}
-                    >
-                      Teléfono
-                    </p>
-                    <a href="tel:+584242049381" className="font-['Inter'] text-[13px] text-white/80 hover:text-[#27eee7] transition-colors"
-                      style={{ fontWeight: 500 }}
-                    >
-                      +58 0424-204.93.81
-                    </a>
-                  </div>
-                </div>
-
-                {/* Ubicación */}
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
-                    <MapPin size={16} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
-                      style={{ fontWeight: 600 }}
-                    >
-                      Ubicación
-                    </p>
-                    <p className="font-['Inter'] text-[13px] text-white/80 leading-snug"
-                      style={{ fontWeight: 500 }}
-                    >
-                      Urb. El Marqués, Miranda<br />Caracas, Venezuela
-                    </p>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
-                    <Mail size={16} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
-                      style={{ fontWeight: 600 }}
-                    >
-                      Email
-                    </p>
-                    <a href="mailto:info@venmet.com.ve" className="font-['Inter'] text-[13px] text-white/80 hover:text-[#27eee7] transition-colors"
-                      style={{ fontWeight: 500 }}
-                    >
-                      info@venmet.com.ve
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -284,8 +224,70 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Contacto - Barra horizontal */}
+        <div className="py-6 border-t border-white/10">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Teléfono */}
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                <Phone size={18} className="text-[#27eee7]" strokeWidth={2} />
+              </div>
+              <div className="text-left">
+                <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                  style={{ fontWeight: 600 }}
+                >
+                  Teléfono
+                </p>
+                <a href="tel:+584242049381" className="font-['Inter'] text-[14px] text-white/90 hover:text-[#27eee7] transition-colors"
+                  style={{ fontWeight: 500 }}
+                >
+                  +58 0424-204.93.81
+                </a>
+              </div>
+            </div>
+
+            {/* Ubicación */}
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                <MapPin size={18} className="text-[#27eee7]" strokeWidth={2} />
+              </div>
+              <div className="text-left">
+                <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                  style={{ fontWeight: 600 }}
+                >
+                  Ubicación
+                </p>
+                <p className="font-['Inter'] text-[14px] text-white/90 leading-tight"
+                  style={{ fontWeight: 500 }}
+                >
+                  Urb. El Marqués, Miranda Caracas, Venezuela
+                </p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                <Mail size={18} className="text-[#27eee7]" strokeWidth={2} />
+              </div>
+              <div className="text-left">
+                <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                  style={{ fontWeight: 600 }}
+                >
+                  Email
+                </p>
+                <a href="mailto:info@venmet.com.ve" className="font-['Inter'] text-[14px] text-white/90 hover:text-[#27eee7] transition-colors"
+                  style={{ fontWeight: 500 }}
+                >
+                  info@venmet.com.ve
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="py-5 border-t border-white/10">
+        <div className="py-4 border-t border-white/10">
           <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
             {/* Copyright */}
@@ -295,7 +297,7 @@ export default function Footer() {
               © {currentYear} Venezolana de Metrología C.A. Todos los derechos reservados.
             </p>
 
-            {/* Certificaciones - Más prominentes */}
+            {/* Certificaciones */}
             <div className="flex items-center gap-3">
               <span className="font-['Inter'] text-[11px] text-white/40" style={{ fontWeight: 500 }}>Certificado por:</span>
               <div className="flex items-center gap-2">
