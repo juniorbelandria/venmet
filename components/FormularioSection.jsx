@@ -148,64 +148,97 @@ export default function FormularioSection() {
           Completa el formulario y recibe una respuesta personalizada en menos de 24 horas.
         </p>
 
-        {/* Card contenedor para Stepper y Formulario */}
-        <div className={`rounded-[24px] p-8 md:p-10 transition-all duration-700 delay-300 ${
+        {/* Grid Layout: Pasos a la izquierda, Formulario a la derecha */}
+        <div className={`grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        }`}
-          style={{
-            background: '#152b86',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
-          }}
-        >
-          {/* Stepper */}
-          <div className="mb-10">
-            <div className="flex justify-between items-center relative">
-              {/* Línea de progreso */}
-              <div className="absolute top-6 left-0 right-0 h-0.5 bg-white/20 -z-10">
+        }`}>
+          
+          {/* Columna Izquierda - Pasos con Descripciones */}
+          <div className="space-y-6">
+            {steps.map((step) => {
+              const Icon = step.icon
+              const isActive = currentStep === step.number
+              const isCompleted = currentStep > step.number
+              
+              const descriptions = {
+                1: 'Cuéntanos sobre tu empresa y el sector en el que operas',
+                2: 'Especifica qué equipos necesitas calibrar y en qué cantidad',
+                3: 'Indícanos cuándo necesitas el servicio y si tienes auditorías próximas',
+                4: 'Déjanos tus datos para enviarte la cotización personalizada'
+              }
+
+              return (
                 <div 
-                  className="h-full transition-all duration-500"
-                  style={{ 
-                    width: `${((currentStep - 1) / 3) * 100}%`,
-                    background: '#27eee7'
+                  key={step.number}
+                  className={`flex gap-4 p-6 rounded-2xl transition-all duration-500 ${
+                    isActive ? 'scale-105' : 'scale-100'
+                  }`}
+                  style={{
+                    background: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.3)',
+                    border: isActive ? '2px solid #27eee7' : '2px solid transparent',
+                    boxShadow: isActive ? '0 8px 32px rgba(39, 238, 231, 0.3)' : 'none'
                   }}
-                />
-              </div>
+                >
+                  {/* Icono */}
+                  <div 
+                    className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300"
+                    style={{
+                      background: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.1)',
+                      boxShadow: isActive || isCompleted ? '0 4px 16px rgba(39, 238, 231, 0.4)' : 'none'
+                    }}
+                  >
+                    {isCompleted ? (
+                      <CheckCircle2 size={24} style={{ color: '#152b86' }} strokeWidth={2.5} />
+                    ) : (
+                      <Icon size={24} style={{ color: isActive || isCompleted ? '#152b86' : 'rgba(255, 255, 255, 0.5)' }} strokeWidth={2} />
+                    )}
+                  </div>
 
-              {steps.map((step) => {
-                const Icon = step.icon
-                const isActive = currentStep === step.number
-                const isCompleted = currentStep > step.number
-
-                return (
-                  <div key={step.number} className="flex flex-col items-center">
-                    <div 
-                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        isCompleted || isActive ? 'scale-110' : 'scale-100'
-                      }`}
-                      style={isCompleted || isActive ? {
-                        background: '#27eee7',
-                        boxShadow: '0 6px 24px rgba(39, 238, 231, 0.5), 0 0 20px rgba(39, 238, 231, 0.3)'
-                      } : {
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        border: '2px solid rgba(255, 255, 255, 0.2)'
+                  {/* Contenido */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span 
+                        className="font-['Inter'] text-[12px] font-bold px-2 py-0.5 rounded"
+                        style={{
+                          background: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.1)',
+                          color: isActive || isCompleted ? '#152b86' : 'rgba(255, 255, 255, 0.5)'
+                        }}
+                      >
+                        PASO {step.number}
+                      </span>
+                    </div>
+                    <h3 
+                      className="font-['Inter'] font-bold text-[18px] mb-2"
+                      style={{ 
+                        color: isActive || isCompleted ? '#27eee7' : 'rgba(255, 255, 255, 0.7)',
+                        fontWeight: 600 
                       }}
                     >
-                      {isCompleted ? (
-                        <CheckCircle2 size={20} style={{ color: '#152b86' }} strokeWidth={2.5} />
-                      ) : (
-                        <Icon size={20} style={{ color: isActive ? '#152b86' : 'rgba(255, 255, 255, 0.5)' }} strokeWidth={2} />
-                      )}
-                    </div>
-                    <p className={`font-['Inter'] font-semibold text-[12px] mt-2 ${
-                      isActive || isCompleted ? 'text-[#27eee7]' : 'text-white/50'
-                    }`}>
                       {step.title}
+                    </h3>
+                    <p 
+                      className="font-['Inter'] text-[14px] leading-relaxed"
+                      style={{ 
+                        color: isActive || isCompleted ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.5)',
+                        fontWeight: 500 
+                      }}
+                    >
+                      {descriptions[step.number]}
                     </p>
                   </div>
-                )
-              })}
-            </div>
+                </div>
+              )
+            })}
           </div>
+
+          {/* Columna Derecha - Formulario */}
+          <div 
+            className="rounded-[24px] p-8 md:p-10 sticky top-8"
+            style={{
+              background: '#152b86',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1)'
+            }}
+          >
 
           {/* Formulario */}
           <form onSubmit={handleSubmit}>
@@ -507,6 +540,7 @@ export default function FormularioSection() {
             )}
           </div>
         </form>
+          </div>
         </div>
       </div>
     </section>
