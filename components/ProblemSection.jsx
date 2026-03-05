@@ -67,18 +67,6 @@ export default function ProblemSection() {
         }}
       />
 
-      {/* Grid Pattern ROJO Visible */}
-      <div 
-        className="absolute inset-0 opacity-[0.25]" 
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,107,107,0.3) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(255,107,107,0.3) 2px, transparent 2px)
-          `,
-          backgroundSize: '25px 25px'
-        }} 
-      />
-
       {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#ff6b6b]/12 rounded-full blur-3xl"></div>
@@ -221,16 +209,23 @@ export default function ProblemSection() {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="relative">
-              {/* Main Image - No background, no card */}
+              {/* Main Image con efecto de desvanecimiento */}
               <div className="relative">
-                <Image
-                  src="/images/PERSONA.png"
-                  alt="Profesional preocupado por calibración"
-                  width={900}
-                  height={1000}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
+                <div className="relative">
+                  <Image
+                    src="/images/PERSONA.png"
+                    alt="Profesional preocupado por calibración"
+                    width={900}
+                    height={1000}
+                    className="w-full h-auto object-contain"
+                    priority
+                  />
+                  {/* Gradient fade en la parte inferior */}
+                  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
+                  {/* Gradient fade en los lados */}
+                  <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/50 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
+                </div>
               </div>
 
               {/* Professional Floating Problem Badges */}
