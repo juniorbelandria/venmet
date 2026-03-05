@@ -81,30 +81,29 @@ export default function FormularioSection() {
       className="relative py-[100px] px-[5%] overflow-hidden"
       style={{ background: '#27eee7' }}
     >
-      {/* Noise Texture Overlay */}
+      {/* Imagen de fondo con overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulance type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+          backgroundImage: 'url("/images/solicita.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
 
-      {/* Grid Pattern AZUL OSCURO */}
+      {/* Overlay oscuro para mejor contraste */}
       <div 
-        className="absolute inset-0 opacity-[0.15]" 
+        className="absolute inset-0"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(11,31,58,0.5) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(11,31,58,0.5) 2px, transparent 2px)
-          `,
-          backgroundSize: '25px 25px'
-        }} 
+          background: 'linear-gradient(135deg, rgba(39, 238, 231, 0.85) 0%, rgba(39, 238, 231, 0.75) 100%)'
+        }}
       />
 
       {/* Glassmorphism Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#27eee7]/12 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#152b86]/15 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-[900px] mx-auto relative z-10">
