@@ -94,7 +94,7 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-1-${index}`}
-                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  className="flex-shrink-0 mx-4 flex items-center justify-center group"
                   style={{ width: '280px', height: '140px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
@@ -117,7 +117,7 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-2-${index}`}
-                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  className="flex-shrink-0 mx-4 flex items-center justify-center group"
                   style={{ width: '280px', height: '140px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
