@@ -83,7 +83,7 @@ export default function FormularioSection() {
     >
       {/* Imagen de fondo con overlay */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-40"
         style={{
           backgroundImage: 'url("/images/solicita.png")',
           backgroundSize: 'cover',
@@ -96,7 +96,7 @@ export default function FormularioSection() {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, rgba(39, 238, 231, 0.85) 0%, rgba(39, 238, 231, 0.75) 100%)'
+          background: 'linear-gradient(135deg, rgba(39, 238, 231, 0.7) 0%, rgba(39, 238, 231, 0.6) 100%)'
         }}
       />
 
