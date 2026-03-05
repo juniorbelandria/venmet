@@ -18,18 +18,12 @@ export default function SocialBar() {
       icon: Instagram,
       url: 'https://instagram.com/venmet',
       color: '#E4405F'
-    },
-    {
-      name: 'WhatsApp',
-      icon: 'whatsapp',
-      url: 'https://wa.me/584242049381',
-      color: '#25D366'
     }
   ]
 
   return (
     <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {socialLinks.map((social) => {
           const Icon = social.icon
           const isHovered = hoveredIcon === social.name
@@ -65,7 +59,7 @@ export default function SocialBar() {
                 rel="noopener noreferrer"
                 onMouseEnter={() => setHoveredIcon(social.name)}
                 onMouseLeave={() => setHoveredIcon(null)}
-                className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 hover:scale-110"
+                className="flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 hover:scale-110"
                 style={{
                   background: '#152b86',
                   boxShadow: isHovered 
@@ -79,7 +73,7 @@ export default function SocialBar() {
                   </svg>
                 ) : (
                   <Icon 
-                    size={22} 
+                    size={24} 
                     strokeWidth={2}
                     style={{ color: '#27eee7' }}
                   />
