@@ -114,13 +114,13 @@ export default function Footer() {
                 +20 años brindando servicios de calibración con trazabilidad garantizada.
               </p>
               
-              {/* Redes Sociales */}
-              <div className="flex items-center gap-3 mb-6">
+              {/* Redes Sociales - Más grandes y centradas */}
+              <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
+                  className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
                     background: 'rgba(39, 238, 231, 0.1)',
                     border: '1px solid rgba(39, 238, 231, 0.2)'
@@ -134,14 +134,14 @@ export default function Footer() {
                     e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Facebook size={16} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Facebook size={22} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
 
                 <a 
                   href="https://instagram.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
+                  className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
                     background: 'rgba(39, 238, 231, 0.1)',
                     border: '1px solid rgba(39, 238, 231, 0.2)'
@@ -155,32 +155,25 @@ export default function Footer() {
                     e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Instagram size={16} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Instagram size={22} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
               </div>
 
-              {/* Contacto */}
-              <div className="space-y-3">
-                <a href="tel:+584242049381" className="flex items-center gap-2.5 text-white/70 hover:text-[#27eee7] transition-colors group">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 group-hover:bg-[#27eee7]/20 transition-colors">
-                    <Phone size={14} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <span className="font-['Inter'] text-[13px]" style={{ fontWeight: 500 }}>+58 0424-204.93.81</span>
+              {/* Contacto - En una sola línea centrado */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/70 text-[13px]"
+                style={{ fontWeight: 500 }}
+              >
+                <a href="tel:+584242049381" className="hover:text-[#27eee7] transition-colors">
+                  +58 0424-204.93.81
                 </a>
-                <a href="mailto:info@venmet.com.ve" className="flex items-center gap-2.5 text-white/70 hover:text-[#27eee7] transition-colors group">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 group-hover:bg-[#27eee7]/20 transition-colors">
-                    <Mail size={14} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <span className="font-['Inter'] text-[13px]" style={{ fontWeight: 500 }}>info@venmet.com.ve</span>
+                <span className="text-white/30">•</span>
+                <a href="mailto:info@venmet.com.ve" className="hover:text-[#27eee7] transition-colors">
+                  info@venmet.com.ve
                 </a>
-                <div className="flex items-start gap-2.5 text-white/70">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
-                    <MapPin size={14} className="text-[#27eee7]" strokeWidth={2} />
-                  </div>
-                  <p className="font-['Inter'] text-[13px] leading-relaxed pt-1" style={{ fontWeight: 500 }}>
-                    Urb. El Marqués, Miranda, Caracas, Venezuela
-                  </p>
-                </div>
+                <span className="text-white/30">•</span>
+                <span>
+                  Urb. El Marqués, Miranda, Caracas, Venezuela
+                </span>
               </div>
             </div>
 
