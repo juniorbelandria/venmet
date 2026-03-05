@@ -209,23 +209,20 @@ export default function ProblemSection() {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="relative">
-              {/* Main Image con efecto de desvanecimiento */}
+              {/* Main Image con mask-image profesional */}
               <div className="relative">
-                <div className="relative">
-                  <Image
-                    src="/images/PERSONA.png"
-                    alt="Profesional preocupado por calibración"
-                    width={900}
-                    height={1000}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                  {/* Gradient fade en la parte inferior */}
-                  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
-                  {/* Gradient fade en los lados */}
-                  <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/50 to-transparent pointer-events-none"></div>
-                  <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
-                </div>
+                <Image
+                  src="/images/PERSONA.png"
+                  alt="Profesional preocupado por calibración"
+                  width={900}
+                  height={1000}
+                  className="w-full h-auto object-contain"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)'
+                  }}
+                  priority
+                />
               </div>
 
               {/* Professional Floating Problem Badges */}
