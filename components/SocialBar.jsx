@@ -62,9 +62,7 @@ export default function SocialBar() {
                 className="flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 hover:scale-110"
                 style={{
                   background: '#152b86',
-                  boxShadow: isHovered 
-                    ? '0 6px 24px rgba(39, 238, 231, 0.5), 0 0 20px rgba(39, 238, 231, 0.3)' 
-                    : '0 4px 12px rgba(21, 43, 134, 0.3)'
+                  boxShadow: '0 6px 24px rgba(39, 238, 231, 0.5), 0 0 20px rgba(39, 238, 231, 0.3)'
                 }}
               >
                 {social.icon === 'whatsapp' ? (
