@@ -41,7 +41,7 @@ export default function ClientLogos() {
   return (
     <section 
       id="client-logos"
-      className="relative py-24 px-[5%] overflow-hidden bg-white"
+      className="relative py-20 px-[5%] overflow-hidden bg-white"
     >
       {/* Subtle background pattern */}
       <div 
@@ -84,8 +84,8 @@ export default function ClientLogos() {
         {/* Infinite Slider Container */}
         <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           {/* Gradient Overlays para efecto fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           {/* Slider Track */}
           <div className="flex overflow-hidden">
@@ -94,20 +94,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-1-${index}`}
-                  className="flex-shrink-0 mx-20 flex items-center justify-center group"
-                  style={{ width: '480px', height: '240px' }}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  style={{ width: '280px', height: '140px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={480}
-                      height={240}
+                      width={280}
+                      height={140}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '480px',
-                        maxHeight: '240px'
+                        maxWidth: '280px',
+                        maxHeight: '140px'
                       }}
                     />
                   </div>
@@ -117,20 +117,20 @@ export default function ClientLogos() {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-2-${index}`}
-                  className="flex-shrink-0 mx-20 flex items-center justify-center group"
-                  style={{ width: '480px', height: '240px' }}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center group"
+                  style={{ width: '280px', height: '140px' }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={logo}
                       alt={`Cliente ${index + 1}`}
-                      width={480}
-                      height={240}
+                      width={280}
+                      height={140}
                       className="object-contain transition-all duration-300 logo-grayscale"
                       style={{
                         filter: 'grayscale(100%) brightness(1.2) contrast(0.9) opacity(0.6)',
-                        maxWidth: '480px',
-                        maxHeight: '240px'
+                        maxWidth: '280px',
+                        maxHeight: '140px'
                       }}
                     />
                   </div>
