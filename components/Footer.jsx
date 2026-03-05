@@ -51,20 +51,20 @@ export default function Footer() {
 
       <div className="max-w-[1400px] mx-auto relative z-10 px-[5%]">
         
-        {/* CTA Section - Más prominente */}
-        <div className="py-16 border-b border-white/10">
-          <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* CTA Section */}
+        <div className="py-10 border-b border-white/10">
+          <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left max-w-[600px]">
-              <h3 className="font-['Inter'] font-bold text-white mb-3"
+              <h3 className="font-['Inter'] font-bold text-white mb-2"
                 style={{ 
-                  fontSize: 'clamp(24px, 3vw, 32px)',
+                  fontSize: 'clamp(22px, 2.5vw, 28px)',
                   letterSpacing: '-0.02em',
                   lineHeight: '1.2'
                 }}
               >
                 ¿Necesitas calibrar tus equipos?
               </h3>
-              <p className="font-['Inter'] text-[16px] text-white/70 leading-relaxed"
+              <p className="font-['Inter'] text-[15px] text-white/70 leading-relaxed"
                 style={{ fontWeight: 500 }}
               >
                 Obtén tu cotización gratis en menos de 24 horas
@@ -74,7 +74,7 @@ export default function Footer() {
               href="https://wa.me/584242049381"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-['Inter'] font-semibold text-[15px] hover:scale-105 transition-all group overflow-hidden whitespace-nowrap"
+              className="relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-['Inter'] font-semibold text-[15px] hover:scale-105 transition-all group overflow-hidden whitespace-nowrap"
               style={{
                 background: '#27eee7',
                 color: '#152b86',
@@ -96,8 +96,8 @@ export default function Footer() {
         </div>
 
         {/* Main Content - Grid optimizado */}
-        <div className="py-16">
-          <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="py-12">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
             
             {/* Logo y Descripción - 4 columnas */}
             <div className="lg:col-span-4">
@@ -105,24 +105,24 @@ export default function Footer() {
                 <Image
                   src="/images/FOOTER.png"
                   alt="VENMET Logo"
-                  width={140}
-                  height={46}
-                  className="h-auto mb-5 mx-auto lg:mx-0"
+                  width={130}
+                  height={43}
+                  className="h-auto mb-4 mx-auto lg:mx-0"
                 />
-                <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-8"
+                <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-6"
                   style={{ fontWeight: 500 }}
                 >
                   +20 años brindando servicios de calibración con trazabilidad garantizada.
                 </p>
               </div>
               
-              {/* Redes Sociales - Centradas */}
-              <div className="flex items-center justify-center lg:justify-center gap-4 mb-8">
+              {/* Redes Sociales */}
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
+                  className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
                     background: 'rgba(39, 238, 231, 0.1)',
                     border: '1px solid rgba(39, 238, 231, 0.2)'
@@ -136,14 +136,14 @@ export default function Footer() {
                     e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Facebook size={22} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Facebook size={20} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
 
                 <a 
                   href="https://instagram.com/venmet" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group hover:scale-110"
+                  className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-300 group hover:scale-110"
                   style={{
                     background: 'rgba(39, 238, 231, 0.1)',
                     border: '1px solid rgba(39, 238, 231, 0.2)'
@@ -157,61 +157,67 @@ export default function Footer() {
                     e.currentTarget.style.borderColor = 'rgba(39, 238, 231, 0.2)'
                   }}
                 >
-                  <Instagram size={22} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
+                  <Instagram size={20} className="text-white group-hover:text-[#152b86] transition-colors" strokeWidth={2} />
                 </a>
               </div>
 
-              {/* Contacto - En 3 columnas con iconos */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              {/* Contacto - Lista vertical compacta */}
+              <div className="space-y-3 text-center lg:text-left">
                 {/* Teléfono */}
-                <div>
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
-                    <Phone size={18} className="text-[#27eee7]" strokeWidth={2} />
+                <div className="flex items-center justify-center lg:justify-start gap-3">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                    <Phone size={16} className="text-[#27eee7]" strokeWidth={2} />
                   </div>
-                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Teléfono
-                  </p>
-                  <a href="tel:+584242049381" className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] transition-colors block"
-                    style={{ fontWeight: 500 }}
-                  >
-                    +58 0424-204.93.81
-                  </a>
+                  <div className="text-left">
+                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                      style={{ fontWeight: 600 }}
+                    >
+                      Teléfono
+                    </p>
+                    <a href="tel:+584242049381" className="font-['Inter'] text-[13px] text-white/80 hover:text-[#27eee7] transition-colors"
+                      style={{ fontWeight: 500 }}
+                    >
+                      +58 0424-204.93.81
+                    </a>
+                  </div>
                 </div>
 
                 {/* Ubicación */}
-                <div>
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
-                    <MapPin size={18} className="text-[#27eee7]" strokeWidth={2} />
+                <div className="flex items-center justify-center lg:justify-start gap-3">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                    <MapPin size={16} className="text-[#27eee7]" strokeWidth={2} />
                   </div>
-                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Ubicación
-                  </p>
-                  <p className="font-['Inter'] text-[13px] text-white/70 leading-relaxed"
-                    style={{ fontWeight: 500 }}
-                  >
-                    Urb. El Marqués, Miranda<br />Caracas, Venezuela
-                  </p>
+                  <div className="text-left">
+                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                      style={{ fontWeight: 600 }}
+                    >
+                      Ubicación
+                    </p>
+                    <p className="font-['Inter'] text-[13px] text-white/80 leading-snug"
+                      style={{ fontWeight: 500 }}
+                    >
+                      Urb. El Marqués, Miranda<br />Caracas, Venezuela
+                    </p>
+                  </div>
                 </div>
 
-                {/* Web */}
-                <div>
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#27eee7]/10 mx-auto mb-3">
-                    <Mail size={18} className="text-[#27eee7]" strokeWidth={2} />
+                {/* Email */}
+                <div className="flex items-center justify-center lg:justify-start gap-3">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#27eee7]/10 flex-shrink-0">
+                    <Mail size={16} className="text-[#27eee7]" strokeWidth={2} />
                   </div>
-                  <p className="font-['Inter'] text-[11px] text-white/50 uppercase tracking-wider mb-1"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Web
-                  </p>
-                  <a href="mailto:info@venmet.com.ve" className="font-['Inter'] text-[13px] text-white/70 hover:text-[#27eee7] transition-colors block"
-                    style={{ fontWeight: 500 }}
-                  >
-                    info@venmet.com.ve
-                  </a>
+                  <div className="text-left">
+                    <p className="font-['Inter'] text-[10px] text-white/50 uppercase tracking-wider mb-0.5"
+                      style={{ fontWeight: 600 }}
+                    >
+                      Email
+                    </p>
+                    <a href="mailto:info@venmet.com.ve" className="font-['Inter'] text-[13px] text-white/80 hover:text-[#27eee7] transition-colors"
+                      style={{ fontWeight: 500 }}
+                    >
+                      info@venmet.com.ve
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -278,8 +284,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar - Más elegante */}
-        <div className="py-6 border-t border-white/10">
+        {/* Bottom Bar */}
+        <div className="py-5 border-t border-white/10">
           <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
             {/* Copyright */}
