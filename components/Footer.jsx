@@ -101,21 +101,23 @@ export default function Footer() {
             
             {/* Logo y Descripción - 4 columnas */}
             <div className="lg:col-span-4">
-              <Image
-                src="/images/FOOTER.png"
-                alt="VENMET Logo"
-                width={140}
-                height={46}
-                className="h-auto mb-5"
-              />
-              <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-6"
-                style={{ fontWeight: 500, maxWidth: '320px' }}
-              >
-                +20 años brindando servicios de calibración con trazabilidad garantizada.
-              </p>
+              <div className="text-center lg:text-left">
+                <Image
+                  src="/images/FOOTER.png"
+                  alt="VENMET Logo"
+                  width={140}
+                  height={46}
+                  className="h-auto mb-5 mx-auto lg:mx-0"
+                />
+                <p className="font-['Inter'] text-[14px] text-white/70 leading-relaxed mb-8"
+                  style={{ fontWeight: 500 }}
+                >
+                  +20 años brindando servicios de calibración con trazabilidad garantizada.
+                </p>
+              </div>
               
-              {/* Redes Sociales - Más grandes y centradas */}
-              <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
+              {/* Redes Sociales - Centradas */}
+              <div className="flex items-center justify-center lg:justify-center gap-4 mb-6">
                 <a 
                   href="https://facebook.com/venmet" 
                   target="_blank" 
@@ -160,18 +162,18 @@ export default function Footer() {
               </div>
 
               {/* Contacto - En una sola línea centrado */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/70 text-[13px]"
+              <div className="flex flex-wrap items-center justify-center lg:justify-center gap-3 text-white/70 text-[13px]"
                 style={{ fontWeight: 500 }}
               >
-                <a href="tel:+584242049381" className="hover:text-[#27eee7] transition-colors">
+                <a href="tel:+584242049381" className="hover:text-[#27eee7] transition-colors whitespace-nowrap">
                   +58 0424-204.93.81
                 </a>
                 <span className="text-white/30">•</span>
-                <a href="mailto:info@venmet.com.ve" className="hover:text-[#27eee7] transition-colors">
+                <a href="mailto:info@venmet.com.ve" className="hover:text-[#27eee7] transition-colors whitespace-nowrap">
                   info@venmet.com.ve
                 </a>
                 <span className="text-white/30">•</span>
-                <span>
+                <span className="whitespace-nowrap">
                   Urb. El Marqués, Miranda, Caracas, Venezuela
                 </span>
               </div>
