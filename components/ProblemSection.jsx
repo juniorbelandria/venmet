@@ -209,7 +209,7 @@ export default function ProblemSection() {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="relative">
-              {/* Main Image con mask-image profesional */}
+              {/* Main Image con mask-image profesional y suave */}
               <div className="relative">
                 <Image
                   src="/images/PERSONA.png"
@@ -218,8 +218,12 @@ export default function ProblemSection() {
                   height={1000}
                   className="w-full h-auto object-contain"
                   style={{
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)'
+                    maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
+                    maskSize: '100% 100%',
+                    WebkitMaskSize: '100% 100%',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskRepeat: 'no-repeat'
                   }}
                   priority
                 />
