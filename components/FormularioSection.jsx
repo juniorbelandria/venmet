@@ -149,12 +149,12 @@ export default function FormularioSection() {
         </p>
 
         {/* Grid Layout: Pasos a la izquierda, Formulario a la derecha */}
-        <div className={`grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start transition-all duration-700 delay-300 ${
+        <div className={`grid lg:grid-cols-[1.2fr_1.8fr] gap-20 xl:gap-28 items-start transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}>
           
           {/* Columna Izquierda - Pasos Minimalistas */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {steps.map((step) => {
               const Icon = step.icon
               const isActive = currentStep === step.number
@@ -176,25 +176,25 @@ export default function FormularioSection() {
                 >
                   {/* Icono Circular Minimalista */}
                   <div 
-                    className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300"
+                    className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300"
                     style={{
                       background: isActive ? '#152b86' : isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.2)',
                       border: isActive ? '3px solid #27eee7' : '3px solid transparent',
-                      boxShadow: isActive ? '0 0 0 6px rgba(39, 238, 231, 0.15)' : 'none'
+                      boxShadow: isActive ? '0 0 0 8px rgba(39, 238, 231, 0.15)' : 'none'
                     }}
                   >
                     {isCompleted ? (
-                      <CheckCircle2 size={28} style={{ color: '#27eee7' }} strokeWidth={2.5} />
+                      <CheckCircle2 size={32} style={{ color: '#27eee7' }} strokeWidth={2.5} />
                     ) : (
-                      <Icon size={28} style={{ color: isActive ? '#27eee7' : 'rgba(21, 43, 134, 0.4)' }} strokeWidth={2} />
+                      <Icon size={32} style={{ color: isActive ? '#27eee7' : 'rgba(21, 43, 134, 0.4)' }} strokeWidth={2} />
                     )}
                   </div>
 
                   {/* Contenido */}
-                  <div className="flex-1 pt-1">
-                    <div className="flex items-center gap-2 mb-2">
+                  <div className="flex-1 pt-2">
+                    <div className="flex items-center gap-2 mb-3">
                       <span 
-                        className="font-['Inter'] text-[11px] font-bold tracking-wider"
+                        className="font-['Inter'] text-[12px] font-bold tracking-wider"
                         style={{
                           color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)'
                         }}
@@ -203,7 +203,7 @@ export default function FormularioSection() {
                       </span>
                     </div>
                     <h3 
-                      className="font-['Inter'] font-bold text-[22px] mb-2 leading-tight"
+                      className="font-['Inter'] font-bold text-[26px] mb-3 leading-tight"
                       style={{ 
                         color: isActive || isCompleted ? '#152b86' : 'rgba(21, 43, 134, 0.5)',
                         fontWeight: 700 
@@ -212,7 +212,7 @@ export default function FormularioSection() {
                       {step.title}
                     </h3>
                     <p 
-                      className="font-['Inter'] text-[15px] leading-relaxed"
+                      className="font-['Inter'] text-[16px] leading-relaxed"
                       style={{ 
                         color: isActive || isCompleted ? 'rgba(21, 43, 134, 0.8)' : 'rgba(21, 43, 134, 0.4)',
                         fontWeight: 500 
@@ -228,7 +228,7 @@ export default function FormularioSection() {
 
           {/* Columna Derecha - Formulario Minimalista */}
           <div 
-            className="rounded-[32px] p-10 md:p-12 sticky top-8"
+            className="rounded-[32px] p-12 md:p-14 lg:p-16 sticky top-8"
             style={{
               background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(20px)',
@@ -242,7 +242,7 @@ export default function FormularioSection() {
           
           {/* PASO 1: Información de la Empresa */}
           {currentStep === 1 && (
-            <div className="space-y-7 animate-fadeInUp">
+            <div className="space-y-8 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -306,7 +306,7 @@ export default function FormularioSection() {
 
           {/* PASO 2: Equipos a Calibrar */}
           {currentStep === 2 && (
-            <div className="space-y-7 animate-fadeInUp">
+            <div className="space-y-8 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -333,7 +333,7 @@ export default function FormularioSection() {
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-7">
                 <div>
                   <label className="font-['Inter'] font-semibold text-[14px] mb-3 block"
                     style={{ fontWeight: 600, color: '#152b86' }}
@@ -398,7 +398,7 @@ export default function FormularioSection() {
 
           {/* PASO 3: Plazo y Urgencia */}
           {currentStep === 3 && (
-            <div className="space-y-7 animate-fadeInUp">
+            <div className="space-y-8 animate-fadeInUp">
               <div>
                 <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                   style={{ fontWeight: 600, color: '#152b86' }}
@@ -455,8 +455,8 @@ export default function FormularioSection() {
 
           {/* PASO 4: Datos de Contacto */}
           {currentStep === 4 && (
-            <div className="space-y-7 animate-fadeInUp">
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-8 animate-fadeInUp">
+              <div className="grid md:grid-cols-2 gap-7">
                 <div>
                   <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                     style={{ fontWeight: 600, color: '#152b86' }}
@@ -509,7 +509,7 @@ export default function FormularioSection() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-7">
                 <div>
                   <label className="flex items-center gap-2 font-['Inter'] font-semibold text-[14px] mb-3"
                     style={{ fontWeight: 600, color: '#152b86' }}
