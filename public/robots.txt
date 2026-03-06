@@ -1,0 +1,18 @@
+# Permitir a los motores de búsqueda legítimos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Bloquear bots maliciosos y scrapers
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://venmet-ventura.com/sitemap.xml
